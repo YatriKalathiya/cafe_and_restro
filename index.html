@@ -1,19 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous">
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
-</head>
-<body>
-    
+    <link rel="stylesheet" href="css/yatri.css">
+  </head>
+  <body>
 
+    <header class="y_header">
+      <div class="y_container">
+        <div class="row align-items-center">
+          <div class="col-auto d-flex align-items-center">
+            <div class="logo me-4">
+              <a href="#">LOGO</a>
+            </div>
+            <nav class="nav-links d-none d-md-flex  ps-lg-5 ms-lg-5 ps-md-0 ms-md-0">
+              <a class="active" href="#">Home</a>
+              <a href="#">My Order</a>
+            </nav>
+          </div>
+          <div class="col-auto ms-auto d-md-none">
+            <button class="btn btn-link text-white mobile-nav-toggle"
+              type="button" data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu">
+              <i class="fas fa-bars"></i>
+            </button>
+          </div>
+          <div class="col desktop-nav">
+            <div class="d-flex justify-content-end align-items-center">
+              <div class="y_search_container me-3">
+                <span class="search-icon">
+                  <img src="yatri_img/y_serach_icon.png" alt="Search">
+                </span>
+                <input type="text" placeholder="Search..."
+                  class="custom-search-input">
+              </div>
+              <div class="cart-icon me-3">
+                <img src="yatri_img/y_cart_icon.png" alt="Cart">
+                <span class="cart-count">0</span>
+              </div>
+              <div class="user-section">
+                <div class="dropdown">
+                  <button class="dropdown-toggle" type="button"
+                    id="dropdownMenuButton" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    <i class="fas fa-user"></i> Smith Johnson <i
+                      class="fas fa-caret-down"></i>
+                  </button>
+                  <ul class="dropdown-menu"
+                    aria-labelledby="dropdownMenuButton">
+                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <!-- <li><a class="dropdown-item" href="#">Settings</a></li> -->
+                    <li><a class="dropdown-item" href="#">Logout</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-</body>
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu"
+      aria-labelledby="offcanvasMenuLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasMenuLabel">Menu</h5>
+        <button type="button" class="btn-close btn-close-white"
+          data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <nav class="flex-column">
+          <div class="d-flex">
+            <div class="y_search_container my-3 pe-2">
+              <span class="search-icon">
+                <img src="yatri_img/y_serach_icon.png" alt="Search">
+              </span>
+              <input type="text" placeholder="Search..."
+                class="custom-search-input">
+            </div>
+            <div class="cart-icon my-3 ps-2">
+              <img src="yatri_img/y_cart_icon.png" alt="Cart">
+              <span class="cart-count">0</span>
+            </div>
+
+          </div>
+          <div class="user-section my-3">
+            <div class="dropdown">
+              <button class="dropdown-toggle" type="button"
+                id="dropdownMenuButtonMobile" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <span><i class="fas fa-user"></i> Smith Johnson</span>
+                <i class="fas fa-caret-down"></i>
+              </button>
+              <ul class="dropdown-menu"
+                aria-labelledby="dropdownMenuButtonMobile">
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <!-- <li><a class="dropdown-item" href="#">Settings</a></li> -->
+                <li><a class="dropdown-item" href="#">Logout</a></li>
+              </ul>
+            </div>
+          </div>
+          <a class="nav-link active" href="#">Home</a>
+          <a class="nav-link" href="#">My Order</a>
+
+          
+        </nav>
+      </div>
+    </div>
+
+    <section class="main_top_section">
+      <div class="y_container pt-5">
+        <div class="section_title">
+          <h2>Menu</h2>
+        </div>
+        <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 g-5 g-lg-5">
+          <div class="col mt-0">
+              <div class="y_item_box">
+                  <img src="yatri_img/y_indian.png" alt="Indian Cuisine">
+              </div>
+          </div>
+          <div class="col mt-0">
+              <div class="y_item_box">
+                  <img src="yatri_img/y_indian.png" alt="Indian Cuisine">
+              </div>
+          </div>
+          <div class="col mt-0">
+              <div class="y_item_box">
+                  <img src="yatri_img/y_indian.png" alt="Indian Cuisine">
+              </div>
+          </div>
+          <div class="col mt-0">
+              <div class="y_item_box">
+                  <img src="yatri_img/y_indian.png" alt="Indian Cuisine">
+              </div>
+          </div>
+          <div class="col mt-0">
+              <div class="y_item_box">
+                  <img src="yatri_img/y_indian.png" alt="Indian Cuisine">
+              </div>
+          </div>
+          <div class="col mt-0">
+              <div class="y_item_box">
+                  <img src="yatri_img/y_indian.png" alt="Indian Cuisine">
+              </div>
+          </div>
+          <div class="col mt-0">
+              <div class="y_item_box">
+                  <img src="yatri_img/y_indian.png" alt="Indian Cuisine">
+              </div>
+          </div>
+          <div class="col mt-0">
+              <div class="y_item_box">
+                  <img src="yatri_img/y_indian.png" alt="Indian Cuisine">
+              </div>
+          </div>
+          <div class="col mt-0">
+              <div class="y_item_box">
+                  <img src="yatri_img/y_indian.png" alt="Indian Cuisine">
+              </div>
+          </div>
+          <div class="col mt-0">
+              <div class="y_item_box">
+                  <img src="yatri_img/y_indian.png" alt="Indian Cuisine">
+              </div>
+          </div>
+      </div>
+      </div>
+    </section>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"></script>
+  </body>
 </html>

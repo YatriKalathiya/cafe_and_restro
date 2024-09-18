@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Header with Off-canvas Menu - 768px breakpoint</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+        * {
+            box-sizing: border-box;
+            font-family: "Lato", sans-serif;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        .y_header {
+            background-color: #1c1c1c;
+            padding: 10px 0;
+            color: #fff;
+        }
+
+        .y_header .logo a {
+            color: #fff;
+            font-size: 24px;
+            text-decoration: none;
+        }
+
+        .y_header .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 20px;
+            margin-right: 20px;
+        }
+
+        .y_header .nav-links a.active {
+            color: #fb7514;
+        }
+
+        .y_header .cart-icon {
+            position: relative;
+        }
+
+        .y_header .cart-icon img {
+            background: #3f3f3f;
+            padding: 10px;
+            border-radius: 50%;
+        }
+
+        .y_header .cart-count {
+            position: absolute;
+            top: -7px;
+            right: -7px;
+            background-color: #fb7514;
+            border-radius: 50%;
+            padding: 2px 6px;
+            font-size: 12px;
+            color: #fff;
+        }
+
+        .y_header .dropdown-toggle {
+            background-color: #fb7514;
+            border: none;
+            color: #fff;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .y_search_container {
+            position: relative;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .custom-search-input {
+            width: 100%;
+            padding: 10px 15px 10px 40px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: transparent;
+            font-size: 14px;
+            color: #fff;
+        }
+
+        .custom-search-input::placeholder {
+            color: #ccc;
+        }
+
+        .search-icon {
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%);
+            color: #ccc;
+        }
+
+        .search-icon img {
+            width: 20px;
+        }
+
+        .offcanvas {
+            background-color: #1c1c1c;
+        }
+
+        .offcanvas-header, .offcanvas-body {
+            color: #fff;
+        }
+
+        .offcanvas .nav-link {
+            color: #fff;
+            font-size: 18px;
+            padding: 10px 0;
+        }
+
+        .offcanvas .nav-link.active {
+            color: #fb7514;
+        }
+
+        .offcanvas .cart-icon {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .offcanvas .cart-icon img {
+            width: 30px;
+            height: 30px;
+            object-fit: contain;
+        }
+
+        .offcanvas .dropdown-toggle {
+            width: 100%;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .offcanvas .dropdown-menu {
+            background-color: #2c2c2c;
+            border: none;
+            width: 100%;
+        }
+
+        .offcanvas .dropdown-item {
+            color: #fff;
+        }
+
+        .offcanvas .dropdown-item:hover {
+            background-color: #3c3c3c;
+        }
+
+        @media (max-width: 767px) {
+            .desktop-nav {
+                display: none;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .mobile-nav-toggle {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="y_header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-auto d-flex align-items-center">
+                    <div class="logo me-4">
+                        <a href="#">LOGO</a>
+                    </div>
+                    <nav class="nav-links d-none d-md-flex">
+                        <a class="active" href="#">Home</a>
+                        <a href="#">My Order</a>
+                    </nav>
+                </div>
+                <div class="col-auto ms-auto d-md-none">
+                    <button class="btn btn-link text-white mobile-nav-toggle" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+                <div class="col desktop-nav">
+                    <div class="d-flex justify-content-end align-items-center">
+                        <div class="y_search_container me-3">
+                            <span class="search-icon">
+                                <img src="yatri_img/y_serach_icon.png" alt="Search">
+                            </span>
+                            <input type="text" placeholder="Search..." class="custom-search-input">
+                        </div>
+                        <div class="cart-icon me-3">
+                            <img src="yatri_img/y_cart_icon.png" alt="Cart">
+                            <span class="cart-count">0</span>
+                        </div>
+                        <div class="user-section">
+                            <div class="dropdown">
+                                <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fas fa-user"></i> Smith Johnson <i class="fas fa-caret-down"></i>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                                    <li><a class="dropdown-item" href="#">Logout</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasMenuLabel">Menu</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <nav class="flex-column">
+                <a class="nav-link active" href="#">Home</a>
+                <a class="nav-link" href="#">My Order</a>
+                <div class="y_search_container my-3">
+                    <span class="search-icon">
+                        <img src="yatri_img/y_serach_icon.png" alt="Search">
+                    </span>
+                    <input type="text" placeholder="Search..." class="custom-search-input">
+                </div>
+                <div class="cart-icon my-3">
+                    <img src="yatri_img/y_cart_icon.png" alt="Cart">
+                    <span class="cart-count">0</span>
+                </div>
+                <div class="user-section my-3">
+                    <div class="dropdown">
+                        <button class="dropdown-toggle" type="button" id="dropdownMenuButtonMobile" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span><i class="fas fa-user"></i> Smith Johnson</span>
+                            <i class="fas fa-caret-down"></i>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonMobile">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
