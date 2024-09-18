@@ -1,0 +1,332 @@
+/* --------------------- font ---------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+/* --------------------------------- basic css--------------------------- */
+
+.sp_bg_black {
+    background-color:  #040404;
+    font-family: "lato";
+}
+.sp_color_yellow{
+    color: #fb7514;
+}
+
+/* ---------------------------sub category page css ----------------------- */
+
+.sp_sub_category_thumb {
+    background-image: url('/sujal_img/sub_category_thumb.png');
+    width: 100%;
+    height: 200px;
+    background-position: center center;
+}
+.sp_sub_category_title{
+    margin: 0px;
+    font-size: 50px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 15px;
+    height: 100%;
+}
+.sp_sub_cat_content {
+    width: 180px;
+    /* margin: auto; */
+}
+.sp_cat_data a {
+    /* color: white; */
+    text-decoration: none;
+    border: 0px;
+}
+.sp_sub_cat_img {
+    display: flex;
+    align-items: center;
+    width: 180px;
+    height: 180px;
+    padding: 20px;
+    border: 1px solid ;
+    border-radius: 10px;
+    border-color:rgba(255, 255, 255,0.1) ;
+    cursor: pointer;
+}
+.sp_sub_cat_title{
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-weight: 500;
+    font-size: 20px;
+    text-transform: capitalize;
+    padding-top: 10px;
+}
+.sp_sub_cat_img:hover {
+    border-color: white;
+}
+
+
+/* -----------------------------------------cat list css */
+.sp_border_ligth {
+    border: 1px solid ;
+    border-radius: 5px;
+    border-color:rgba(255, 255, 255,0.1) ;
+}
+.sp_meal {
+    cursor: pointer;
+}
+.s_catlist_card {
+    width: 320px;
+    /* margin:20px auto; */
+    border: 1px solid ;
+    border-radius: 10px;
+    border-color:rgba(255, 255, 255,0.1) ;
+}
+.s_catlist_img {
+    position: relative;
+}
+.s_catlist_icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+.sp_fs_12{
+    font-size: 12px;
+}
+.s_add_btn {
+    border: none;
+    box-shadow: none;
+    background-color: #fb7514;
+    color: white;
+    font-size: 20px;
+    width: 150px;
+    border-radius: 5px;
+    padding: 5px 0px;
+    font-weight: 600px;
+}
+.sp_cardlist_cart {
+    background-color: #0F0F0F; 
+    color: white;
+    padding: 15px 40px; 
+}
+body{
+    position: relative;
+}
+.sp_cardlist_cart{
+    position: fixed;
+    bottom: 40px;
+    width: 90%;
+    left: 5%;
+}
+.sp_cardlist_menu{
+    position: fixed;
+    bottom: 150px;
+    left: 10%;
+    width: 80%;
+}
+.sp_cardlist_menu_box{
+    width: 60px;
+    height: 60px;
+    background-color: #0F0F0F;
+    border-radius: 50%;
+}
+.sp_cardlist_menu img {
+    margin: auto;
+    width: 24px;
+    height: 24px;
+}
+.sp_fs_11 {
+    font-size: 11px;
+}
+/* ----------modal css----- */
+.s_catlist_card .modal-content {
+    background-color: #0f0f0f;
+}
+.s_catlist_card   .modal-dialog {
+    width: 700px !important;
+
+}
+.s_catlist_card .btn-close {
+    background-image: url('/sujal_img/close.png');
+    width: 24px;
+    height: 24px;
+    background-size: cover;
+    margin: 20px;
+}
+.s_modal_inner {
+    margin: 20px 10px;
+    background-color: #040404;
+    border: 1px solid ;
+    border-radius: 10px;
+    border-color:rgba(255, 255, 255,0.1) ;
+}
+.s_modal_inner .s_modal_inp {
+    padding: 10px 20px;
+    margin-bottom: 0px;
+}
+.s_modal_inner hr {
+    margin: 0px;
+}
+.s_modal_inner input[type="radio" i] {
+    width: 18px;
+    height: 18px;
+    accent-color: #FB7514;
+    ;
+}
+/* ---------------------------media query ==----------------------------------- */
+.y_container{
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+@media (min-width: 1900px){
+    .sp_cardlist_cart{
+        width: 80% !important;
+        left: 10% !important;
+    }
+    .sp_cardlist_menu {
+        width: 80% !important;
+        left: 10% !important; 
+    }
+}
+@media (min-width: 1650px) {
+    .y_container {
+        width: 1501px;
+    }
+    .sp_cardlist_cart{
+        width: 90%;
+        left: 5%;
+    }
+    .sp_cardlist_menu {
+        width: 90%;
+        left: 5%; 
+    }
+
+}
+@media (min-width: 1200px) and (max-width: 1649px) {
+    .y_container {
+        width: 1199px;
+        max-width: none;
+    }
+    /* .sp_cardlist_cart , .sp_cardlist_menu{
+        width: 1199px;
+    } */
+    .sp_cardlist_cart{
+        width: 90%;
+        left: 5%;
+    }
+    .sp_cardlist_menu {
+        width: 90%;
+        left: 5%; 
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .y_container {
+        width: 970px;
+        max-width: none;
+    }
+
+
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .y_container {
+        width: 750px;
+        max-width: none;
+    }
+    .s_sub_category_title{
+        font-size: 40px !important;
+    }
+    .s_sub_text{
+        font-size: 18px !important;
+    }
+    .sp_cardlist_cart{
+        width: 100%;
+        left: 0%;
+        bottom: 0px;
+    }
+    .sp_cardlist_menu {
+        width: 100%;
+        left: 0%; 
+    }
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+    .y_container {
+        max-width: 750px;
+    }
+    .s_sub_category_title{
+        font-size: 40px !important;
+    }
+    .s_sub_text{
+        font-size: 18px !important;
+    }
+    .sp_cardlist_cart{
+        width: 100%;
+        left: 0%;
+        bottom: 0px;
+
+    }
+    .sp_cardlist_menu {
+        width: 100%;
+        left: 0%; 
+    }
+
+
+}
+
+@media (min-width: 450px) and (max-width: 479px) {
+    .sp_cardlist_cart{
+        width: 100%;
+        left: 0%;
+        bottom: 0px;
+    }
+}
+
+@media (min-width: 300px) and (max-width: 450px) {
+    .y_container {
+        max-width: 750px;
+        padding: 0px 10px;
+    }
+    .s_sub_category_title{
+        font-size: 40px !important;
+    }
+    .s_sub_text{
+        font-size: 18px !important;
+    }
+
+    .s_catlist_card {
+        width: 320px;
+    }
+    .sp_cardlist_cart{
+        width: 100%;
+        left: 0%;
+        bottom: 0px;
+    }
+    .sp_cardlist_menu {
+        width: 100%;
+        left: 0%; 
+
+    }
+
+}
+@media (min-width: 300px) and (max-width: 374px){
+    .s_catlist_card {
+        width: 280px;
+    }
+    .sp_fliter_box {
+        padding: 12px 10px !important ;
+    }
+    .sp_cardlist_cart{
+        width: 100%;
+        left: 0%;
+        bottom: 0px;
+    }
+    .sp_cardlist_menu {
+        width: 100%;
+        left: 0%; 
+
+    }
+}
+@media (min-width: 576px) {
+    .s_catlist_card .modal-dialog {
+        max-width: 700px;
+        margin: 1.75rem auto;
+    }
+}
