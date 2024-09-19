@@ -1,0 +1,232 @@
+    @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: #0F0F0F;
+        font-family: "lato";
+        color: #ffffff;
+    }
+
+    img {
+        object-fit: cover;
+        overflow: hidden;
+    }
+
+    .y_container {
+        margin-right: auto;
+        margin-left: auto;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .sb_abosulate {
+        display: block;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .sb_abosulate img {
+        height: 150px;
+    }
+
+    .sb_reletive {
+        position: absolute;
+    }
+
+    .sb_block {
+        display: none;
+    }
+
+    .sb_btn {
+        background-color: #FB7514;
+        color: #ffffff;
+        border: 0;
+        border-radius: 5px;
+        padding: 5px 45px;
+    }
+
+    .sb_btn:hover {
+        color: #ffffff;
+    }
+
+    .sb_card {
+        background-color: transparent;
+        border: none;
+        width: 15rem !important;
+        margin: auto;
+    }
+
+    .sb_card_body {
+        text-align: center;
+    }
+
+    .sb_line {
+        color: #FB7514;
+        text-decoration: underline;
+        text-align: end;
+        padding: 2rem 0;
+    }
+    .sb_card_body1{
+        height: 260px;
+    }
+    .sb_card1 {
+        background-color: transparent;
+        border: none;
+        width: auto !important;
+        border: 1px solid #201d1d;
+    }
+    .sb_dots{
+        color: #FB7514;
+        margin: 0 8px;
+    }
+    .sb_star{
+        color: #FB7514;
+        margin: 0 5px;
+    }
+    .sb_qty_btn{
+        background-color: #FB7514;
+        padding: 5px 0;
+        border-radius: 5px;
+    }
+    .sb_qty_btn span{
+    margin: 0 15px;
+    }
+    .sb_total{
+        margin: 20px 0;
+        border-radius: 5px;
+        background-color: #020202;
+        padding: 20px 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border: 1px solid #201d1d;
+    }
+    .sb_modal-content{
+        background-color: #0F0F0F;
+        color: #ffffff;
+        position: relative;
+    }
+    .sb_model-header{
+        border-bottom: 1px dashed #545454;
+        display: block !important;
+    }
+    .sb_model-header img{
+        position: absolute;
+        top: -14%;
+        left: 40%;
+    }
+    .sb_model_flex{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .sb_model_flex p{
+        font-size: 13px;
+        margin-bottom: 0;
+    }
+   .sb_line1{
+    color: #FB7514;
+    text-decoration: underline;
+   }
+   .sb_model-footer{
+    border-top: 1px dashed #545454 !important;
+   }
+   .sb_model_btn{
+    display: flex;
+    justify-content: space-between;
+   }
+    @media (min-width: 1650px) {
+        .y_container {
+            width: 1501px;
+        }
+    }
+
+    @media (min-width: 1200px) and (max-width: 1649px) {
+        .y_container {
+            width: 1199px;
+            max-width: none;
+        }
+    }
+
+    @media (min-width: 992px) and (max-width: 1199px) {
+        .y_container {
+            width: 970px;
+            max-width: none;
+        }
+    }
+
+    @media (min-width: 768px) and (max-width: 991px) {
+        .y_container {
+            width: 750px;
+            max-width: none;
+        }
+    }
+
+    @media (min-width: 480px) and (max-width: 767px) {
+        .y_container {
+            max-width: 750px;
+        }
+    }
+
+    @media (min-width: 300px) and (max-width: 450px) {
+        .y_container {
+            max-width: 750px;
+            padding: 0px 10px;
+        }
+    }
+    @media (max-width:768px) {
+        .sb_dots{
+            color: #FB7514;
+            margin: 0 3px;
+        }
+        .sb_star{
+            color: #FB7514;
+            margin: 0 3px;
+        }
+        .sb_qty_btn span{
+            margin: 0 10px;
+        }
+        .sb_card_body1{
+            height: 300px;
+        }
+    }
+
+    @media (max-width:425px) {
+        .sb_abosulate {
+            display: none;
+        }
+
+        .sb_block {
+            display: block;
+            padding: 1rem 2rem;
+        }
+    
+        .sb_lg_items .row {
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .sb_sm_cart{
+            border: 1px solid #201d1d;
+            border-radius: 10px;
+            margin: 10px;
+        }
+        .sb_qty_btn span{
+            margin: 0 5px;
+        }
+        .sb_fixed_total {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            padding: 20px 10px;
+        }
+        
+        
+    }
