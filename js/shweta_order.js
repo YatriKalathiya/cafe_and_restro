@@ -19,7 +19,7 @@ function generateOrderCards(orders) {
 
     orders.forEach((order, index) => {
         const cardHTML = `
-            <div class="col-lg-3 col-md-6 col-12">
+            <div class="col-xl-3 col-lg-4 col-md-6 col-12">
                 <div class="card sb_card2">
                     <div class="card-body">
                         <div class="sb_line py-3 view-invoice" data-bs-toggle="modal" data-bs-target="#invoiceModal" data-index="${index}">View Invoice</div>
@@ -67,7 +67,7 @@ function generateInvoiceHTML(order) {
     // This is a simplified version. You should expand this with actual order details.
     return `
         <div class="text-center p-2">
-            <h5>Royal Cafe & Restaurant</h5>
+            <h3>Royal Cafe & Restaurant</h3>
             <p><small style="color: #999999;">1315 Dye Street, Minnesota - 55347</small></p>
         </div>
         <div style="border-bottom: 1px dashed #545454;" ></div>
@@ -137,14 +137,84 @@ function generateInvoiceHTML(order) {
 }
 
 // Function to download HTML as a file
+// function downloadInvoice(invoiceHTML, fileName) {
+//     const blob = new Blob([invoiceHTML], { type: 'text/html' });
+//     const link = document.createElement('a');
+//     link.href = URL.createObjectURL(blob);
+//     link.download = fileName;
+//     link.click();
+//     URL.revokeObjectURL(link.href);
+// }
+// Function to download HTML as a file
 function downloadInvoice(invoiceHTML, fileName) {
-    const blob = new Blob([invoiceHTML], { type: 'text/html' });
+    const fullInvoiceHTML = `
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Invoice - Royal Cafe & Restaurant</title>
+            <style>
+                .invoice-container {
+                    margin: 0 auto;
+                    background-color: #2c2c2c;
+                    border-radius: 8px;
+                    padding: 20px 0;
+                }
+                h3 {
+                    text-align: center;
+                    color: #ffffff;
+                    margin-bottom: 5px;
+                }
+                .text-center {
+                    text-align: center;
+                }
+                small {
+                    color: #999999;
+                }
+                .border-bottom {
+                    border-bottom: 1px dashed #545454;
+                    margin: 10px 0;
+                }
+                th {
+                    padding: 10px 0;
+                    text-align: left;
+                    border-bottom: 1px dashed #545454;
+                }
+                .text-end {
+                    text-align: right;
+                }
+                .mt-3 {
+                    margin-top: 15px;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="invoice-container">
+                ${invoiceHTML}
+            </div>
+        </body>
+        </html>
+    `;
+    const blob = new Blob([fullInvoiceHTML], { type: 'text/html' });
     const link = document.createElement('a');
     link.href = URL.createObjectURL(blob);
     link.download = fileName;
     link.click();
     URL.revokeObjectURL(link.href);
 }
+
+// Event listener for download invoice button
+document.getElementById('downloadInvoice').addEventListener('click', function () {
+    const invoiceContent = document.getElementById('invoiceContent').innerHTML;
+    downloadInvoice(invoiceContent, 'invoice.html');
+});
+
+// Event listener for download invoice button
+document.getElementById('downloadInvoice').addEventListener('click', function () {
+    const invoiceContent = document.getElementById('invoiceContent').innerHTML;
+    downloadInvoice(invoiceContent, 'invoice.html');
+});
 
 // Event listener for 'Order Now' button
 document.addEventListener('DOMContentLoaded', function () {
@@ -164,9 +234,10 @@ document.getElementById('downloadInvoice').addEventListener('click', function ()
         <head>
             <style>
                 body { font-family: Arial, sans-serif; color: white; background-color: #1e1e1e; }
-                .invoice-container { width: 100%; max-width: 600px; margin: 0 auto; padding: 20px; }
+                .invoice-container { width: 100%; max-width: 400px; margin: 0 auto; padding: 20px 0; }
                 table { width: 100%; border-collapse: collapse; }
-                th, td { border-bottom: 1px dashed #545454; padding: 10px; text-align: left; }
+                th { border-bottom: 1px dashed #545454; padding: 10px; text-align: left; }
+                td {  padding: 10px; text-align: left; }
             </style>
         </head>
         <body>
