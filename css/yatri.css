@@ -27,6 +27,7 @@ body {
   color: #fff;
   position: fixed;
   width: 100%;
+  z-index: 999;
 }
 
 .y_header .logo a {
@@ -593,7 +594,21 @@ footer {
   color: white;
   border: none;
 }
-
+.user-section .dropdown-item.active, .dropdown-item:active{
+  background-color: #fb7514;
+  color: white;
+}
+.user-section ul{
+  background-color: #0F0F0F;
+  color: white !important;
+}
+.user-section ul a{
+  color: white !important;
+}
+.user-section ul a:hover{
+  background-color: #fb7514;
+  color: white;
+}
 /* mobile logout modal  */
 /* Center the mobile logout modal vertically and horizontally */
 .y_mobileLogoutModel-dialog {
