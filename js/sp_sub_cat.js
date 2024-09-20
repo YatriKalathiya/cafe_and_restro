@@ -1,14 +1,14 @@
 // ------------------------------------------------------------ sub_category js ------------------------------------------------------------
-var sub_cat_data =[{name: 'dosa' ,image:'/sujal_img/dosa.png'},{name: 'samosa' ,image:'/sujal_img/samosa.png'},{name: 'paratha' ,image:'/sujal_img/paratha.png'},{name: 'biryani' ,image:'/sujal_img/biryani.png'},{name: 'pav bhaji' ,image:'/sujal_img/pavbhaji.png'},{name: 'chaat' ,image:'/sujal_img/chaat.png'},{name: 'kichdi' ,image:'/sujal_img/khichdi.png'},{name: 'breads' ,image:'/sujal_img/breads.png'},{name: 'rice' ,image:'/sujal_img/rice.png'},{name: 'bevrages' ,image:'/sujal_img/bevrage.png'}];
+var sub_cat_data =[{name: 'Dosa' ,image:'dosa.png'},{name: 'Samosa' ,image:'samosa.png'},{name: 'Paratha' ,image:'paratha.png'},{name: 'Biryani' ,image:'biryani.png'},{name: 'Pav Bhaji' ,image:'pavbhaji.png'},{name: 'Chaat' ,image:'chaat.png'},{name: 'Kichdi' ,image:'khichdi.png'},{name: 'Breads' ,image:'breads.png'},{name: 'rice' ,image:'rice.png'},{name: 'Bevrages' ,image:'bevrage.png'}];
 
 function subcat_load(){
     var id= document.getElementById('sp_sub_cat');
     id.innerHTML='';
     sub_cat_data.forEach((el,id1)=>{
-        const itemdata =`<a href='./category_list.html' class="col d-flex justify-content-center pb-5">
+        const itemdata =`<a href='./category_list.html' class="col d-flex justify-content-center pb-5" onclick="addcat('${el.name}')">
                 <div class="sp_sub_cat_content">
-                    <div class="sp_sub_cat_img ${id1==0 ? `border-white`:''}">
-                        <img src="${el.image}" alt="Card image cap" class="w-100">
+                    <div class="sp_sub_cat_img">
+                        <img src="/sujal_img/${el.image}" alt="Card image cap" class="w-100">
                     </div>
                     <h4 class="sp_sub_cat_title">${el.name}</h4>
                 </div>
@@ -17,6 +17,11 @@ function subcat_load(){
         id.innerHTML+=itemdata;
     })
 
+}
+function addcat(el){
+    console.log(el);
+    localStorage.setItem('selected_cat', el);
+    window.location.href = './category_list.html';  // Redirect to new page on button click.
 }
 window.onload = function(){
     subcat_load();

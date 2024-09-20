@@ -1,132 +1,171 @@
 // -------------------------------category list js ------------------------------->
 
+
 var cat_list_data = [
     {
-        img: '/sujal_img/masaladaso.png',
-        title: 'Masala Dosa',
-        continate: 'south india',
+        img: 'masaladaso.png',
+        title: 'Samosa',
+        cat: 'South India',
         type: 'non veg',
         rate: '4.7',
         des: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam, eaque quia eius maiores, alias eligendi fuga iure sit commodi aliquid consequatur amet odio error deleniti, dolor exercitationem iste a. Ipsa!',
         price: '$ 120',
         size: [{ title: 'Small', price: '$10' }, { title: 'Medium', price: '$14' }, { title: 'Large', price: '$18' }],
         stuffings:[{ title: 'Palack', price: '$10' }, { title: 'Paneer', price: '00' }],
-        dips : [{ title: 'Green chutney', price: '$3'},{ title: 'Ketchup', price: '$3'},{ title: 'Dahi rayta', price: '$3'}]
+        dips : [{ title: 'Green chutney', price: '$3'},{ title: 'Ketchup', price: '$3'},{ title: 'Dahi rayta', price: '$3'}],
+        sub_cat:'Samosa',
+        main_cat:'Indian',
     },
     {
-        img: '/sujal_img/masaladaso.png',
-        title: 'Masala Dosa',
-        continate: 'south india',
+        img: 'masaladaso.png',
+        title: 'Pizza',
+        cat: 'South India',
         type: 'pure veg',
         rate: '4.7',
         des: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam, eaque quia eius maiores, alias eligendi fuga iure sit commodi aliquid consequatur amet odio error deleniti, dolor exercitationem iste a. Ipsa!',
         price: '$ 120',
         types: [{ title: 'Regular', price: '$10' }, { title: 'Butter', price: '$14' }, { title: 'Cheese', price: '$18' }],
         stuffings:[{ title: 'Palack', price: '$10' }, { title: 'Paneer', price: '00' }],
-        dips : [{ title: 'Green chutney', price: '$3'},{ title: 'Ketchup', price: '$3'},{ title: 'Dahi rayta', price: '$3'}]
+        dips : [{ title: 'Green chutney', price: '$3'},{ title: 'Ketchup', price: '$3'},{ title: 'Dahi rayta', price: '$3'}],
+        sub_cat:'Pizza',
+        main_cat:'Indian',
     },
     {
-        img: '/sujal_img/masaladaso.png',
-        title: 'Masala Dosa',
-        continate: 'south india',
+        img: 'masaladaso.png',
+        title: 'Pizza',
+        cat: 'South India',
         type: 'pure veg',
         rate: '4.7',
         des: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam, eaque quia eius maiores, alias eligendi fuga iure sit commodi aliquid consequatur amet odio error deleniti, dolor exercitationem iste a. Ipsa!',
         price: '$ 120',
         types: [{ title: 'Regular', price: '$10' }, { title: 'Butter', price: '$14' }, { title: 'Cheese', price: '$18' }],
         stuffings:[{ title: 'Palack', price: '$10' }, { title: 'Paneer', price: '00' }],
-        dips : [{ title: 'Green chutney', price: '$3'},{ title: 'Ketchup', price: '$3'},{ title: 'Dahi rayta', price: '$3'}]
+        dips : [{ title: 'Green chutney', price: '$3'},{ title: 'Ketchup', price: '$3'},{ title: 'Dahi rayta', price: '$3'}],
+        sub_cat:'Pizza',
+        main_cat:'Indian',
     },
     {
-        img: '/sujal_img/masaladaso.png',
+        img: 'masaladaso.png',
         title: 'Masala Dosa',
-        continate: 'south india',
+        cat: 'South India',
         type: 'pure veg',
         rate: '4.7',
         des: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam, eaque quia eius maiores, alias eligendi fuga iure sit commodi aliquid consequatur amet odio error deleniti, dolor exercitationem iste a. Ipsa!',
         price: '$ 120',
         types: [{ title: 'Regular', price: '$10' }, { title: 'Butter', price: '$14' }, { title: 'Cheese', price: '$18' }],
         stuffings:[{ title: 'Palack', price: '$10' }, { title: 'Paneer', price: '00' }],
-        dips : [{ title: 'Green chutney', price: '$3'},{ title: 'Ketchup', price: '$3'},{ title: 'Dahi rayta', price: '$3'}]
+        dips : [{ title: 'Green chutney', price: '$3'},{ title: 'Ketchup', price: '$3'},{ title: 'Dahi rayta', price: '$3'}],
+        sub_cat:'Dosa',
+        main_cat:'Indian',
     },
     {
-        img: '/sujal_img/masaladaso.png',
+        img: 'masaladaso.png',
         title: 'Masala Dosa',
-        continate: 'south india',
+        cat: 'South India',
+        type: 'non veg',
+        rate: '4.7',
+        des: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam, eaque quia eius maiores, alias eligendi fuga iure sit commodi aliquid consequatur amet odio error deleniti, dolor exercitationem iste a. Ipsa!',
+        price: '$ 120',
+        types: [{ title: 'Regular', price: '$10' }, { title: 'Butter', price: '$14' }, { title: 'Cheese', price: '$18' }],
+        stuffings:[{ title: 'Palack', price: '$10' }, { title: 'Paneer', price: '00' }],
+        dips : [{ title: 'Green chutney', price: '$3'},{ title: 'Ketchup', price: '$3'},{ title: 'Dahi rayta', price: '$3'}],
+        sub_cat:'Dosa',
+        main_cat:'Indian',
+    },
+    {
+        img: 'masaladaso.png',
+        title: 'Masala Dosa',
+        cat: 'South India',
         type: 'pure veg',
         rate: '4.7',
         des: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam, eaque quia eius maiores, alias eligendi fuga iure sit commodi aliquid consequatur amet odio error deleniti, dolor exercitationem iste a. Ipsa!',
         price: '$ 120',
         types: [{ title: 'Regular', price: '$10' }, { title: 'Butter', price: '$14' }, { title: 'Cheese', price: '$18' }],
         stuffings:[{ title: 'Palack', price: '$10' }, { title: 'Paneer', price: '00' }],
-        dips : [{ title: 'Green chutney', price: '$3'},{ title: 'Ketchup', price: '$3'},{ title: 'Dahi rayta', price: '$3'}]
-    },
-    {
-        img: '/sujal_img/masaladaso.png',
-        title: 'Masala Dosa',
-        continate: 'south india',
-        type: 'pure veg',
-        rate: '4.7',
-        des: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam, eaque quia eius maiores, alias eligendi fuga iure sit commodi aliquid consequatur amet odio error deleniti, dolor exercitationem iste a. Ipsa!',
-        price: '$ 120',
-        types: [{ title: 'Regular', price: '$10' }, { title: 'Butter', price: '$14' }, { title: 'Cheese', price: '$18' }],
-        stuffings:[{ title: 'Palack', price: '$10' }, { title: 'Paneer', price: '00' }],
-        dips : [{ title: 'Green chutney', price: '$3'},{ title: 'Ketchup', price: '$3'},{ title: 'Dahi rayta', price: '$3'}]
+        dips : [{ title: 'Green chutney', price: '$3'},{ title: 'Ketchup', price: '$3'},{ title: 'Dahi rayta', price: '$3'}],
+        sub_cat:'Dosa',
+        main_cat:'Indian',
     }, 
       {
-        img: '/sujal_img/masaladaso.png',
+        img: 'masaladaso.png',
         title: 'Masala Dosa',
-        continate: 'south india',
+        cat: 'South India',
         type: 'pure veg',
         rate: '4.7',
         des: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam, eaque quia eius maiores, alias eligendi fuga iure sit commodi aliquid consequatur amet odio error deleniti, dolor exercitationem iste a. Ipsa!',
         price: '$ 120',
         types: [{ title: 'Regular', price: '$10' }, { title: 'Butter', price: '$14' }, { title: 'Cheese', price: '$18' }],
         stuffings:[{ title: 'Palack', price: '$10' }, { title: 'Paneer', price: '00' }],
-        dips : [{ title: 'Green chutney', price: '$3'},{ title: 'Ketchup', price: '$3'},{ title: 'Dahi rayta', price: '$3'}]
+        dips : [{ title: 'Green chutney', price: '$3'},{ title: 'Ketchup', price: '$3'},{ title: 'Dahi rayta', price: '$3'}],
+        sub_cat:'Dosa',
+        main_cat:'Indian',
     }
     , 
       {
-        img: '/sujal_img/masaladaso.png',
+        img: 'masaladaso.png',
         title: 'Masala Dosa',
-        continate: 'south india',
+        cat: 'South India',
         type: 'pure veg',
         rate: '4.7',
         des: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam, eaque quia eius maiores, alias eligendi fuga iure sit commodi aliquid consequatur amet odio error deleniti, dolor exercitationem iste a. Ipsa!',
         price: '$ 120',
         types: [{ title: 'Regular', price: '$10' }, { title: 'Butter', price: '$14' }, { title: 'Cheese', price: '$18' }],
         stuffings:[{ title: 'Palack', price: '$10' }, { title: 'Paneer', price: '00' }],
-        dips : [{ title: 'Green chutney', price: '$3'},{ title: 'Ketchup', price: '$3'},{ title: 'Dahi rayta', price: '$3'}]
+        dips : [{ title: 'Green chutney', price: '$3'},{ title: 'Ketchup', price: '$3'},{ title: 'Dahi rayta', price: '$3'}],
+        sub_cat:'Dosa',
+        main_cat:'Indian',
     }
     , 
-     
+    {
+        img: 'masaladaso.png',
+        title: 'Masala Dosa',
+        cat: 'South India',
+        type: 'pure veg',
+        rate: '4.7',
+        des: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam, eaque quia eius maiores, alias eligendi fuga iure sit commodi aliquid consequatur amet odio error deleniti, dolor exercitationem iste a. Ipsa!',
+        price: '$ 120',
+        types: [{ title: 'Regular', price: '$10' }, { title: 'Butter', price: '$14' }, { title: 'Cheese', price: '$18' }],
+        stuffings:[{ title: 'Palack', price: '$10' }, { title: 'Paneer', price: '00' }],
+        dips : [{ title: 'Green chutney', price: '$3'},{ title: 'Ketchup', price: '$3'},{ title: 'Dahi rayta', price: '$3'}],
+        sub_cat:'Dosa',
+        main_cat:'Indian',
+    }
 ];
+var item ;
 
-function cat_list() {
+function cat_list(x) {
+    var cards;
+    var selected_cat = localStorage.getItem('selected_cat');
+    var category = cat_list_data.filter(item => item.sub_cat === selected_cat);
     var id = document.getElementById('s_catlist_card');
     id.innerHTML = '';
-
-    cat_list_data.forEach((el, index) => {
+    if(x == 'pure veg' || x== 'non veg'){
+        cards = category.filter(item => item.type === x);
+    }
+    else if(x== undefined || x=='all'){
+        cards =category;
+    }
+    cards.forEach((el, index) => {
         const itemHtml = `
-            <div class="col py-4 d-flex justify-content-start">
-                <div class="s_catlist_card m-xxl-0 m-auto">
+            <div class="col-xl-3 col-lg-4 col-sm-6 py-4 d-flex justify-content-start gx-4">
+                <div class="s_catlist_card m-xxl-0  mx-auto">
                     <div class="s_catlist_img">
-                        <img src="${el.img}" class="w-100">
+                        <img src="/sujal_img/${el.img}" class="w-100">
                         ${el.type === 'pure veg' ? `<img src="/sujal_img/veg.png" class="s_catlist_icon">` : `<img src="/sujal_img/nonveg.png" class="s_catlist_icon">`}
                     </div>
                     <div class="p-3">
                         <h5>${el.title}</h5>
                         <div>
                             <small class="d-flex text-secondary">
-                                ${el.continate}
-                                <ul class="d-flex ps-0 mx-3">
+                                ${el.cat}
+                                <ul class="d-flex ps-0 ms-auto">
                                     <li class="mx-3">${el.type}</li>
                                     <li class="mx-3"><img src="/sujal_img/star.png" class="mx-1 align-self-center mb-1"><span>${el.rate}</span></li>
                                 </ul>
                             </small>
                             <p class="sp_fs_12">${el.des}</p>
                         </div>
-                        <div class="d-flex align-content-center justify-content-between">
+                        <div class="d-flex align-items-center justify-content-between">
                             <h4 class="sp_color_yellow">${el.price}</h4>
                             <button type="button" class="s_add_btn" data-bs-toggle="modal" data-bs-target="#exampleModal${index}" onclick="no_item()">Add</button>
 
@@ -201,11 +240,11 @@ function cat_list() {
                                         </div>
                                         <div class="sp_modal_footer">
                                             <div class="sp_btn d-flex justify-content-around align-items-center">
-                                                <h5 class="mb-0" onclick="no_item(1)">-</h5>
-                                                <h5 class="mb-0" id="no_items">${item}</h5>
-                                                <h5 class="mb-0" onclick="no_item(2)">+</h5>
+                                                <h5 class="mb-0" onclick="no_item('1')" type="button">-</h5>
+                                                <h5 class="mb-0" id="no_items" type="button" >${item}</h5>
+                                                <h5 class="mb-0" onclick="no_item('2')" type="button">+</h5>
                                             </div>
-                                            <div class="sp_btn d-flex justify-content-around align-items-center">
+                                            <div class="sp_btn d-flex justify-content-around align-items-center" type="button">
                                                 <h5 class="mb-0">Add Item</h5>
                                             </div>
                                         </div>
@@ -218,19 +257,20 @@ function cat_list() {
             </div>`;
         id.innerHTML += itemHtml;
     });
+
 }
 
-var item = 1;
 function no_item(x) {
-    if (x === 1 && item > 0) {
+    if (x == '1' && item > 0) {
         item--;
-    } else if (x === 2) {
+    } else if (x == '2') {
         item++;
     }
-    document.getElementById('no_items').innerHTML = item;
+    var id=document.getElementById('no_items');
+    id.innerHTML = item;
 }
-
 // --------------------------window onload functions---------------------------------
 window.onload = function () {
+    item=1;
     cat_list();
 };

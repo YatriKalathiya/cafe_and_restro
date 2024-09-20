@@ -14,34 +14,32 @@
     <!-- css file  -->
     <link rel="stylesheet" href="/css/sujal.css">
 </head>
-
 <body class="sp_bg_black">
     <section class="sp_sub_category_thumb d-flex align-items-center justify-content-center text-center text-white">
         <div class="">
-            <h1 class="sp_sub_category_title align-self-center">Indian</h1>
-            <h5 class="sp_sub_text mb-0"><span>Home / </span><span>Category / </span><span class="sp_color_yellow">
-                    Indian</span></h5>
+            <h1 class="sp_sub_category_title align-self-center">Indian Cuisine</h1>
+            <h5 class="sp_sub_text mb-0"><span>Home / </span><span class="sp_color_yellow">
+                Indian Cuisine</span></h5>
         </div>
     </section>
     <section class="y_container text-white py-5 s_catlist_row">
-        <div class="d-flex align-items-center justify-content-around justify-content-md-start">
+        <div class="d-flex align-items-center justify-content-around                                                                                                                                                                                                                                            justify-content-md-start">
             <h4 class="mb-0 me-sm-5">Indian Cuisine</h4>
             <a class="mx-2 px-2 py-1 sp_border_ligth text-decoration-none text-white border-white sp_fliter_box sp_meal" id="all" onclick="mealhanddler('all')"><span>All</span></a>
-            <a class="mx-2 px-2 py-1 sp_border_ligth text-decoration-none text-white d-flex justify-content-center align-items-center flex-wrap sp_meal" id="veg" onclick="mealhanddler('veg')"><img src="/sujal_img/veg.png"><p class="px-1 mb-0"> veg</p></a>
-            <a class="mx-sm-2 px-sm-2 px-1 py-1 sp_border_ligth text-decoration-none text-white d-flex justify-content-center align-items-center flex-wrap  sp_meal" id="nonveg" onclick="mealhanddler('nonveg')"><img src="/sujal_img/nonveg.png"><p class="px-sm-1 mb-0">non veg</p></a>
+            <a class="mx-2 px-2 py-1 sp_border_ligth text-decoration-none text-white d-flex justify-content-center align-items-center flex-wrap sp_meal" id="pure veg" onclick="mealhanddler('pure veg')"><img src="/sujal_img/veg.png"><p class="px-1 mb-0"> veg</p></a>
+            <a class="mx-sm-2 px-sm-2 px-1 py-1 sp_border_ligth text-decoration-none text-white d-flex justify-content-center align-items-center flex-wrap  sp_meal" id="non veg" onclick="mealhanddler('non veg')"><img src="/sujal_img/nonveg.png"><p class="px-sm-1 mb-0">non veg</p></a>
         </div>
-        <div class="row " id="s_catlist_card">
+        <div class="row d-flex justify-content-around justify-content-sm-start gx-0" id="s_catlist_card">
         </div>
         <section class="">
 
         </section>
-
     </section>
     <div class="sp_cardlist_menu d-flex justify-content-end">
-        <div class="sp_cardlist_menu_box d-flex align-items-center justify-content-center text-center">
+        <div class="sp_cardlist_menu_box d-flex align-items-center justify-content-center text-center text-white">
             <div class="">
                 <img src="/sujal_img/menu.png">
-                <p class="sp_fs_11 mb-0">menu</p>
+                <p class="sp_fs_11 mb-0">Menu</p>
             </div>
         </div>
     </div>
@@ -72,6 +70,7 @@ myModal.addEventListener('shown.bs.modal', function () {
         }
         var id = document.getElementById(x);
         id.classList.add('border-white');
+        cat_list(x);
     }
          </script>
 </body>

@@ -19,91 +19,23 @@
         <section class="y_container">
             <div class="sp_search_input d-flex align-items-center  my-5">
                 <img src="/sujal_img/search.png">
-                <input type="text"  value="Dosa"></input>
-                <img src="/sujal_img/close1.png">
+                <input type="text"  value="" onchange="searchhanddler(value)" id="search_input"></input>
+                <img src="/sujal_img/close1.png" onclick="searchclosehanddler()">
             </div>
             <div class="sp_popular text-white">
-                <h4 class="py-2">Popular Category</h4>
-                <div class="row row-cols-md-4 row-cols-sm-3 row-cols-2 gx-0 text-white justify-content-between"> 
-                    <a href='./category_list.html' class="col pb-5 text-decoration-none d-flex justify-content-center d-md-block">
-                        <div class="sp_sub_cat_content m-auto m-md-0">
-                            <div class="sp_sub_cat_img ${id1==0 ? `border-white`:''} m-auto m-md-0">
-                                <img src="/sujal_img/chaat.png" alt="Card image cap" class="w-100">
-                            </div>
-                            <h4 class="sp_sub_cat_title m-auto m-md-0">French</h4>
-                        </div>
-                    </a>
-                    <a href='./category_list.html' class="col pb-5 text-decoration-none d-flex justify-content-center d-md-block">
-                        <div class="sp_sub_cat_content m-auto m-md-0">
-                            <div class="sp_sub_cat_img ${id1==0 ? `border-white`:''} m-auto m-md-0">
-                                <img src="/sujal_img/khichdi.png" alt="Card image cap" class="w-100">
-                            </div>
-                            <h4 class="sp_sub_cat_title m-auto m-md-0">Japanese</h4>
-                        </div>
-                    </a>
-                    <a href='./category_list.html' class="col pb-5 text-decoration-none d-flex justify-content-center d-md-block" >
-                        <div class="sp_sub_cat_content m-auto m-md-0">
-                            <div class="sp_sub_cat_img ${id1==0 ? `border-white`:''} m-auto m-md-0">
-                                <img src="/sujal_img/khichdi.png" alt="Card image cap" class="w-100">
-                            </div>
-                            <h4 class="sp_sub_cat_title m-auto m-md-0">Japanese</h4>
-                        </div>
-                    </a>
-                    <a href='./category_list.html' class="col  pb-5 text-decoration-none d-flex justify-content-center d-md-block">
-                        <div class="sp_sub_cat_content m-auto m-md-0">
-                            <div class="sp_sub_cat_img ${id1==0 ? `border-white`:''} m-auto m-md-0">
-                                <img src="/sujal_img/breads.png" alt="Card image cap" class="w-100">
-                            </div>
-                            <h4 class="sp_sub_cat_title m-auto m-md-0">Japanese</h4>
-                        </div>
-                    </a>
-                </div>
-
-            </div>
-            <div class="d-sm-flex d-md-block">
-                <div class="sp_search d-md-flex text-white m-auto">
-                    <img src="/sujal_img/masaladaso.png" class="sp_thumbnail">
-                    <div class="sp_text">
-                        <div class="d-md-flex justify-content-between">
-                            <h5>masala dosa</h5>
-                            <h5 class="sp_color_yellow d-none d-md-block">$120</h5>
-                        </div>
-                        <small class="d-flex text-secondary">
-                            south indian
-                            <ul class="d-flex ps-0 mx-3 mb-0">
-                                <li class="mx-3">pure veg</li>
-                                <li class="mx-3 "><img src="/sujal_img/star.png" class="mx-1 align-self-center mb-1"><span>0.7</span></li>
-                            </ul>
-                        </small>
-                        <div class="d-flex">
-                            <p class="sp_fs_13 mb-0 w-75 me-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum vero debitis repudiandae earum laborum excepturi doloribus, iusto, praesentium amet illo</p>
-                            <button type="button" class="s_add_btn align-self-center">Add</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="sp_search d-md-flex text-white m-auto">
-                    <img src="/sujal_img/masaladaso.png" class="sp_thumbnail">
-                    <div class="sp_text">
-                        <div class="d-md-flex justify-content-between">
-                            <h5>masala dosa</h5>
-                            <h5 class="sp_color_yellow d-none d-md-block">$120</h5>
-                        </div>
-                        <small class="d-flex text-secondary">
-                            south indian
-                            <ul class="d-flex ps-0 mx-3 mb-0">
-                                <li class="mx-3">pure veg</li>
-                                <li class="mx-3 "><img src="/sujal_img/star.png" class="mx-1 align-self-center mb-1"><span>0.7</span></li>
-                            </ul>
-                        </small>
-                        <div class="d-flex">
-                            <p class="sp_fs_13 mb-0 w-75 me-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum vero debitis repudiandae earum laborum excepturi doloribus, iusto, praesentium amet illo</p>
-                            <button type="button" class="s_add_btn align-self-center">Add</button>
-                        </div>
-                    </div>
+                <h4 class="py-2 " id="popular_title"></h4>
+                <div class="row row-cols-md-3 row-cols-sm-2  gx-3 text-white justify-content-around justify-content-sm-start  row-cols-auto" id="popular_data"> 
                 </div>
             </div>
-
+            <div class="d-sm-flex d-md-block flex-wrap" id="search_data">
+            </div>
         </section>
+            <!-- boostrap js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+    crossorigin="anonymous"></script>
+    <!-- js file -->
+     <script src="/js/sp_search.js"></script>
 </body>
 
 </html>
