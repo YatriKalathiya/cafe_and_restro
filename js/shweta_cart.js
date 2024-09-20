@@ -37,7 +37,7 @@ function renderLargeScreenCart() {
 
     cartData.forEach((item, index) => {
         const itemHtml = `
-            <div class="col-xl-3 col-md-4 col-12">
+            <div class="col-xl-3 col-lg-4  col-md-6 col-12">
                 <div class="card sb_card1" style="width: 18rem;">
                     <img src="${item.image}" class="card-img-top" alt="${item.name}" style="position: relative;">
                     <img src="${item.vegIcon}" alt="Veg icon" style="position: absolute; top: 5%; right: 10%;">
@@ -55,7 +55,7 @@ function renderLargeScreenCart() {
                             <div class="d-flex justify-content-between align-items-center">
                                 <div>
                                     <h5 style="color: #FB7514 !important;">$${item.price}</h5>
-                                    <p style="font-size: 14px;">Customize</p>
+                                    <p style="font-size: 14px; cursor: pointer;"  id="customiseBtn" data-index="${index}">Customize</p>
                                 </div>
                                 <div class="sb_qty_btn">
                                 ${item.quantity === 1
@@ -128,5 +128,10 @@ document.addEventListener('DOMContentLoaded', function () {
         reviewModal.hide();
         thankYouModal.show();
     });
+});
+
+document.getElementById('customiseBtn').addEventListener('click', function() {
+    const myModal = new bootstrap.Modal(document.getElementById('customiseModal'));
+    myModal.show();
 });
 

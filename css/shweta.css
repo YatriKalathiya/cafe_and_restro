@@ -77,7 +77,8 @@
     }
 
     .sb_card_body1 {
-        height: 260px;
+        height: 210px;
+        border-radius: 0 012px 12px;
     }
 
     .sb_card1 {
@@ -85,6 +86,7 @@
         border: none;
         width: auto !important;
         border: 1px solid #201d1d;
+        border-radius: 12px;
     }
 
     .sb_dots {
@@ -173,7 +175,8 @@
         border-radius: 5px;
         padding: 5px 45px;
     }
-    .sb_btn_dark a{
+
+    .sb_btn_dark a {
         text-decoration: none;
         color: #ffffff;
     }
@@ -220,8 +223,72 @@
         top: -20%;
     }
 
-
-    /* ====================================================================================================================================================================
+    /* ================================= Customise Model Css =============================== */
+    .sb_modal-content3 {
+        background-color: #0F0F0F;
+        color: #ffffff;
+    }
+    .sb_model_body1{
+        background-color: #020202;
+        border-radius: 5px;
+        border: 1px solid #545454;
+    }
+    .sb_option {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px ;
+    }
+    .sb_radio-container {
+        display: flex;
+        align-items: center;
+    }
+    .sb_radio-container input[type="radio"] {
+        display: none;
+    }
+    .sb_radio-container label {
+        position: relative;
+        padding-left: 30px;
+        cursor: pointer;
+    }
+    .sb_radio-container label::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 18px;
+        height: 18px;
+        border: 2px solid #555;
+        border-radius: 50%;
+        padding: 8px;
+    }
+    .sb_radio-container input[type="radio"]:checked + label::before {
+        border: 2px solid #ff6600;
+    }
+    .sb_radio-container input[type="radio"]:checked + label::after {
+        content: '';
+        position: absolute;
+        left: 4px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: #ff6600;
+    }
+    .sb_option .form-check-input:checked{
+        background-color: #ff6600;
+        border-color: #ff6600;
+    }
+    .sb_modal-content3:last-child{
+        padding: 0;
+    }
+    .sb_option .form-check-input{
+        background-color: transparent;
+        border-color: #555;
+    }
+ /* ====================================================================================================================================================================
                                                                             ORDER PAGE CSS
  ====================================================================================================================================================================== */
 
@@ -258,11 +325,11 @@
         padding: 0;
     }
 
-    .sb_invoice-meta p{
+    .sb_invoice-meta p {
         margin-bottom: 10px;
     }
-      
-    /* ====================================================================================================================================================================
+
+ /* ====================================================================================================================================================================
                                                                             Media Query
  ====================================================================================================================================================================== */
 
@@ -329,15 +396,11 @@
         }
 
         .sb_card_body1 {
-            height: 300px;
+            height: 225px;
         }
     }
 
     @media (max-width:425px) {
-
-        .sb_qty_btn span {
-            margin: 0 5px;
-        }
 
         .sb_fixed_total {
             position: fixed;
@@ -375,15 +438,19 @@
         .sb_model-header2 img {
             left: 37%;
         }
-        .sb_modal-content3{
+
+        .sb_modal-content3 {
             padding: 10px;
         }
-        .sb_invoice-meta p{
+
+        .sb_invoice-meta p {
             font-size: 12px;
         }
-        .sb_invoice-items{
+
+        .sb_invoice-items {
             font-size: 12px;
         }
+
     }
 
     @media (max-width:325px) {
