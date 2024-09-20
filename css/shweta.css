@@ -24,6 +24,11 @@
         padding-right: 10px;
     }
 
+
+    /* ====================================================================================================================================================================
+                                                                           CART PAGE CSS
+ ====================================================================================================================================================================== */
+
     .sb_abosulate {
         display: block;
         position: relative;
@@ -38,10 +43,6 @@
 
     .sb_reletive {
         position: absolute;
-    }
-
-    .sb_block {
-        display: none;
     }
 
     .sb_btn {
@@ -72,33 +73,41 @@
         text-decoration: underline;
         text-align: end;
         padding: 2rem 0;
+        cursor: pointer;
     }
-    .sb_card_body1{
+
+    .sb_card_body1 {
         height: 260px;
     }
+
     .sb_card1 {
         background-color: transparent;
         border: none;
         width: auto !important;
         border: 1px solid #201d1d;
     }
-    .sb_dots{
+
+    .sb_dots {
         color: #FB7514;
         margin: 0 8px;
     }
-    .sb_star{
+
+    .sb_star {
         color: #FB7514;
         margin: 0 5px;
     }
-    .sb_qty_btn{
+
+    .sb_qty_btn {
         background-color: #FB7514;
         padding: 5px 0;
         border-radius: 5px;
     }
-    .sb_qty_btn span{
-    margin: 0 15px;
+
+    .sb_qty_btn span {
+        margin: 0 15px;
     }
-    .sb_total{
+
+    .sb_total {
         margin: 20px 0;
         border-radius: 5px;
         background-color: #020202;
@@ -108,40 +117,155 @@
         justify-content: space-between;
         border: 1px solid #201d1d;
     }
-    .sb_modal-content{
+
+    .sb_btn a {
+        text-decoration: none;
+        color: white;
+    }
+
+    /* ================================= Order Summry Model Css =============================== */
+
+    .sb_modal-content {
         background-color: #0F0F0F;
         color: #ffffff;
         position: relative;
     }
-    .sb_model-header{
+
+    .sb_model-header {
         border-bottom: 1px dashed #545454;
         display: block !important;
     }
-    .sb_model-header img{
+
+    .sb_model-header img {
         position: absolute;
-        top: -14%;
+        top: -10%;
         left: 40%;
     }
-    .sb_model_flex{
+
+    .sb_model_flex {
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
-    .sb_model_flex p{
+
+    .sb_model_flex p {
         font-size: 13px;
         margin-bottom: 0;
     }
-   .sb_line1{
-    color: #FB7514;
-    text-decoration: underline;
-   }
-   .sb_model-footer{
-    border-top: 1px dashed #545454 !important;
-   }
-   .sb_model_btn{
-    display: flex;
-    justify-content: space-between;
-   }
+
+    .sb_line1 {
+        color: #FB7514;
+        text-decoration: underline;
+    }
+
+    .sb_model-footer {
+        border-top: 1px dashed #545454 !important;
+    }
+
+    .sb_model_btn {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .sb_btn_dark {
+        background-color: #0F0F0F;
+        border: 1px solid white;
+        border-radius: 5px;
+        padding: 5px 45px;
+    }
+    .sb_btn_dark a{
+        text-decoration: none;
+        color: #ffffff;
+    }
+
+    /* ================================= Review Model Css =============================== */
+
+    .sb_model-header1 {
+        border-bottom: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .sb_textarea textarea {
+        width: 95%;
+        background-color: #070707;
+        margin: 0 3%;
+        color: #ffffff;
+        border: 1px solid white !important;
+        border-radius: 5px;
+        padding: 10px;
+    }
+
+    .sb_textarea textarea:focus-visible {
+        outline: none;
+    }
+
+    /* ================================= Review Model Css =============================== */
+
+    .sb_modal-content2 {
+        background-color: #0F0F0F;
+        color: #ffffff;
+        position: relative;
+    }
+
+    .sb_model-header2 {
+        border-bottom: none;
+    }
+
+    .sb_model-header2 img {
+        border-bottom: none;
+        position: absolute;
+        left: 40%;
+        top: -20%;
+    }
+
+
+    /* ====================================================================================================================================================================
+                                                                            ORDER PAGE CSS
+ ====================================================================================================================================================================== */
+
+    .no-Order {
+        transform: translateY(70%);
+    }
+
+
+    .sb_bg_img img {
+        height: 200px;
+    }
+
+    .sb_card2 {
+        background-color: #020202;
+        color: #ffffff;
+        border: 1px solid #201d1d;
+    }
+
+    .sb_modal-content3 {
+        background-color: #1c1c1c;
+        color: #fff;
+        border-radius: 10px;
+        padding: 20px;
+    }
+
+    .sb_modal-content3 .modal-header {
+        border-bottom: none;
+    }
+
+    .sb_model_body {
+        background-color: #020202;
+        border: 1px solid #393939;
+        border-radius: 10px;
+        padding: 0;
+    }
+
+    .sb_invoice-meta p{
+        margin-bottom: 10px;
+    }
+      
+    /* ====================================================================================================================================================================
+                                                                            Media Query
+ ====================================================================================================================================================================== */
+
     @media (min-width: 1650px) {
         .y_container {
             width: 1501px;
@@ -181,52 +305,93 @@
             padding: 0px 10px;
         }
     }
+
+    @media (max-width:1024px) {
+        .no-Order {
+            transform: translateY(60%);
+        }
+
+    }
+
     @media (max-width:768px) {
-        .sb_dots{
+        .sb_dots {
             color: #FB7514;
             margin: 0 3px;
         }
-        .sb_star{
+
+        .sb_star {
             color: #FB7514;
             margin: 0 3px;
         }
-        .sb_qty_btn span{
+
+        .sb_qty_btn span {
             margin: 0 10px;
         }
-        .sb_card_body1{
+
+        .sb_card_body1 {
             height: 300px;
         }
     }
 
     @media (max-width:425px) {
-        .sb_abosulate {
-            display: none;
-        }
 
-        .sb_block {
-            display: block;
-            padding: 1rem 2rem;
-        }
-    
-        .sb_lg_items .row {
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .sb_sm_cart{
-            border: 1px solid #201d1d;
-            border-radius: 10px;
-            margin: 10px;
-        }
-        .sb_qty_btn span{
+        .sb_qty_btn span {
             margin: 0 5px;
         }
+
         .sb_fixed_total {
             position: fixed;
             bottom: 0;
             width: 100%;
             padding: 20px 10px;
         }
-        
-        
+
+        .s_modal2 .sb_btn {
+            width: 100%;
+        }
+
+        .sb_bg_img img {
+            height: 150px;
+        }
+    }
+
+    @media (max-width:375px) {
+        .sb_total {
+            padding: 20px 20px;
+        }
+
+        .sb_btn {
+            padding: 5px 30px;
+        }
+
+        .sb_btn_dark {
+            padding: 5px 30px;
+        }
+
+        .sb_model-header img {
+            left: 37%;
+        }
+
+        .sb_model-header2 img {
+            left: 37%;
+        }
+        .sb_modal-content3{
+            padding: 10px;
+        }
+        .sb_invoice-meta p{
+            font-size: 12px;
+        }
+        .sb_invoice-items{
+            font-size: 12px;
+        }
+    }
+
+    @media (max-width:325px) {
+        .sb_btn {
+            padding: 5px 20px;
+        }
+
+        .sb_btn_dark {
+            padding: 5px 20px;
+        }
     }

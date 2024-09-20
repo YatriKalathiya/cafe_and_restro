@@ -28,24 +28,10 @@
     <main>
         <!-- first section -->
         <section>
-            <!-- large screen -->
             <div class="sb_abosulate">
                 <img src="../shweta_img/img1.png" alt="" width="100%">
                 <h2 class="sb_reletive">Cart</h2>
             </div>
-
-            <!-- small screen  -->
-            <div class="sb_block">
-                <div class="y_container" style="display: flex; align-items: center; justify-content: space-between;">
-                    <div class="arrow-container" style="display: flex; align-items: center;">
-                        <img src="../shweta_img/Frame.svg" alt="Arrow" style="width: 16px; height: 16px;">
-                    </div>
-                    <div class="cart-container" style="flex-grow: 1;">
-                        <h4 class="text-center" style="margin: 0; text-align: center;">Cart</h4>
-                    </div>
-                </div>
-            </div>
-
         </section>
 
         <!-- Empty Cart  -->
@@ -62,7 +48,7 @@
 
         <!-- Add Items -->
         <section id="filled-cart" style="display: none;">
-            <div class="d-md-block d-none">
+            <div>
                 <div class="y_container">
                     <div>
                         <p class="sb_line">Add More Items</p>
@@ -78,30 +64,8 @@
                             <h6 id="total-price">$0</h6>
                         </div>
                         <div>
-                            <button class="sb_btn" data-bs-toggle="modal" data-bs-target="#exampleModal">Place
+                            <button class="sb_btn" id="placeOrderBtn">Place
                                 Order</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- small screen -->
-            <div class="d-md-none d-block">
-                <div class="y_container">
-                    <div id="small-screen-cart" class="row sb_sm_cart">
-                        <!-- Dynamic content will be inserted here -->
-                    </div>
-                </div>
-
-                <div class="sb_fixed_total">
-                    <div class="y_container ">
-                        <div class="d-flex justify-content-between p-3">
-                            <p id="total-items-sm" class="m-0">Total (0 items)</p>
-                            <p id="total-price-sm" class="m-0">$0</p>
-                        </div>
-                        <div class="p-3">
-                            <button class="sb_btn" style="width: 100%;" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal">Place Order</button>
                         </div>
                     </div>
                 </div>
@@ -109,50 +73,127 @@
         </section>
     </main>
 
-   <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content sb_modal-content">
-            <div class="modal-header sb_model-header">
-                <img src="../shweta_img/img3.png" alt="">
-                <h5 class=" text-center mt-5" >Order Confirmed</h5>
-                <div class="sb_model_flex">
-                    <p>Order Summry</p>
-                    <a href="#"><p class="sb_line1">View Invoice</p></a>
+    <!-- Order Summry Modal -->
+    <div class="modal fade" id="orderSummaryModal" tabindex="-1" aria-labelledby="orderSummaryModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content sb_modal-content">
+                <div class="modal-header sb_model-header">
+                    <img src="../shweta_img/img3.png" alt="">
+                    <h5 class=" text-center mt-5 mb-3">Order Confirmed</h5>
+                    <div class="sb_model_flex">
+                        <p>Order Summry</p>
+                        <a href="#">
+                            <p class="sb_line1">View Invoice</p>
+                        </a>
+                    </div>
                 </div>
-            </div>
-            <div class="modal-body">
-                <small style="color: #7F7F7F;">24/08/2024</small>
+                <div class="modal-body">
+                    <small style="color: #7F7F7F;">24/08/2024</small>
 
-                <div class="my-3 d-flex justify-content-between">
-                    <div><img src="../shweta_img/order.png" alt=""></div>
-                    <div>
-                        <p class="m-0">Masala Dosa</p>
-                        <p class="m-0">QTY.:3</p>
-                        <p class="m-0" style="color: #FB7514;">$120</p>
-                    </div>
-                    <div>
-                        <p style="color: #FB7514;">$360</p>
+                    <div class="my-3 d-flex justify-content-between">
+                        <div><img src="../shweta_img/order.png" alt=""></div>
+                        <div>
+                            <p class="m-0">Masala Dosa</p>
+                            <p class="m-0">QTY.:3</p>
+                            <p class="m-0" style="color: #FB7514;">$120</p>
+                        </div>
+                        <div>
+                            <p style="color: #FB7514;">$360</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="modal-footer sb_model-footer">
-                <div class="text-end">
-                    <p>Sub Total : &nbsp; <span>$483</span></p>
-                    <p>Tax : &nbsp;&nbsp; &nbsp; <span>$17</span></p>
-                    <p style="border-top: 1px dashed #545454;" class="pt-2">Total : &nbsp; <span>$500</span></p>
+                <div class="modal-footer sb_model-footer">
+                    <div class="text-end">
+                        <p>Sub Total : &nbsp; <span>$483</span></p>
+                        <p>Tax : &nbsp;&nbsp; &nbsp; <span>$17</span></p>
+                        <p style="border-top: 1px dashed #545454;" class="pt-2">Total : &nbsp; <span>$500</span></p>
+                    </div>
                 </div>
-            </div>
-            <div class="sb_model_btn">
-                <button>Remind me later</button>
-                <button class="sb_btn">Add Review</button>
+                <div class="sb_model_btn p-md-4 px-2 py-4">
+                    <button class="sb_btn_dark"><a href="Cart.html">Remind me later</a></button>
+                    <button class="sb_btn" id="addReviewBtn">Add Review</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
+
+    <!-- Review Modal -->
+    <div class="modal fade" id="reviewModal" tabindex="-1" aria-labelledby="reviewModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content sb_modal-content">
+                <div class="modal-header sb_model-header1">
+                    <h5>Review</h5>
+                    <i class="fa-solid fa-xmark fs-4" data-bs-dismiss="modal" aria-label="Close"></i>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <div class="d-flex justify-content-between">
+                            <p>Overall</p>
+                            <div>
+                                <img src="../shweta_img/emoji1.png" alt="">
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <p>Food</p>
+                            <div>
+                                <img src="../shweta_img/emoji2.png" alt="">
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <p>Service</p>
+                            <div>
+                                <img src="../shweta_img/emoji3.png" alt="">
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <p>Ambiance</p>
+                            <div>
+                                <img src="../shweta_img/emoji4.png" alt="">
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <p>Value</p>
+                            <div>
+                                <img src="../shweta_img/emoji5.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sb_textarea my-4">
+                        <textarea name="text" placeholder="Write your valuable feedback" rows="4">
+                        </textarea>
+                    </div>
+                   <div class="d-md-flex justify-content-center d-block s_modal2 my-3">
+                    <button class="sb_btn"  id="submitReviewBtn">Submit</button>
+                   </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- Thank you Model -->
+    <div class="modal fade" id="thankYouModal" tabindex="-1" aria-labelledby="thankYouModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content sb_modal-content2">
+                <div class="modal-header sb_model-header2">
+                    <img src="../shweta_img/img2.png" alt="">
+                </div>
+                <div class="modal-body">
+                    <div class="m-3">
+                        <h4 class="text-center p-5">Thank You For Your <br> Feedback</h4>
+                       <div class="d-md-flex justify-content-center d-block s_modal2">
+                        <button class="sb_btn"><a href="Cart.html">Back To Home</a></button>
+                       </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
 
 
-    <script src="../js/shweta.js"></script>
+    <script src="../js/shweta_cart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
