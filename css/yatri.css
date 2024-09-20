@@ -1,229 +1,521 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Forum&display=swap");
 
 * {
-    box-sizing: border-box;
-    font-family: "Lato", sans-serif;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
 }
 
 body {
-    margin: 0;
+  background-color: #0f0f0f;
+  font-family: "lato";
+  color: #ffffff;
 }
-
+.row {
+  margin: 0;
+  padding: 0;
+}
+.col {
+  padding: 0;
+}
+.main_header {
+  padding-bottom: 88px;
+}
 .y_header {
-    background-color: #1c1c1c;
-    padding: 22px 0;
-    color: #fff;
+  background-color: #1c1c1c;
+  padding: 22px 0;
+  color: #fff;
+  position: fixed;
+  width: 100%;
 }
 
 .y_header .logo a {
-    color: #fff;
-    font-size: 24px;
-    text-decoration: none;
+  color: #fff;
+  font-size: 24px;
+  text-decoration: none;
 }
 
 .y_header .nav-links a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 20px;
-    margin-right: 30px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  margin-right: 30px;
 }
 
 .y_header .nav-links a.active {
-    color: #fb7514;
+  color: #fb7514;
 }
 
- .cart-icon {
-    position: relative;
+.cart-icon {
+  position: relative;
 }
 
- .cart-icon img {
-    background: #3f3f3f;
-    padding: 10px;
-    border-radius: 50%;
+.cart-icon img {
+  background: #3f3f3f;
+  padding: 10px;
+  border-radius: 50%;
 }
 
- .cart-count {
-    position: absolute;
-    top: -7px;
-    right: -7px;
-    background-color: #fb7514;
-    border-radius: 50%;
-    padding: 2px 6px;
-    font-size: 12px;
-    color: #fff;
+.cart-count {
+  position: absolute;
+  top: -7px;
+  right: -7px;
+  background-color: #fb7514;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+  color: #fff;
 }
 
 .user-section .dropdown-toggle {
-    background-color: #fb7514;
-    border: none;
-    color: #fff;
-    padding: 8px 15px;
-    border-radius: 4px;
-    cursor: pointer;
+  background-color: #fb7514;
+  border: none;
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
 }
-.user-section .dropdown-toggle::after{
+.user-section .dropdown-toggle::after {
   display: none;
 }
 .y_search_container {
-    position: relative;
-    width: 100%;
-    max-width: 300px;
+  position: relative;
+  width: 100%;
+  max-width: 300px;
 }
 
 .custom-search-input {
-    width: 100%;
-    padding: 10px 15px 10px 40px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: transparent;
-    font-size: 14px;
-    color: #fff;
+  width: 100%;
+  padding: 10px 15px 10px 40px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: transparent;
+  font-size: 14px;
+  color: #fff;
 }
 
 .custom-search-input::placeholder {
-    color: #ccc;
+  color: #ccc;
 }
 
 .search-icon {
-    position: absolute;
-    top: 50%;
-    left: 10px;
-    transform: translateY(-50%);
-    color: #ccc;
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: #ccc;
 }
 
 .search-icon img {
-    width: 20px;
+  width: 20px;
 }
 
 .offcanvas {
-    background-color: #1c1c1c;
+  background-color: #1c1c1c;
 }
 
-.offcanvas-header, .offcanvas-body {
-    color: #fff;
+.offcanvas-header,
+.offcanvas-body {
+  color: #fff;
 }
 
 .offcanvas .nav-link {
-    color: #fff;
-    font-size: 18px;
-    padding: 10px 0;
+  color: #fff;
+  font-size: 18px;
+  padding: 10px 0;
 }
 
 .offcanvas .nav-link.active {
-    color: #fb7514;
+  color: #fb7514;
 }
 
 .offcanvas .cart-icon {
-    display: inline-block;
-    margin-right: 10px;
+  display: inline-block;
+  margin-right: 10px;
 }
 
 .offcanvas .cart-icon img {
-    width: 41px;
-    height: 41px;
-    object-fit: contain;
+  width: 41px;
+  height: 41px;
+  object-fit: contain;
 }
 
 .offcanvas .dropdown-toggle {
-    width: 100%;
-    text-align: left;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  width: 100%;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .offcanvas .dropdown-menu {
-    background-color: #2c2c2c;
-    border: none;
-    width: 100%;
+  background-color: #2c2c2c;
+  border: none;
+  width: 100%;
 }
 
 .offcanvas .dropdown-item {
-    color: #fff;
+  color: #fff;
 }
 
 .offcanvas .dropdown-item:hover {
-    background-color: #3c3c3c;
+  background-color: #3c3c3c;
 }
-
-
 
 /* home page css start  */
 
-
 .y_item_box {
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  border: 1px solid #2c2c2c;
+  border-radius: 10px;
   padding: 15px;
   margin-bottom: 20px;
   text-align: center;
+  margin-bottom: 15px;
+  max-height: 180px;
+  max-width: 180px;
 }
 .y_item_box img {
   max-width: 100%;
   height: auto;
 }
 
-.main_top_section{
-  padding-top: 100px;
+.main_top_section {
+  /* padding-top: 100px; */
   background-color: #040404;
 }
-@media (max-width: 767px) {
-    .desktop-nav {
-        display: none;
-    }
+.y_section_title h2 {
+  color: #fff;
+  font-size: 24px;
+  padding-top: 10px;
+  padding-bottom: 15px;
 }
+.y_item_text h2 {
+  font-size: 20px;
+  text-align: center;
+  width: 180px;
+  padding-bottom: 20px;
+}
+footer {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.y_footer_links {
+  padding-bottom: 10px;
+}
+
+/* footer css start  */
+
+.y_footer_links img {
+  object-fit: contain;
+}
+.y_footer_links p {
+  font-size: 14px;
+  font-weight: 400;
+}
+.y_footer_logo h2 {
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+}
+.y_footer_logo h4 {
+  font-size: 24px;
+  font-weight: 400;
+  padding-top: 10px;
+  text-align: center;
+  font-family: "Forum", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.y_footer_title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* login page css start  */
+
+.y_bg_image {
+  background-image: url("/yatri_img/login_bg.png"); /* Replace with the image path */
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+.y_login_form {
+  margin-top: 10%;
+}
+.y_login_form h1 {
+  max-width: 470px;
+  font-size: 48px;
+  font-family: "Forum", serif;
+  font-weight: 400;
+  font-style: normal;
+  margin: auto;
+  margin-bottom: 3%;
+}
+.y_login_form form p {
+  font-size: 24px;
+  font-weight: 500;
+}
+.y_login_form form {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 40px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 531px;
+  margin: auto;
+}
+
+.y_login_form input {
+  margin-bottom: 20px;
+  border: 0.8px solid #fff;
+  border-radius: 4px;
+  padding: 6px;
+  width: 100%;
+  color: white;
+  background: transparent;
+}
+.y_login_form input::placeholder {
+  font-size: 14px;
+}
+.y_login_form button {
+  background-color: #fb7514;
+  color: white;
+  border: none;
+  padding: 7px 0;
+  width: 100%;
+  font-size: 18px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+.y_overlay {
+  height: 100vh;
+  width: 100%;
+  background: #0000009e;
+  /* display: flex;
+  align-items: center; */
+}
+
+
+/* otp css start  */
+
+/* OTP page CSS similar to login page */
+.y_bg_image {
+  background-image: url('/yatri_img/otp_bg.png'); /* Replace with the image path */
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.y_otp_form {
+  margin-top: 14%;
+}
+.y_otp_form a{
+    color: #FB7514;
+}
+.y_otp_form h1 {
+  font-size: 24px;
+  margin-bottom: 3%;
+}
+
+.y_otp_form p {
+  font-size: 18px;
+  font-weight: 500;
+}
+.y_otp_form p span{
+    color: #999999;
+}
+
+.y_otp_form form {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 48px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 531px;
+  margin: auto;
+}
+
+.otp_input_container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    gap: 5%;
+}
+
+.otp_input {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid white;
+  background: transparent;
+  color: white;
+  text-align: center;
+  font-size: 24px;
+}
+
+.y_otp_form button {
+  background-color: #FB7514;
+  color: white;
+  border: none;
+  padding: 12px 0;
+  width: 100%;
+  font-size: 18px;
+  border-radius: 4px;
+}
+
+.y_overlay {
+  height: 100vh;
+  width: 100%;
+  background: #0000009e;
+}
+
 
 @media (min-width: 768px) {
-    .mobile-nav-toggle {
-        display: none;
-    }
+  .mobile-nav-toggle {
+    display: none;
+  }
 }
 
-      .y_container {
-        margin-right: auto;
-        margin-left: auto;
-        padding-left: 10px;
-        padding-right: 10px;
-      }
+.y_container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
 
-      @media (min-width: 1650px) {
-        .y_container {
-          width: 1501px;
-        }
-      }
+@media (min-width: 1650px) {
+  .y_container {
+    width: 1501px;
+  }
+}
 
-      @media (min-width: 1200px) and (max-width: 1649px) {
-        .y_container {
-          width: 1199px;
-          max-width: none;
-        }
-      }
+@media (min-width: 1200px) and (max-width: 1649px) {
+  .y_container {
+    width: 1199px;
+    max-width: none;
+  }
+}
 
-      @media (min-width: 992px) and (max-width: 1199px) {
-        .y_container {
-          width: 970px;
-          max-width: none;
-        }
-      }
+@media (min-width: 992px) and (max-width: 1199px) {
+  .y_container {
+    width: 970px;
+    max-width: none;
+  }
+}
 
-      @media (min-width: 768px) and (max-width: 991px) {
-        .y_container {
-          width: 750px;
-          max-width: none;
-        }
-      }
+@media (min-width: 768px) and (max-width: 991px) {
+  .y_container {
+    width: 750px;
+    max-width: none;
+  }
+}
 
-      @media (min-width: 480px) and (max-width: 767px) {
-        .y_container {
-          max-width: 750px;
-        }
-      }
+@media (min-width: 480px) and (max-width: 767px) {
+  .y_container {
+    max-width: 750px;
+  }
+}
 
-      @media (min-width: 300px) and (max-width: 450px) {
-        .y_container {
-          max-width: 750px;
-          padding: 0px 10px;
-        }
-      }
+@media (min-width: 300px) and (max-width: 450px) {
+  .y_container {
+    max-width: 750px;
+    padding: 0px 10px;
+  }
+}
+@media (max-width: 1200px) {
+  .y_item_text h2 {
+    width: 100%;
+  }
+}
+@media (max-width: 992px) {
+  .y_footer_logo h2,
+  .y_footer_logo h4 {
+    text-align: start;
+  }
+  .y_login_form h1 {
+    max-width: 306px;
+    font-size: 27px;
+  }
+  .y_login_form form {
+    padding: 15px 20px;
+    max-width: 360px;
+  }
+  .y_login_form form p {
+    font-size: 17px;
+  }
+  .y_otp_form form {
+    padding: 27px;
+    max-width: 452px;
+  }
+  .y_otp_form h1 {
+    font-size: 19px;
+  }
+  .y_otp_form p {
+    font-size: 15px;
+  }
+  .otp_input {
+    width: 35px;
+    height: 35px;
+  }
+  .y_otp_form button {
+    padding: 9px 0;
+    font-size: 15px;
+}
+.y_otp_form {
+  margin-top: 26%;
+}
+}
+@media (max-width: 767px) {
+  .desktop-nav {
+    display: none;
+  }
+  .main_header {
+    padding-bottom: 82px;
+  }
+}
+@media (max-width: 576px) {
+  .y_otp_form form {
+    padding: 50px 20px;
+    max-width: 310px;
+}
+}
+@media (max-width: 425px) {
+  .y_otp_form h1 {
+    font-size: 21px;
+  }
+
+  .y_otp_form form {
+    padding: 50px 20px;
+    max-width: 255px;
+  }
+
+  .y_otp_form button {
+    font-size: 16px;
+  }
+  .y_login_form input::placeholder {
+    font-size: 12px;
+  }
+  .y_login_form form {
+    padding: 15px 20px;
+    max-width: 255px;
+  }
+  .y_login_form h1 {
+    max-width: 249px;
+    font-size: 21px;
+  }
+  .y_login_form button {
+    padding: 7px 0;
+    font-size: 13px;
+  }
+}

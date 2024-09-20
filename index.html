@@ -19,60 +19,62 @@
   </head>
   <body>
 
-    <header class="y_header">
-      <div class="y_container">
-        <div class="row align-items-center">
-          <div class="col-auto d-flex align-items-center">
-            <div class="logo me-4">
-              <a href="#">LOGO</a>
+    <div class="main_header">
+      <header class="y_header">
+        <div class="y_container">
+          <div class="row align-items-center">
+            <div class="col-auto d-flex align-items-center">
+              <div class="logo me-4">
+                <a href="#">LOGO</a>
+              </div>
+              <nav
+                class="nav-links d-none d-md-flex  ps-lg-5 ms-lg-5 ps-md-0 ms-md-0">
+                <a class="active" href="#">Home</a>
+                <a href="#">My Order</a>
+              </nav>
             </div>
-            <nav class="nav-links d-none d-md-flex  ps-lg-5 ms-lg-5 ps-md-0 ms-md-0">
-              <a class="active" href="#">Home</a>
-              <a href="#">My Order</a>
-            </nav>
-          </div>
-          <div class="col-auto ms-auto d-md-none">
-            <button class="btn btn-link text-white mobile-nav-toggle"
-              type="button" data-bs-toggle="offcanvas"
-              data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu">
-              <i class="fas fa-bars"></i>
-            </button>
-          </div>
-          <div class="col desktop-nav">
-            <div class="d-flex justify-content-end align-items-center">
-              <div class="y_search_container me-3">
-                <span class="search-icon">
-                  <img src="yatri_img/y_serach_icon.png" alt="Search">
-                </span>
-                <input type="text" placeholder="Search..."
-                  class="custom-search-input">
-              </div>
-              <div class="cart-icon me-3">
-                <img src="yatri_img/y_cart_icon.png" alt="Cart">
-                <span class="cart-count">0</span>
-              </div>
-              <div class="user-section">
-                <div class="dropdown">
-                  <button class="dropdown-toggle" type="button"
-                    id="dropdownMenuButton" data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                    <i class="fas fa-user"></i> Smith Johnson <i
-                      class="fas fa-caret-down"></i>
-                  </button>
-                  <ul class="dropdown-menu"
-                    aria-labelledby="dropdownMenuButton">
-                    <li><a class="dropdown-item" href="#">Profile</a></li>
-                    <!-- <li><a class="dropdown-item" href="#">Settings</a></li> -->
-                    <li><a class="dropdown-item" href="#">Logout</a></li>
-                  </ul>
+            <div class="col-auto ms-auto d-md-none">
+              <button class="btn btn-link text-white mobile-nav-toggle"
+                type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu">
+                <i class="fas fa-bars"></i>
+              </button>
+            </div>
+            <div class="col desktop-nav">
+              <div class="d-flex justify-content-end align-items-center">
+                <div class="y_search_container me-3">
+                  <span class="search-icon">
+                    <img src="yatri_img/y_serach_icon.png" alt="Search">
+                  </span>
+                  <input type="text" placeholder="Search..."
+                    class="custom-search-input">
+                </div>
+                <div class="cart-icon me-3">
+                  <img src="yatri_img/y_cart_icon.png" alt="Cart">
+                  <span class="cart-count">0</span>
+                </div>
+                <div class="user-section">
+                  <div class="dropdown">
+                    <button class="dropdown-toggle" type="button"
+                      id="dropdownMenuButton" data-bs-toggle="dropdown"
+                      aria-expanded="false">
+                      <i class="fas fa-user"></i> Smith Johnson <i
+                        class="fas fa-caret-down"></i>
+                    </button>
+                    <ul class="dropdown-menu"
+                      aria-labelledby="dropdownMenuButton">
+                      <li><a class="dropdown-item" href="#">Profile</a></li>
+                      <li><a class="dropdown-item" href="login.html">Login</a></li>
+                      <li><a class="dropdown-item" href="#">Logout</a></li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </header>
-
+      </header>
+    </div>
     <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu"
       aria-labelledby="offcanvasMenuLabel">
       <div class="offcanvas-header">
@@ -107,7 +109,7 @@
               <ul class="dropdown-menu"
                 aria-labelledby="dropdownMenuButtonMobile">
                 <li><a class="dropdown-item" href="#">Profile</a></li>
-                <!-- <li><a class="dropdown-item" href="#">Settings</a></li> -->
+                <li><a class="dropdown-item" href="login.html">Login</a></li>
                 <li><a class="dropdown-item" href="#">Logout</a></li>
               </ul>
             </div>
@@ -115,70 +117,170 @@
           <a class="nav-link active" href="#">Home</a>
           <a class="nav-link" href="#">My Order</a>
 
-          
         </nav>
       </div>
     </div>
 
-    <section class="main_top_section">
-      <div class="y_container pt-5">
-        <div class="section_title">
-          <h2>Menu</h2>
+    <section class="main_top_section pb-xl-5 pb-md-3 pb-2">
+      <div class="y_container pt-4">
+        <div class="y_section_title">
+          <h2 class="text-light pb-0">Menu</h2>
         </div>
-        <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 g-5 g-lg-5">
-          <div class="col mt-0">
-              <div class="y_item_box">
-                  <img src="yatri_img/y_indian.png" alt="Indian Cuisine">
-              </div>
-          </div>
-          <div class="col mt-0">
-              <div class="y_item_box">
-                  <img src="yatri_img/y_indian.png" alt="Indian Cuisine">
-              </div>
-          </div>
-          <div class="col mt-0">
-              <div class="y_item_box">
-                  <img src="yatri_img/y_indian.png" alt="Indian Cuisine">
-              </div>
-          </div>
-          <div class="col mt-0">
-              <div class="y_item_box">
-                  <img src="yatri_img/y_indian.png" alt="Indian Cuisine">
-              </div>
-          </div>
-          <div class="col mt-0">
-              <div class="y_item_box">
-                  <img src="yatri_img/y_indian.png" alt="Indian Cuisine">
-              </div>
-          </div>
-          <div class="col mt-0">
-              <div class="y_item_box">
-                  <img src="yatri_img/y_indian.png" alt="Indian Cuisine">
-              </div>
-          </div>
-          <div class="col mt-0">
-              <div class="y_item_box">
-                  <img src="yatri_img/y_indian.png" alt="Indian Cuisine">
-              </div>
-          </div>
-          <div class="col mt-0">
-              <div class="y_item_box">
-                  <img src="yatri_img/y_indian.png" alt="Indian Cuisine">
-              </div>
-          </div>
-          <div class="col mt-0">
-              <div class="y_item_box">
-                  <img src="yatri_img/y_indian.png" alt="Indian Cuisine">
-              </div>
-          </div>
-          <div class="col mt-0">
-              <div class="y_item_box">
-                  <img src="yatri_img/y_indian.png" alt="Indian Cuisine">
-              </div>
-          </div>
       </div>
+      <div class="y_container">
+        <div
+          class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 g-5 g-lg-5">
+          <div class="col mt-0 pt-4">
+            <a href="#" class="text-decoration-none">
+              <div class="y_item_box">
+                <img src="yatri_img/y_indian.png" alt="Indian Cuisine">
+              </div>
+              <div class="y_item_text">
+                <h2 class="text-light">Indian</h2>
+              </div>
+            </a>
+          </div>
+          <div class="col mt-0 pt-4">
+            <a href="#" class="text-decoration-none">
+              <div class="y_item_box">
+                <img src="yatri_img/y_italian.png" alt="Indian Cuisine">
+              </div>
+              <div class="y_item_text">
+                <h2 class="text-light">Italian</h2>
+              </div>
+            </a>
+          </div>
+          <div class="col mt-0 pt-4">
+            <a href="#" class="text-decoration-none">
+              <div class="y_item_box">
+                <img src="yatri_img/y_maxican.png" alt="Indian Cuisine">
+              </div>
+              <div class="y_item_text">
+                <h2 class="text-light">Mexican</h2>
+              </div>
+            </a>
+          </div>
+          <div class="col mt-0 pt-4">
+            <a href="#" class="text-decoration-none">
+              <div class="y_item_box">
+                <img src="yatri_img/y_greek.png" alt="Indian Cuisine">
+              </div>
+              <div class="y_item_text">
+                <h2 class="text-light">Greek</h2>
+              </div>
+            </a>
+          </div>
+          <div class="col mt-0 pt-4">
+            <a href="#" class="text-decoration-none">
+              <div class="y_item_box">
+                <img src="yatri_img/y_chinis.png" alt="Indian Cuisine">
+              </div>
+              <div class="y_item_text">
+                <h2 class="text-light">Chinese</h2>
+              </div>
+            </a>
+          </div>
+          <div class="col mt-0 pt-4">
+            <a href="#" class="text-decoration-none">
+              <div class="y_item_box">
+                <img src="yatri_img/y_french.png" alt="Indian Cuisine">
+              </div>
+              <div class="y_item_text">
+                <h2 class="text-light">French</h2>
+              </div>
+            </a>
+          </div>
+          <div class="col mt-0 pt-4">
+            <a href="#" class="text-decoration-none">
+              <div class="y_item_box">
+                <img src="yatri_img/y_japanis.png" alt="Indian Cuisine">
+              </div>
+              <div class="y_item_text">
+                <h2 class="text-light">Japanese</h2>
+              </div>
+            </a>
+          </div>
+          <div class="col mt-0 pt-4">
+            <a href="#" class="text-decoration-none">
+              <div class="y_item_box">
+                <img src="yatri_img/y_spanis.png" alt="Indian Cuisine">
+              </div>
+              <div class="y_item_text">
+                <h2 class="text-light">Spanish</h2>
+              </div>
+            </a>
+          </div>
+          <div class="col mt-0 pt-4">
+            <a href="#" class="text-decoration-none">
+              <div class="y_item_box">
+                <img src="yatri_img/y_thai.png" alt="Indian Cuisine">
+              </div>
+              <div class="y_item_text">
+                <h2 class="text-light">Thai</h2>
+              </div>
+            </a>
+          </div>
+          <div class="col mt-0 pt-4">
+            <a href="#" class="text-decoration-none">
+              <div class="y_item_box">
+                <img src="yatri_img/y_Bevrages.png" alt="Indian Cuisine">
+              </div>
+              <div class="y_item_text">
+                <h2 class="text-light">Bevrages</h2>
+              </div>
+            </a>
+          </div>
+        </div>
       </div>
     </section>
+
+    <footer>
+      <div class="y_container">
+        <div class="row">
+          <div class="col-xl-3 col-lg-3 col-md-6 pt-3">
+            <div class="y_footer_logo">
+              <h2>LOGO</h2>
+              <h4>Royal Cafe & Restaurant</h4>
+            </div>
+          </div>
+          <div class="col-xl-4 col-lg-4 col-md-6 pt-3">
+            <p class="y_footer_title">Contact</p>
+            <div class="d-flex y_footer_links">
+              <img class="pe-2" src="yatri_img/location.png" alt="">
+              <p class="mb-0">Bobst Library 70 Washington Square South, New York, NY 10012, United States</p>
+            </div>
+            <div class="d-flex y_footer_links">
+              <img class="pe-2" src="yatri_img/email.png" alt="">
+              <p class="mb-0">example@gmail.com</p>
+            </div>
+            <div class="d-flex y_footer_links">
+              <img class="pe-2" src="yatri_img/phone.png" alt="">
+              <p class="mb-0">+1 59589 69596</p>
+            </div>
+          </div>
+          <div class="col-xl-2 col-lg-3 col-md-6 pt-3">
+            <p class="y_footer_title">Timing</p>
+            <div class="d-flex y_footer_links">
+              <img class="pe-2" src="yatri_img/time.png" alt="">
+              <div>
+                <p class="mb-0">Monday - Sunday </p>
+                <p class="mb-0">7 AM - 10 PM</p>
+
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-2 col-md-6 pt-3">
+            <p class="y_footer_title">Follow Us On</p>
+            <div class="d-flex  y_footer_icons">
+              <img class="px-2" src="yatri_img/facebook.png" alt="">
+              <img class="px-2" src="yatri_img/insta.png" alt="">
+              <img class="px-2" src="yatri_img/twitter.png" alt="">
+              <img class="px-2" src="yatri_img/youtube.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
       integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
@@ -187,5 +289,7 @@
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"></script>
+    <script src="js/yatri.js"></script>
+
   </body>
 </html>
