@@ -79,12 +79,14 @@ body {
   display: none;
 }
 .y_search_container {
+  cursor: pointer;
   position: relative;
   width: 100%;
   max-width: 300px;
 }
 
 .custom-search-input {
+  cursor: pointer;
   width: 100%;
   padding: 10px 15px 10px 40px;
   border: 1px solid #ccc;
@@ -174,6 +176,12 @@ body {
   max-height: 180px;
   max-width: 180px;
 }
+.y_item_box.active {
+  border: 1px solid white;
+}
+.y_item_box:hover {
+  border: 1px solid white;
+}
 .y_item_box img {
   max-width: 100%;
   height: auto;
@@ -202,7 +210,14 @@ footer {
 .y_footer_links {
   padding-bottom: 10px;
 }
-
+.y_footer_links:hover {
+  padding-left: 8px;
+  transition: 0.5s;
+}
+.y_footer_icons img:hover{
+  scale: 1.2;
+  transition: 0.5s;
+}
 /* footer css start  */
 
 .y_footer_links img {
@@ -300,12 +315,11 @@ footer {
   align-items: center; */
 }
 
-
 /* otp css start  */
 
 /* OTP page CSS similar to login page */
 .y_bg_image {
-  background-image: url('/yatri_img/otp_bg.png'); /* Replace with the image path */
+  background-image: url("/yatri_img/otp_bg.png"); /* Replace with the image path */
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -320,8 +334,8 @@ footer {
 .y_otp_form {
   margin-top: 14%;
 }
-.y_otp_form a{
-    color: #FB7514;
+.y_otp_form a {
+  color: #fb7514;
 }
 .y_otp_form h1 {
   font-size: 24px;
@@ -332,8 +346,8 @@ footer {
   font-size: 18px;
   font-weight: 500;
 }
-.y_otp_form p span{
-    color: #999999;
+.y_otp_form p span {
+  color: #999999;
 }
 
 .y_otp_form form {
@@ -346,11 +360,11 @@ footer {
 }
 
 .otp_input_container {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    gap: 5%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  gap: 5%;
 }
 
 .otp_input {
@@ -365,7 +379,7 @@ footer {
 }
 
 .y_otp_form button {
-  background-color: #FB7514;
+  background-color: #fb7514;
   color: white;
   border: none;
   padding: 12px 0;
@@ -380,6 +394,260 @@ footer {
   background: #0000009e;
 }
 
+/* profile modal css strat  */
+/* Modal Customization */
+.y_modal-dialog {
+  max-width: 500px;
+  margin: auto;
+}
+
+.y_modal-content {
+  background-color: #1a1a1a;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.y_modal-header {
+  border-bottom: none;
+}
+
+.y_btn-close {
+  color: white;
+}
+
+.y_modal-body .form-label {
+  color: #e0e0e0;
+}
+
+.y_input {
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.y_btn {
+  background-color: #ff6600;
+  color: white;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  margin-top: 20px;
+}
+.y_btn:hover {
+  background-color: #e45b00;
+  color: white;
+}
+
+.modal-dialog-centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* me add  */
+.y_modal-dialog .modal-title{
+  width: 100%;
+  text-align: center;
+}
+/* White close icon */
+.y_btn-close {
+  filter: invert(1.5) !important; /* Inverts the black color to white */
+  background-color: transparent; /* Ensures no background color */
+  border: none;
+}
+
+.y_btn-close:hover {
+  filter: invert(0.8); /* Slight change on hover to keep it subtle */
+}
+
+
+
+/* mobile view profile modal  */
+
+/* Mobile Profile Modal Customization */
+.y_mobile_modal-dialog {
+  max-width: 500px;
+  margin: auto;
+}
+
+.y_mobile_modal-content {
+  background-color: #1a1a1a;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.y_mobile_modal-header {
+  border-bottom: none;
+}
+
+.y_mobile_btn-close {
+  color: white;
+}
+
+.y_mobile_modal-body .form-label {
+  color: #e0e0e0;
+}
+
+.y_mobile_input {
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.y_mobile_btn {
+  background-color: #ff6600;
+  color: white;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.y_mobile_btn:hover {
+  background-color: #e45b00;
+  color: white;
+}
+
+.modal-dialog-centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Center the modal title */
+.y_mobile_modal-dialog .modal-title {
+  width: 100%;
+  text-align: center;
+}
+
+/* White close icon */
+.y_mobile_btn-close {
+  filter: invert(1.5) !important; /* Inverts the black color to white */
+  background-color: transparent; /* Ensures no background color */
+  border: none;
+}
+
+.y_mobile_btn-close:hover {
+  filter: invert(0.8); /* Slight change on hover to keep it subtle */
+}
+
+
+/* logout  modal  */
+
+ /* Center the modal vertically and horizontally */
+ .y_logoutModel-dialog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: auto;
+}
+
+.y_logoutModel-content {
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #0F0F0F;
+}
+
+.y_logoutModel-body {
+  text-align: center;
+}
+
+.y_logoutModel-body p{
+  font-size: 20px;
+  font-weight: 500;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.y_logoutModel-cancel-btn {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 8px 20px;
+  width: 100%;
+}
+.y_logoutModel-cancel-btn:hover {
+  background-color: gray;
+  color: white;
+  border: 1px solid gray;
+}
+.y_logoutModel-logout-btn {
+  padding: 8px 20px;
+  width: 100%;
+  background-color: #fb7514;
+  color: white;
+  border: none;
+}
+.y_logoutModel-logout-btn:hover {
+  background-color: #da630d;
+  color: white;
+  border: none;
+}
+
+/* mobile logout modal  */
+/* Center the mobile logout modal vertically and horizontally */
+.y_mobileLogoutModel-dialog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: auto;
+}
+
+.y_mobileLogoutModel-content {
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #0F0F0F;
+}
+
+.y_mobileLogoutModel-body {
+  text-align: center;
+}
+
+.y_mobileLogoutModel-body p {
+  font-size: 20px;
+  font-weight: 500;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.y_mobileLogoutModel-cancel-btn {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 8px 20px;
+  width: 100%;
+}
+
+.y_mobileLogoutModel-cancel-btn:hover {
+  background-color: gray;
+  color: white;
+  border: 1px solid gray;
+}
+
+.y_mobileLogoutModel-logout-btn {
+  padding: 8px 20px;
+  width: 100%;
+  background-color: #fb7514;
+  color: white;
+  border: none;
+}
+
+.y_mobileLogoutModel-logout-btn:hover {
+  background-color: #da630d;
+  color: white;
+  border: none;
+}
 
 @media (min-width: 768px) {
   .mobile-nav-toggle {
@@ -471,10 +739,21 @@ footer {
   .y_otp_form button {
     padding: 9px 0;
     font-size: 15px;
-}
-.y_otp_form {
-  margin-top: 26%;
-}
+  }
+  .y_otp_form {
+    margin-top: 26%;
+  }
+  .y_modal-dialog {
+    width: 90%; /* Responsive modal width */
+  }
+
+  .y_modal-content {
+    padding: 15px;
+  }
+
+  .y_btn {
+    font-size: 14px;
+  }
 }
 @media (max-width: 767px) {
   .desktop-nav {
@@ -488,7 +767,13 @@ footer {
   .y_otp_form form {
     padding: 50px 20px;
     max-width: 310px;
-}
+  }
+  .y_mobile_modal-dialog {
+    max-width: 334px;
+  }
+  .y_mobileLogoutModel-dialog{
+    max-width: 334px;
+  }
 }
 @media (max-width: 425px) {
   .y_otp_form h1 {
