@@ -112,26 +112,20 @@
     color: white;
     padding: 15px 40px; 
 }
-body{
+.sp_card{
     position: relative;
 }
 .sp_cardlist_cart{
-    position: fixed;
-    bottom: 40px;
-    width: 90%;
-    left: 5%;
+    margin: auto;
+    width: 100% !important; 
 }
-.sp_cardlist_menu{
-    position: fixed;
-    bottom: 150px;
-    left: 10%;
-    width: 80%;
-}
+
 .sp_cardlist_menu_box{
     width: 60px;
     height: 60px;
     background-color: #0F0F0F;
     border-radius: 50%;
+    margin-bottom: 50px;
 }
 .sp_cardlist_menu img {
     margin: auto;
@@ -443,27 +437,13 @@ body{
     padding-right: 10px;
 }
 @media (min-width: 1900px){
-    .sp_cardlist_cart{
-        width: 80% !important;
-        left: 10% !important;
-    }
-    .sp_cardlist_menu {
-        width: 80% !important;
-        left: 10% !important; 
-    }
+
 }
 @media (min-width: 1650px) {
     .y_container {
         width: 1501px;
     }
-    .sp_cardlist_cart{
-        width: 90%;
-        left: 5%;
-    }
-    .sp_cardlist_menu {
-        width: 90%;
-        left: 5%; 
-    }
+
 }
 @media (min-width: 1200px) and (max-width: 1649px) {
     .y_container {
@@ -473,14 +453,7 @@ body{
     /* .sp_cardlist_cart , .sp_cardlist_menu{
         width: 1199px;
     } */
-    .sp_cardlist_cart{
-        width: 90%;
-        left: 5%;
-    }
-    .sp_cardlist_menu {
-        width: 90%;
-        left: 5%; 
-    }
+
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
@@ -503,15 +476,7 @@ body{
     .s_sub_text{
         font-size: 18px !important;
     }
-    .sp_cardlist_cart{
-        width: 100%;
-        left: 0%;
-        bottom: 0px;
-    }
-    .sp_cardlist_menu {
-        width: 100%;
-        left: 0%; 
-    }
+
     .s_catlist_card   .modal-dialog {
         width: 600px ;
     }
@@ -545,16 +510,7 @@ body{
     .s_sub_text{
         font-size: 18px !important;
     }
-    .sp_cardlist_cart{
-        width: 100%;
-        left: 0%;
-        bottom: 0px;
 
-    }
-    .sp_cardlist_menu {
-        width: 100%;
-        left: 0%; 
-    }
     .s_catlist_card   .modal-dialog {
         width: 450px;
         margin: auto;
@@ -591,11 +547,7 @@ body{
     }
 }
 @media (min-width: 450px) and (max-width: 479px) {
-    .sp_cardlist_cart{
-        width: 100%;
-        left: 0%;
-        bottom: 0px;
-    }
+
     .s_catlist_card   .modal-body {
         padding: 0px;
     }
