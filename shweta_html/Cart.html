@@ -20,7 +20,7 @@
 
     <!-- My css -->
     <link rel="stylesheet" href="../css/shweta.css">
-
+    <link rel="stylesheet" href="../css/yatri.css">
     <style>
         .modal-body::-webkit-scrollbar {
             display: none;
@@ -29,8 +29,285 @@
 </head>
 
 <body>
+ 
+    <div>
+            <div class="main_header">
+            <header class="y_header">
+                <div class="y_container">
+                    <div class="row align-items-center">
+                        <div class="col-auto d-flex align-items-center">
+                            <div class="logo me-4">
+                                <a href="index.html">LOGO</a>
+                            </div>
+                            <nav class="nav-links d-none d-md-flex  ps-lg-5 ms-lg-5 ps-md-0 ms-md-0">
+                                <a class="active" href="index.html">Home</a>
+                                <a href="Order.html">My Order</a>
+                            </nav>
+                        </div>
+                        <div class="col-auto ms-auto d-md-none">
+                            <button class="btn btn-link text-white mobile-nav-toggle" type="button"
+                                data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu"
+                                aria-controls="offcanvasMenu">
+                                <i class="fas fa-bars"></i>
+                            </button>
+                        </div>
+                        <div class="col desktop-nav">
+                            <div class="d-flex justify-content-end align-items-center">
+                                <a href="sujal_html/search.html" class="text-decoration-none me-3">
+                                    <div class="y_search_container">
+                                        <span class="search-icon">
+                                            <img src="../yatri_img/y_serach_icon.png" alt="Search">
+                                        </span>
+                                        <input type="text" placeholder="Search..." class="custom-search-input">
+                                    </div>
+                                </a>
+                                <a href="Cart.html" class="text-decoration-none me-3">
+                                    <div class="cart-icon">
+                                        <img src="../yatri_img/y_cart_icon.png" alt="Cart">
+                                        <span class="cart-count">0</span>
+                                    </div>
+                                </a>
+                                <div class="user-section">
+                                    <div class="dropdown">
+                                        <button class="dropdown-toggle" type="button" id="dropdownMenuButton"
+                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                            <i class="fas fa-user"></i> Smith Johnson <i class="fas fa-caret-down"></i>
+                                        </button>
+                                        <!-- Dropdown Menu -->
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#y_profileModal">Profile</a></li>
+                                            <li><a class="dropdown-item" href="../login.html">Login</a></li>
+                                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#logoutModal">Logout</a></li>
+                                        </ul>
+                                        <!-- Profile Modal -->
+                                        <div class="modal fade" id="y_profileModal" tabindex="-1"
+                                            aria-labelledby="y_profileModalLabel" aria-hidden="true"
+                                            data-bs-backdrop="false">
+                                            <div class="modal-dialog modal-dialog-centered y_modal-dialog">
+                                                <div class="modal-content y_modal-content">
+                                                    <div class="modal-header y_modal-header">
+                                                        <h5 class="modal-title" id="y_profileModalLabel">Profile</h5>
+                                                        <button type="button" class="btn-close y_btn-close"
+                                                            data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body y_modal-body">
+                                                        <!-- Profile Form -->
+                                                        <div id="profileForm">
+                                                            <form>
+                                                                <div class="mb-3">
+                                                                    <label for="y_name" class="form-label">Name</label>
+                                                                    <input type="text" class="form-control y_input"
+                                                                        id="y_name" value="Smith Johnson">
+                                                                </div>
+                                                                <div class="mb-3">
+                                                                    <label for="y_email"
+                                                                        class="form-label">Email</label>
+                                                                    <input type="email" class="form-control y_input"
+                                                                        id="y_email" value="example@gmail.com">
+                                                                </div>
+                                                                <div class="mb-3">
+                                                                    <label for="y_mobile" class="form-label">Mobile
+                                                                        No.</label>
+                                                                    <input type="tel" class="form-control y_input"
+                                                                        id="y_mobile" value="+91 66666 66666">
+                                                                </div>
+                                                                <button type="button" id="y_editProfileBtn"
+                                                                    class="btn y_btn">Edit Profile</button>
+                                                            </form>
+                                                        </div>
+                                                        <!-- Edit Profile Form -->
+                                                        <div id="editProfileForm" style="display: none;">
+                                                            <form>
+                                                                <div class="mb-3">
+                                                                    <label for="y_editName"
+                                                                        class="form-label">Name</label>
+                                                                    <input type="text" class="form-control y_input"
+                                                                        id="y_editName" placeholder="Enter your name">
+                                                                </div>
+                                                                <div class="mb-3">
+                                                                    <label for="y_editEmail"
+                                                                        class="form-label">Email</label>
+                                                                    <input type="email" class="form-control y_input"
+                                                                        id="y_editEmail" placeholder="Enter your email">
+                                                                </div>
+                                                                <div class="mb-3">
+                                                                    <label for="y_editMobile" class="form-label">Mobile
+                                                                        No.</label>
+                                                                    <input type="tel" class="form-control y_input"
+                                                                        id="y_editMobile"
+                                                                        placeholder="Enter your mobile number">
+                                                                </div>
+                                                                <button type="button" id="y_saveProfileBtn"
+                                                                    class="btn y_btn">Save Changes</button>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- logout modal  -->
+                                        <!-- Logout Modal -->
+                                        <div class="modal fade" id="logoutModal" tabindex="-1"
+                                            aria-labelledby="logoutModalLabel" aria-hidden="true"
+                                            data-bs-backdrop="false">
+                                            <div class="modal-dialog y_logoutModel-dialog">
+                                                <div class="modal-content y_logoutModel-content">
+                                                    <div class="modal-body y_logoutModel-body px-0">
+                                                        <p>Are you sure you want to logout?</p>
+                                                        <div class="d-flex">
+                                                            <button type="button"
+                                                                class="btn mx-3 y_logoutModel-cancel-btn"
+                                                                data-bs-dismiss="modal">Cancel</button>
+                                                            <button type="button"
+                                                                class="btn mx-3 y_logoutModel-logout-btn">Logout</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
 
-    <main>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasMenuLabel">Menu</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                    aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <nav class="flex-column">
+                    <div class="d-flex">
+                        <a href="../sujal_html/search.html" class="text-decoration-none pe-2">
+                            <div class="y_search_container my-3 ">
+                                <span class="search-icon">
+                                    <img src="../yatri_img/y_serach_icon.png" alt="Search">
+                                </span>
+                                <input type="text" placeholder="Search..." class="custom-search-input">
+                            </div>
+                        </a>
+                        <a href="shweta_html/Cart.html" class="text-decoration-none ps-2 ">
+                            <div class="cart-icon my-3 ps-2">
+                                <img src="../yatri_img/y_cart_icon.png" alt="Cart">
+                                <span class="cart-count">0</span>
+                            </div>
+                        </a>
+
+                    </div>
+                    <div class="user-section my-3">
+                        <div class="dropdown">
+                            <button class="dropdown-toggle" type="button" id="dropdownMenuButtonMobile"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <span><i class="fas fa-user"></i> Smith Johnson</span>
+                                <i class="fas fa-caret-down"></i>
+                            </button>
+                            <!-- Dropdown Menu for Mobile -->
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonMobile">
+                                <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                        data-bs-target="#y_mobileProfileModal">Profile</a></li>
+                                <li><a class="dropdown-item" href="login.html">Login</a></li>
+                                <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                        data-bs-target="#mobileLogoutModal">Logout</a></li>
+                            </ul>
+                            <!-- Mobile Profile Modal -->
+                            <div class="modal fade" id="y_mobileProfileModal" tabindex="-1"
+                                aria-labelledby="y_mobileProfileModalLabel" aria-hidden="true" data-bs-backdrop="false">
+                                <div class="modal-dialog modal-dialog-centered y_mobile_modal-dialog">
+                                    <div class="modal-content y_mobile_modal-content">
+                                        <div class="modal-header y_mobile_modal-header">
+                                            <h5 class="modal-title" id="y_mobileProfileModalLabel">Profile</h5>
+                                            <button type="button" class="btn-close y_mobile_btn-close"
+                                                data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body y_mobile_modal-body">
+                                            <!-- Mobile Profile Form -->
+                                            <div id="mobileProfileForm">
+                                                <form>
+                                                    <div class="mb-3">
+                                                        <label for="y_mobile_name" class="form-label">Name</label>
+                                                        <input type="text" class="form-control y_mobile_input"
+                                                            id="y_mobile_name" value="John Doe">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="y_mobile_email" class="form-label">Email</label>
+                                                        <input type="email" class="form-control y_mobile_input"
+                                                            id="y_mobile_email" value="john@example.com">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="y_mobile_mobile" class="form-label">Mobile
+                                                            No.</label>
+                                                        <input type="tel" class="form-control y_mobile_input"
+                                                            id="y_mobile_mobile" value="+91 12345 67890">
+                                                    </div>
+                                                    <button type="button" id="y_mobile_editProfileBtn"
+                                                        class="btn y_mobile_btn">Edit Profile</button>
+                                                </form>
+                                            </div>
+                                            <!-- Mobile Edit Profile Form -->
+                                            <div id="mobileEditProfileForm" style="display: none;">
+                                                <form>
+                                                    <div class="mb-3">
+                                                        <label for="y_mobile_editName" class="form-label">Name</label>
+                                                        <input type="text" class="form-control y_mobile_input"
+                                                            id="y_mobile_editName" placeholder="Enter your name">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="y_mobile_editEmail" class="form-label">Email</label>
+                                                        <input type="email" class="form-control y_mobile_input"
+                                                            id="y_mobile_editEmail" placeholder="Enter your email">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="y_mobile_editMobile" class="form-label">Mobile
+                                                            No.</label>
+                                                        <input type="tel" class="form-control y_mobile_input"
+                                                            id="y_mobile_editMobile"
+                                                            placeholder="Enter your mobile number">
+                                                    </div>
+                                                    <button type="button" id="y_mobile_saveProfileBtn"
+                                                        class="btn y_mobile_btn">Save Changes</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- mobile logout modal  -->
+                            <!-- Mobile Logout Modal -->
+                            <div class="modal fade" id="mobileLogoutModal" tabindex="-1"
+                                aria-labelledby="mobileLogoutModalLabel" aria-hidden="true" data-bs-backdrop="false">
+                                <div class="modal-dialog y_mobileLogoutModel-dialog">
+                                    <div class="modal-content y_mobileLogoutModel-content">
+                                        <div class="modal-body y_mobileLogoutModel-body px-0">
+                                            <p>Are you sure you want to logout?</p>
+                                            <div class="d-flex">
+                                                <button type="button" class="btn mx-3 y_mobileLogoutModel-cancel-btn"
+                                                    data-bs-dismiss="modal">Cancel</button>
+                                                <button type="button"
+                                                    class="btn mx-3 y_mobileLogoutModel-logout-btn">Logout</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="nav-link active" href="../index.html">Home</a>
+                    <a class="nav-link" href="./Order.html">My Order</a>
+
+                </nav>
+            </div>
+        </div>
+    </div>
+ 
+    <main style="background-color: #040404;">
         <!-- first section -->
         <section>
             <div class="sb_abosulate">
@@ -41,7 +318,7 @@
 
         <!-- Empty Cart  -->
 
-        <section id="empty-cart" style="transform: translateY(50%);">
+        <section id="empty-cart" class="py-5">
             <div class="card sb_card" style="width: 18rem;">
                 <img src="../shweta_img/cart.png" class="card-img-top" alt="..." width="100%">
                 <div class="card-body sb_card_body">
@@ -62,7 +339,7 @@
                         <!-- Dynamic content will be inserted here -->
                     </div>
                 </div>
-                <div class="y_container">
+                <div class="y_container pb-4">
                     <div class="sb_total">
                         <div class="">
                             <h6 id="total-items">Total 0 Items</h6>
@@ -76,250 +353,322 @@
                 </div>
             </div>
         </section>
-    </main>
 
-    <!-- Order Summry Modal -->
-    <div class="modal fade" id="orderSummaryModal" tabindex="-1" aria-labelledby="orderSummaryModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content sb_modal-content">
-                <div class="modal-header sb_model-header">
-                    <img src="../shweta_img/img3.png" alt="">
-                    <h5 class=" text-center mt-5 mb-3">Order Confirmed</h5>
-                    <div class="sb_model_flex">
-                        <p>Order Summry</p>
-                        <a href="#">
-                            <p class="sb_line1 view-invoice" data-bs-toggle="modal" data-bs-target="#invoiceModal" data-index="${index}">View Invoice</p>
+
+        <!-- Order Summry Modal -->
+        <div class="modal fade" id="orderSummaryModal" tabindex="-1" aria-labelledby="orderSummaryModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content sb_modal-content">
+                    <div class="modal-header sb_model-header">
+                        <img src="../shweta_img/img3.png" alt="">
+                        <h5 class=" text-center mt-5 mb-3">Order Confirmed</h5>
+                        <div class="sb_model_flex">
+                            <p>Order Summry</p>
+                            <a href="#">
+                                <p class="sb_line1 view-invoice" data-bs-toggle="modal" data-bs-target="#invoiceModal"
+                                    data-index="${index}">View Invoice</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <small style="color: #7F7F7F;">24/08/2024</small>
+
+                        <div class="my-3 d-flex justify-content-between">
+                            <div><img src="../shweta_img/order.png" alt=""></div>
+                            <div>
+                                <p class="m-0">Masala Dosa</p>
+                                <p class="m-0">QTY.:3</p>
+                                <p class="m-0" style="color: #FB7514;">$120</p>
+                            </div>
+                            <div>
+                                <p style="color: #FB7514;">$360</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer sb_model-footer">
+                        <div class="text-end">
+                            <p>Sub Total : &nbsp; <span>$483</span></p>
+                            <p>Tax : &nbsp;&nbsp; &nbsp; <span>$17</span></p>
+                            <p style="border-top: 1px dashed #545454;" class="pt-2">Total : &nbsp; <span>$500</span></p>
+                        </div>
+                    </div>
+                    <div class="sb_model_btn p-md-4 px-2 py-4">
+                        <button class="sb_btn_dark"><a href="Cart.html">Remind me later</a></button>
+                        <button class="sb_btn" id="addReviewBtn">Add Review</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Review Modal -->
+        <div class="modal fade" id="reviewModal" tabindex="-1" aria-labelledby="reviewModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content sb_modal-content">
+                    <div class="modal-header sb_model-header1">
+                        <h5>Review</h5>
+                        <i class="fa-solid fa-xmark fs-4" data-bs-dismiss="modal" aria-label="Close"></i>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <div class="d-flex justify-content-between">
+                                <p>Overall</p>
+                                <div>
+                                    <img src="../shweta_img/emoji1.png" alt="">
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <p>Food</p>
+                                <div>
+                                    <img src="../shweta_img/emoji2.png" alt="">
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <p>Service</p>
+                                <div>
+                                    <img src="../shweta_img/emoji3.png" alt="">
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <p>Ambiance</p>
+                                <div>
+                                    <img src="../shweta_img/emoji4.png" alt="">
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <p>Value</p>
+                                <div>
+                                    <img src="../shweta_img/emoji5.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sb_textarea my-4">
+                            <textarea name="text" placeholder="Write your valuable feedback" rows="4">
+                        </textarea>
+                        </div>
+                        <div class="d-md-flex justify-content-center d-block s_modal2 my-3">
+                            <button class="sb_btn" id="submitReviewBtn">Submit</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Thank you Model -->
+        <div class="modal fade" id="thankYouModal" tabindex="-1" aria-labelledby="thankYouModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content sb_modal-content2">
+                    <div class="modal-header sb_model-header2">
+                        <img src="../shweta_img/img2.png" alt="">
+                    </div>
+                    <div class="modal-body">
+                        <div class="m-3">
+                            <h4 class="text-center p-5">Thank You For Your <br> Feedback</h4>
+                            <div class="d-md-flex justify-content-center d-block s_modal2">
+                                <button class="sb_btn"><a href="Cart.html">Back To Home</a></button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Customize Modal -->
+        <div class="modal fade" id="customiseModal" tabindex="-1" aria-labelledby="customiseModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered  modal-dialog-scrollable">
+                <div class="modal-content sb_modal-content3">
+                    <div class="modal-header ">
+                        <i class="fa-solid fa-xmark fs-3 ms-auto" class="btn-close" data-bs-dismiss="modal"
+                            aria-label="Close"></i>
+                    </div>
+                    <h5 class="text-center">Customise As Per Your Taste</h5>
+                    <div class="modal-body">
+                        <div class="mx-1 mb-3 sb_model_body1">
+                            <p style="border-bottom:  1px solid #161616; padding: 10px;" class="mb-0">Add Instrutions
+                            </p>
+                            <div style="padding: 10px;">
+                                <small>
+                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum ab fugit veritatis,
+                                    amet
+                                    molestiae quisquam soluta nisi voluptatibus quasi sapiente nam expedita, placeat
+                                    quis
+                                    voluptatem iure! Fugit praesentium quod suscipit?
+                                </small>
+                            </div>
+                        </div>
+                        <div class="mx-1 mb-3 sb_model_body1">
+                            <p style="border-bottom:  1px solid #161616; padding: 10px;" class="mb-0">Size</p>
+                            <div class="sb_option">
+                                <span>Small</span>
+                                <div class="sb_radio-container">
+                                    <input type="radio" id="small" name="size" checked>
+                                    <label for="small"></label>
+                                </div>
+                            </div>
+                            <div class="sb_option">
+                                <span>Medium</span>
+                                <div class="sb_radio-container ">
+                                    <span class=" mx-3" style="color: #999;"><small>+$4</small></span>
+                                    <input type="radio" id="medium" name="size">
+                                    <label for="medium"></label>
+                                </div>
+                            </div>
+                            <div class="sb_option">
+                                <span>Large</span>
+                                <div class="sb_radio-container ">
+                                    <span class=" mx-3" style="color: #999;"><small>+$10</small></span>
+                                    <input type="radio" id="large" name="size">
+                                    <label for="large"></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mx-1 mb-3 sb_model_body1">
+                            <p style="border-bottom:  1px solid #161616; padding: 10px;" class="mb-0">Stuffings</p>
+                            <div class="sb_option">
+                                <span>Palak</span>
+                                <div class="d-flex">
+                                    <span class=" mx-3" style="color: #999;"><small>+$3</small></span>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"
+                                            checked>
+                                        <label class="form-check-label" for="flexCheckChecked"></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sb_option">
+                                <span>Paneer</span>
+                                <div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault"></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mx-1 mb-3 sb_model_body1">
+                            <p style="border-bottom:  1px solid #161616; padding: 10px;" class="mb-0">Dips</p>
+                            <div class="sb_option">
+                                <span>Green Chutney</span>
+                                <div class="d-flex">
+                                    <span class=" mx-3" style="color: #999;"><small>+$3</small></span>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"
+                                            checked>
+                                        <label class="form-check-label" for="flexCheckChecked"></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sb_option">
+                                <span>Krtchup</span>
+                                <div class="d-flex">
+                                    <span class=" mx-3" style="color: #999;"><small>+$3</small></span>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault"></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sb_option">
+                                <span>Dahi Rayta</span>
+                                <div class="d-flex">
+                                    <span class=" mx-3" style="color: #999;"><small>+$3</small></span>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault"></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background-color: #020202; color: white; border-top: 1px solid #545454;">
+                        <div class="d-flex justify-content-between align-content-center p-4">
+                            <div class="sb_qty_btn">
+                                <span><i class="fa-solid fa-trash-can" onclick="deleteItem(0)"
+                                        style="color: #000 !important;"></i></span>
+                                <span>1</span>
+                                <span><i class="fa-solid fa-plus" onclick="updateQuantity(0, 1)"></i></span>
+                            </div>
+                            <div><button class="sb_btn">Add Item</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="y_container">
+            <div class="row">
+                <div class="col-xl-3 col-lg-3 col-md-6 pt-3">
+                    <div class="y_footer_logo">
+                        <a href="#" class="text-decoration-none text-light">
+                            <h2>LOGO</h2>
+                        </a>
+                        <h4>Royal Cafe & Restaurant</h4>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 pt-3">
+                    <p class="y_footer_title">Contact</p>
+                    <a href="#" class="text-decoration-none text-light">
+                        <div class="d-flex y_footer_links">
+                            <img class="pe-2" src="yatri_img/location.png" alt="">
+                            <p class="mb-0">Bobst Library 70 Washington Square South, New York, NY 10012, United States
+                            </p>
+                        </div>
+                    </a>
+                    <a href="#" class="text-decoration-none text-light">
+                        <div class="d-flex y_footer_links">
+                            <img class="pe-2" src="yatri_img/email.png" alt="">
+                            <p class="mb-0">example@gmail.com</p>
+                        </div>
+                    </a>
+                    <a href="#" class="text-decoration-none text-light">
+                        <div class="d-flex y_footer_links">
+                            <img class="pe-2" src="yatri_img/phone.png" alt="">
+                            <p class="mb-0">+1 59589 69596</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xl-2 col-lg-3 col-md-6 pt-3">
+                    <p class="y_footer_title">Timing</p>
+                    <a href="#" class="text-decoration-none text-light">
+                        <div class="d-flex y_footer_links">
+                            <img class="pe-2" src="yatri_img/time.png" alt="">
+                            <div>
+                                <p class="mb-0">Monday - Sunday </p>
+                                <p class="mb-0">7 AM - 10 PM</p>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xl-3 col-lg-2 col-md-6 pt-3">
+                    <p class="y_footer_title">Follow Us On</p>
+                    <div class="d-flex  y_footer_icons">
+                        <a href="#" class="text-decoration-none text-light">
+                            <img class="px-2" src="yatri_img/facebook.png" alt="">
+                        </a>
+                        <a href="#" class="text-decoration-none text-light">
+                            <img class="px-2" src="yatri_img/insta.png" alt="">
+                        </a>
+                        <a href="#" class="text-decoration-none text-light">
+                            <img class="px-2" src="yatri_img/twitter.png" alt="">
+                        </a>
+                        <a href="#" class="text-decoration-none text-light">
+                            <img class="px-2" src="yatri_img/youtube.png" alt="">
                         </a>
                     </div>
                 </div>
-                <div class="modal-body">
-                    <small style="color: #7F7F7F;">24/08/2024</small>
-
-                    <div class="my-3 d-flex justify-content-between">
-                        <div><img src="../shweta_img/order.png" alt=""></div>
-                        <div>
-                            <p class="m-0">Masala Dosa</p>
-                            <p class="m-0">QTY.:3</p>
-                            <p class="m-0" style="color: #FB7514;">$120</p>
-                        </div>
-                        <div>
-                            <p style="color: #FB7514;">$360</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer sb_model-footer">
-                    <div class="text-end">
-                        <p>Sub Total : &nbsp; <span>$483</span></p>
-                        <p>Tax : &nbsp;&nbsp; &nbsp; <span>$17</span></p>
-                        <p style="border-top: 1px dashed #545454;" class="pt-2">Total : &nbsp; <span>$500</span></p>
-                    </div>
-                </div>
-                <div class="sb_model_btn p-md-4 px-2 py-4">
-                    <button class="sb_btn_dark"><a href="Cart.html">Remind me later</a></button>
-                    <button class="sb_btn" id="addReviewBtn">Add Review</button>
-                </div>
             </div>
         </div>
-    </div>
-
-    <!-- Review Modal -->
-    <div class="modal fade" id="reviewModal" tabindex="-1" aria-labelledby="reviewModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content sb_modal-content">
-                <div class="modal-header sb_model-header1">
-                    <h5>Review</h5>
-                    <i class="fa-solid fa-xmark fs-4" data-bs-dismiss="modal" aria-label="Close"></i>
-                </div>
-                <div class="modal-body">
-                    <div>
-                        <div class="d-flex justify-content-between">
-                            <p>Overall</p>
-                            <div>
-                                <img src="../shweta_img/emoji1.png" alt="">
-                            </div>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <p>Food</p>
-                            <div>
-                                <img src="../shweta_img/emoji2.png" alt="">
-                            </div>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <p>Service</p>
-                            <div>
-                                <img src="../shweta_img/emoji3.png" alt="">
-                            </div>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <p>Ambiance</p>
-                            <div>
-                                <img src="../shweta_img/emoji4.png" alt="">
-                            </div>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <p>Value</p>
-                            <div>
-                                <img src="../shweta_img/emoji5.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="sb_textarea my-4">
-                        <textarea name="text" placeholder="Write your valuable feedback" rows="4">
-                        </textarea>
-                    </div>
-                    <div class="d-md-flex justify-content-center d-block s_modal2 my-3">
-                        <button class="sb_btn" id="submitReviewBtn">Submit</button>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-
-    <!-- Thank you Model -->
-    <div class="modal fade" id="thankYouModal" tabindex="-1" aria-labelledby="thankYouModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content sb_modal-content2">
-                <div class="modal-header sb_model-header2">
-                    <img src="../shweta_img/img2.png" alt="">
-                </div>
-                <div class="modal-body">
-                    <div class="m-3">
-                        <h4 class="text-center p-5">Thank You For Your <br> Feedback</h4>
-                        <div class="d-md-flex justify-content-center d-block s_modal2">
-                            <button class="sb_btn"><a href="Cart.html">Back To Home</a></button>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-    <!-- Customize Modal -->
-    <div class="modal fade" id="customiseModal" tabindex="-1" aria-labelledby="customiseModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered  modal-dialog-scrollable">
-            <div class="modal-content sb_modal-content3">
-                <div class="modal-header ">
-                    <i class="fa-solid fa-xmark fs-3 ms-auto" class="btn-close" data-bs-dismiss="modal"
-                        aria-label="Close"></i>
-                </div>
-                <h5 class="text-center">Customise As Per Your Taste</h5>
-                <div class="modal-body">
-                    <div class="mx-1 mb-3 sb_model_body1">
-                        <p style="border-bottom:  1px solid #161616; padding: 10px;" class="mb-0">Add Instrutions</p>
-                        <div style="padding: 10px;">
-                            <small>
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum ab fugit veritatis, amet
-                                molestiae quisquam soluta nisi voluptatibus quasi sapiente nam expedita, placeat quis
-                                voluptatem iure! Fugit praesentium quod suscipit?
-                            </small>
-                        </div>
-                    </div>
-                    <div class="mx-1 mb-3 sb_model_body1">
-                        <p style="border-bottom:  1px solid #161616; padding: 10px;" class="mb-0">Size</p>
-                        <div class="sb_option">
-                            <span>Small</span>
-                            <div class="sb_radio-container">
-                                <input type="radio" id="small" name="size" checked>
-                                <label for="small"></label>
-                            </div>
-                        </div>
-                        <div class="sb_option">
-                            <span>Medium</span>
-                            <div class="sb_radio-container ">
-                                <span class=" mx-3" style="color: #999;"><small>+$4</small></span>
-                                <input type="radio" id="medium" name="size">
-                                <label for="medium"></label>
-                            </div>
-                        </div>
-                        <div class="sb_option">
-                            <span>Large</span>
-                            <div class="sb_radio-container ">
-                                <span class=" mx-3" style="color: #999;"><small>+$10</small></span>
-                                <input type="radio" id="large" name="size">
-                                <label for="large"></label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mx-1 mb-3 sb_model_body1">
-                        <p style="border-bottom:  1px solid #161616; padding: 10px;" class="mb-0">Stuffings</p>
-                        <div class="sb_option">
-                            <span>Palak</span>
-                            <div class="d-flex">
-                                <span class=" mx-3" style="color: #999;"><small>+$3</small></span>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"
-                                        checked>
-                                    <label class="form-check-label" for="flexCheckChecked"></label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="sb_option">
-                            <span>Paneer</span>
-                            <div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                    <label class="form-check-label" for="flexCheckDefault"></label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mx-1 mb-3 sb_model_body1">
-                        <p style="border-bottom:  1px solid #161616; padding: 10px;" class="mb-0">Dips</p>
-                        <div class="sb_option">
-                            <span>Green Chutney</span>
-                            <div class="d-flex">
-                                <span class=" mx-3" style="color: #999;"><small>+$3</small></span>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"
-                                        checked>
-                                    <label class="form-check-label" for="flexCheckChecked"></label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="sb_option">
-                            <span>Krtchup</span>
-                            <div class="d-flex">
-                                <span class=" mx-3" style="color: #999;"><small>+$3</small></span>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                    <label class="form-check-label" for="flexCheckDefault"></label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="sb_option">
-                            <span>Dahi Rayta</span>
-                            <div class="d-flex">
-                                <span class=" mx-3" style="color: #999;"><small>+$3</small></span>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                    <label class="form-check-label" for="flexCheckDefault"></label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div style="background-color: #020202; color: white; border-top: 1px solid #545454;">
-                    <div class="d-flex justify-content-between align-content-center p-4">
-                        <div class="sb_qty_btn">
-                            <span><i class="fa-solid fa-trash-can" onclick="deleteItem(0)"
-                                    style="color: #000 !important;"></i></span>
-                            <span>1</span>
-                            <span><i class="fa-solid fa-plus" onclick="updateQuantity(0, 1)"></i></span>
-                        </div>
-                        <div><button class="sb_btn">Add Item</button></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
+    </footer>
 
     <script src="../js/shweta_cart.js"></script>
+    <script src="../js/yatri.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>

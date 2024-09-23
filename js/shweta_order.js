@@ -7,54 +7,54 @@ const orders = [
 ];
 
 // Function to generate dynamic order cards
-function generateOrderCards(orders) {
-    const orderContainer = document.querySelector('.y_container .row');
+// function generateOrderCards(orders) {
+//     const orderContainer = document.querySelector('.y_container .row');
 
-    if (!orderContainer) {
-        console.error('Order container not found');
-        return;
-    }
+//     if (!orderContainer) {
+//         console.error('Order container not found');
+//         return;
+//     }
 
-    orderContainer.innerHTML = '';  // Clear previous content
+//     orderContainer.innerHTML = '';  // Clear previous content
 
-    orders.forEach((order, index) => {
-        const cardHTML = `
-            <div class="col-xl-3 col-lg-4 col-md-6 col-12">
-                <div class="card sb_card2">
-                    <div class="card-body">
-                        <div class="sb_line py-3 view-invoice" data-bs-toggle="modal" data-bs-target="#invoiceModal" data-index="${index}">View Invoice</div>
-                        <div>
-                            <div class="d-flex align-content-center justify-content-between">
-                                <div style="color: #737373;">Order Date</div>
-                                <div>${order.orderDate}</div>
-                            </div>
-                            <div style="border-bottom: 1px dashed #545454; margin: 10px 0;"></div>
-                            <div class="d-flex align-content-center justify-content-between">
-                                <div style="color: #737373;">Invoice No.</div>
-                                <div>${order.invoiceNo}</div>
-                            </div>
-                            <div style="border-bottom: 1px dashed #545454; margin: 10px 0;"></div>
-                            <div class="d-flex align-content-center justify-content-between">
-                                <div style="color: #737373;">Total Amount</div>
-                                <div>${order.totalAmount}</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        `;
+//     orders.forEach((order, index) => {
+//         const cardHTML = `
+//             <div class="col-xl-3 col-lg-4 col-md-6 col-12">
+//                 <div class="card sb_card2">
+//                     <div class="card-body">
+//                         <div class="sb_line py-3 view-invoice" data-bs-toggle="modal" data-bs-target="#invoiceModal" data-index="${index}">View Invoice</div>
+//                         <div>
+//                             <div class="d-flex align-content-center justify-content-between">
+//                                 <div style="color: #737373;">Order Date</div>
+//                                 <div>${order.orderDate}</div>
+//                             </div>
+//                             <div style="border-bottom: 1px dashed #545454; margin: 10px 0;"></div>
+//                             <div class="d-flex align-content-center justify-content-between">
+//                                 <div style="color: #737373;">Invoice No.</div>
+//                                 <div>${order.invoiceNo}</div>
+//                             </div>
+//                             <div style="border-bottom: 1px dashed #545454; margin: 10px 0;"></div>
+//                             <div class="d-flex align-content-center justify-content-between">
+//                                 <div style="color: #737373;">Total Amount</div>
+//                                 <div>${order.totalAmount}</div>
+//                             </div>
+//                         </div>
+//                     </div>
+//                 </div>
+//             </div>
+//         `;
 
-        orderContainer.innerHTML += cardHTML;
-    });
+//         orderContainer.innerHTML += cardHTML;
+//     });
 
-    // Add event listeners for "View Invoice" buttons
-    document.querySelectorAll('.view-invoice').forEach(button => {
-        button.addEventListener('click', function () {
-            const index = this.getAttribute('data-index');
-            openInvoiceModal(orders[index]);
-        });
-    });
-}
+//     // Add event listeners for "View Invoice" buttons
+//     document.querySelectorAll('.view-invoice').forEach(button => {
+//         button.addEventListener('click', function () {
+//             const index = this.getAttribute('data-index');
+//             openInvoiceModal(orders[index]);
+//         });
+//     });
+// }
 
 // Function to open invoice modal and populate it with data
 function openInvoiceModal(order) {
