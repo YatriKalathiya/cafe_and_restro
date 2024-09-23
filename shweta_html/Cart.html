@@ -29,18 +29,18 @@
 </head>
 
 <body>
- 
+
     <div>
-            <div class="main_header">
+        <div class="main_header">
             <header class="y_header">
                 <div class="y_container">
                     <div class="row align-items-center">
                         <div class="col-auto d-flex align-items-center">
                             <div class="logo me-4">
-                                <a href="index.html">LOGO</a>
+                                <a href="../index.html">LOGO</a>
                             </div>
                             <nav class="nav-links d-none d-md-flex  ps-lg-5 ms-lg-5 ps-md-0 ms-md-0">
-                                <a class="active" href="index.html">Home</a>
+                                <a class="active" href="../index.html">Home</a>
                                 <a href="Order.html">My Order</a>
                             </nav>
                         </div>
@@ -306,7 +306,7 @@
             </div>
         </div>
     </div>
- 
+
     <main style="background-color: #040404;">
         <!-- first section -->
         <section>
@@ -315,7 +315,6 @@
                 <h2 class="sb_reletive">Cart</h2>
             </div>
         </section>
-
         <!-- Empty Cart  -->
 
         <section id="empty-cart" class="py-5">
@@ -329,12 +328,9 @@
         </section>
 
         <!-- Add Items -->
-        <section id="filled-cart" style="display: none;">
-            <div>
+        <section id="filled-cart">
                 <div class="y_container">
-                    <div>
                         <p class="sb_line">Add More Items</p>
-                    </div>
                     <div id="large-screen-cart" class="row g-3">
                         <!-- Dynamic content will be inserted here -->
                     </div>
@@ -345,13 +341,12 @@
                             <h6 id="total-items">Total 0 Items</h6>
                             <h6 id="total-price">$0</h6>
                         </div>
-                        <div>
+          
                             <button class="sb_btn" id="placeOrderBtn">Place
                                 Order</button>
-                        </div>
+                      
                     </div>
                 </div>
-            </div>
         </section>
 
 
@@ -477,127 +472,132 @@
         </div>
 
         <!-- Customize Modal -->
-        <div class="modal fade" id="customiseModal" tabindex="-1" aria-labelledby="customiseModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered  modal-dialog-scrollable">
+        <!-- <div class="modal fade" id="customiseModal" tabindex="-1" aria-labelledby="customiseModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                 <div class="modal-content sb_modal-content3">
-                    <div class="modal-header ">
+                    <div class="modal-header">
                         <i class="fa-solid fa-xmark fs-3 ms-auto" class="btn-close" data-bs-dismiss="modal"
                             aria-label="Close"></i>
                     </div>
-                    <h5 class="text-center">Customise As Per Your Taste</h5>
+                    <h5 class="text-center">Customize As Per Your Taste</h5>
                     <div class="modal-body">
+                       
                         <div class="mx-1 mb-3 sb_model_body1">
-                            <p style="border-bottom:  1px solid #161616; padding: 10px;" class="mb-0">Add Instrutions
-                            </p>
+                            <p style="border-bottom: 1px solid #161616; padding: 10px;" class="mb-0">Add Instructions</p>
                             <div style="padding: 10px;">
                                 <small>
-                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum ab fugit veritatis,
-                                    amet
-                                    molestiae quisquam soluta nisi voluptatibus quasi sapiente nam expedita, placeat
-                                    quis
-                                    voluptatem iure! Fugit praesentium quod suscipit?
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit veritatis, amet molestiae
+                                    soluta voluptatibus.
                                 </small>
                             </div>
                         </div>
+                      
                         <div class="mx-1 mb-3 sb_model_body1">
-                            <p style="border-bottom:  1px solid #161616; padding: 10px;" class="mb-0">Size</p>
+                            <p style="border-bottom: 1px solid #161616; padding: 10px;" class="mb-0">Size</p>
                             <div class="sb_option">
                                 <span>Small</span>
                                 <div class="sb_radio-container">
-                                    <input type="radio" id="small" name="size" checked>
+                                    <input type="radio" id="small" name="size" value="small">
                                     <label for="small"></label>
                                 </div>
                             </div>
                             <div class="sb_option">
                                 <span>Medium</span>
-                                <div class="sb_radio-container ">
-                                    <span class=" mx-3" style="color: #999;"><small>+$4</small></span>
-                                    <input type="radio" id="medium" name="size">
+                                <div class="sb_radio-container">
+                                    <span class="mx-3" style="color: #999;"><small>+$4</small></span>
+                                    <input type="radio" id="medium" name="size" value="medium">
                                     <label for="medium"></label>
                                 </div>
                             </div>
                             <div class="sb_option">
                                 <span>Large</span>
-                                <div class="sb_radio-container ">
-                                    <span class=" mx-3" style="color: #999;"><small>+$10</small></span>
-                                    <input type="radio" id="large" name="size">
+                                <div class="sb_radio-container">
+                                    <span class="mx-3" style="color: #999;"><small>+$10</small></span>
+                                    <input type="radio" id="large" name="size" value="large">
                                     <label for="large"></label>
                                 </div>
                             </div>
                         </div>
+                     
                         <div class="mx-1 mb-3 sb_model_body1">
-                            <p style="border-bottom:  1px solid #161616; padding: 10px;" class="mb-0">Stuffings</p>
+                            <p style="border-bottom: 1px solid #161616; padding: 10px;" class="mb-0">Stuffings</p>
                             <div class="sb_option">
                                 <span>Palak</span>
                                 <div class="d-flex">
-                                    <span class=" mx-3" style="color: #999;"><small>+$3</small></span>
+                                    <span class="mx-3" style="color: #999;"><small>+$3</small></span>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"
-                                            checked>
-                                        <label class="form-check-label" for="flexCheckChecked"></label>
+                                        <input class="form-check-input stuffing-checkbox" type="checkbox" value="3">
+                                        <label class="form-check-label"></label>
                                     </div>
                                 </div>
                             </div>
                             <div class="sb_option">
                                 <span>Paneer</span>
-                                <div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label class="form-check-label" for="flexCheckDefault"></label>
-                                    </div>
+                                <div class="form-check">
+                                    <input class="form-check-input stuffing-checkbox" type="checkbox" value="2">
+                                    <label class="form-check-label"></label>
                                 </div>
                             </div>
                         </div>
+                       
                         <div class="mx-1 mb-3 sb_model_body1">
-                            <p style="border-bottom:  1px solid #161616; padding: 10px;" class="mb-0">Dips</p>
+                            <p style="border-bottom: 1px solid #161616; padding: 10px;" class="mb-0">Dips</p>
                             <div class="sb_option">
                                 <span>Green Chutney</span>
                                 <div class="d-flex">
-                                    <span class=" mx-3" style="color: #999;"><small>+$3</small></span>
+                                    <span class="mx-3" style="color: #999;"><small>+$3</small></span>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"
-                                            checked>
-                                        <label class="form-check-label" for="flexCheckChecked"></label>
+                                        <input class="form-check-input dip-checkbox" type="checkbox" value="3">
+                                        <label class="form-check-label"></label>
                                     </div>
                                 </div>
                             </div>
                             <div class="sb_option">
-                                <span>Krtchup</span>
+                                <span>Ketchup</span>
                                 <div class="d-flex">
-                                    <span class=" mx-3" style="color: #999;"><small>+$3</small></span>
+                                    <span class="mx-3" style="color: #999;"><small>+$2</small></span>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label class="form-check-label" for="flexCheckDefault"></label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="sb_option">
-                                <span>Dahi Rayta</span>
-                                <div class="d-flex">
-                                    <span class=" mx-3" style="color: #999;"><small>+$3</small></span>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label class="form-check-label" for="flexCheckDefault"></label>
+                                        <input class="form-check-input dip-checkbox" type="checkbox" value="2">
+                                        <label class="form-check-label"></label>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+               
                     <div style="background-color: #020202; color: white; border-top: 1px solid #545454;">
                         <div class="d-flex justify-content-between align-content-center p-4">
                             <div class="sb_qty_btn">
                                 <span><i class="fa-solid fa-trash-can" onclick="deleteItem(0)"
                                         style="color: #000 !important;"></i></span>
-                                <span>1</span>
+                                <span id="quantity-display">1</span>
                                 <span><i class="fa-solid fa-plus" onclick="updateQuantity(0, 1)"></i></span>
                             </div>
-                            <div><button class="sb_btn">Add Item</button></div>
+                            <div><button class="sb_btn" id="addItemBtn" onclick="addItemToCart()">Add Item</button></div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div> -->
+        <div class="modal fade" id="customiseModal" tabindex="-1" aria-labelledby="customiseModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content sb_modal-content3">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="customiseModalLabel">Customize Your Order</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Dynamic content will be injected here -->
+                        <div id="customize-content"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="saveCustomizations">Save changes</button>
+                    </div>
+                </div>
+            </div>
         </div>
+        
     </main>
     <footer>
         <div class="y_container">
