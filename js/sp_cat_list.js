@@ -10,7 +10,7 @@ var cat_list_data = [
         rate: '4.7',
         des: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam, eaque quia eius maiores, alias eligendi fuga iure sit commodi aliquid consequatur amet odio error deleniti, dolor exercitationem iste a. Ipsa!',
         price: '$ 120',
-        size: [{ title: 'Small', price: '$10' }, { title: 'Medium', price: '$14' }, { title: 'Large', price: '$18' }],
+        types: [{ title: 'Regular', price: '$10' }, { title: 'Butter', price: '$14' }, { title: 'Cheese', price: '$18' }],
         stuffings: [{ title: 'Palack', price: '$10' }, { title: 'Paneer', price: '00' }],
         dips: [{ title: 'Green chutney', price: '$3' }, { title: 'Ketchup', price: '$3' }, { title: 'Dahi rayta', price: '$3' }],
         sub_cat: 'Samosa',

@@ -1,3 +1,6 @@
+const cart = JSON.parse(localStorage.getItem('cart'));
+console.log("cart>>>>>>>>>>>>>>",cart);
+
 // Sample order data (replace with your actual data structure)
 const orders = [
     { orderDate: '19/06/2024', invoiceNo: '565465453', totalAmount: '$360' },
@@ -66,7 +69,7 @@ function openInvoiceModal(order) {
 function generateInvoiceHTML(order) {
     // This is a simplified version. You should expand this with actual order details.
     return `
-        <div class="text-center p-2">
+        <div class="text-center py-2">
             <h3>Royal Cafe & Restaurant</h3>
             <p><small style="color: #999999;">1315 Dye Street, Minnesota - 55347</small></p>
         </div>
@@ -136,85 +139,27 @@ function generateInvoiceHTML(order) {
     `;
 }
 
-// Function to download HTML as a file
-// function downloadInvoice(invoiceHTML, fileName) {
-//     const blob = new Blob([invoiceHTML], { type: 'text/html' });
-//     const link = document.createElement('a');
-//     link.href = URL.createObjectURL(blob);
-//     link.download = fileName;
-//     link.click();
-//     URL.revokeObjectURL(link.href);
-// }
-// Function to download HTML as a file
-function downloadInvoice(invoiceHTML, fileName) {
-    const fullInvoiceHTML = `
-        <!DOCTYPE html>
-        <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Invoice - Royal Cafe & Restaurant</title>
-            <style>
-                .invoice-container {
-                    margin: 0 auto;
-                    background-color: #2c2c2c;
-                    border-radius: 8px;
-                    padding: 20px 0;
-                }
-                h3 {
-                    text-align: center;
-                    color: #ffffff;
-                    margin-bottom: 5px;
-                }
-                .text-center {
-                    text-align: center;
-                }
-                small {
-                    color: #999999;
-                }
-                .border-bottom {
-                    border-bottom: 1px dashed #545454;
-                    margin: 10px 0;
-                }
-                th {
-                    padding: 10px 0;
-                    text-align: left;
-                    border-bottom: 1px dashed #545454;
-                }
-                .text-end {
-                    text-align: right;
-                }
-                .mt-3 {
-                    margin-top: 15px;
-                }
-            </style>
-        </head>
-        <body>
-            <div class="invoice-container">
-                ${invoiceHTML}
-            </div>
-        </body>
-        </html>
-    `;
-    const blob = new Blob([fullInvoiceHTML], { type: 'text/html' });
-    const link = document.createElement('a');
-    link.href = URL.createObjectURL(blob);
-    link.download = fileName;
-    link.click();
-    URL.revokeObjectURL(link.href);
+function downloadInvoicePDF(invoiceContent) {
+    // Create a temporary div to wrap the invoice content for the PDF
+    const invoiceWrapper = document.createElement('div');
+    invoiceWrapper.innerHTML = invoiceContent;
+    
+    // Use html2pdf to generate the PDF
+    html2pdf().from(invoiceWrapper).set({
+        margin: 1,
+        filename: 'invoice.pdf',
+        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' },
+    }).save();
 }
 
 // Event listener for download invoice button
 document.getElementById('downloadInvoice').addEventListener('click', function () {
     const invoiceContent = document.getElementById('invoiceContent').innerHTML;
-    downloadInvoice(invoiceContent, 'invoice.html');
+    downloadInvoicePDF(invoiceContent);
 });
 
-// Event listener for download invoice button
-document.getElementById('downloadInvoice').addEventListener('click', function () {
-    const invoiceContent = document.getElementById('invoiceContent').innerHTML;
-    downloadInvoice(invoiceContent, 'invoice.html');
-});
+
+
 
 // Event listener for 'Order Now' button
 document.addEventListener('DOMContentLoaded', function () {
@@ -226,26 +171,3 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// Event listener for download invoice button
-document.getElementById('downloadInvoice').addEventListener('click', function () {
-    const invoiceContent = document.getElementById('invoiceContent').innerHTML;
-    const fullInvoiceHTML = `
-        <html>
-        <head>
-            <style>
-                body { font-family: Arial, sans-serif; color: white; background-color: #1e1e1e; }
-                .invoice-container { width: 100%; max-width: 400px; margin: 0 auto; padding: 20px 0; }
-                table { width: 100%; border-collapse: collapse; }
-                th { border-bottom: 1px dashed #545454; padding: 10px; text-align: left; }
-                td {  padding: 10px; text-align: left; }
-            </style>
-        </head>
-        <body>
-            <div class="invoice-container">
-                ${invoiceContent}
-            </div>
-        </body>
-        </html>
-    `;
-    downloadInvoice(fullInvoiceHTML, 'invoice.html');
-});
