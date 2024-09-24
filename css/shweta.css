@@ -77,7 +77,7 @@
     }
 
     .sb_card_body1 {
-        height: 210px;
+        /* height: 210px; */
         border-radius: 0 012px 12px;
     }
 
@@ -387,9 +387,9 @@
             margin: 0 10px;
         }
 
-        .sb_card_body1 {
+        /* .sb_card_body1 {
             height: 225px;
-        }
+        } */
     }
 
     @media (max-width:425px) {

@@ -173,7 +173,10 @@
     opacity: 0;
 }
 
-
+.sp_btn a{
+    color: white;
+    text-decoration: none;
+}
 .s_modal_inner .s_modal_intxt {
     font-size: 14px !important;
     background-color: transparent;
