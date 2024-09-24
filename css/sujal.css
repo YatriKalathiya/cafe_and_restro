@@ -151,14 +151,31 @@
     display: none;
 }
 .s_catlist_card .btn-close {
-    background-image: url('/sujal_img/close.png');
-    width: 24px;
-    height: 24px;
-    background-size: cover;
+    width: 15px;
+    height: 15px;
     margin: 20px;
+    opacity: 1;
+    color: white;
+    background-image: url('/sujal_img/close.png');
+    background-size: cover;
 }
+.modal-header {
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    text-align: left;
+    font-size: 23px;
+    color: white;
+    background-color: #261f31;
+    border-bottom: 0px;
+  }
+  
+/* .btn-close i:focus-visible {
+    outline-color: white!important;
+} */
 .s_modal_inner {
     margin: 20px 10px;
+    margin-top: 0px;
     background-color: #040404;
     border: 1px solid ;
     border-radius: 10px;
@@ -188,10 +205,7 @@
     accent-color: white;
     text-wrap: normal;
 }
-.s_modal_inner .s_modal_intxt::placeholder {
-    color: white;
-    font-size: 14px !important;
-}
+
 /* custome radio button css */
 .s_modal_inner .radio-wrapper {
     position: relative;
@@ -319,7 +333,7 @@
     width: 820px;
     margin:auto;
     padding: 10px 20px;
-    border: 1px solid ;
+    border: 1px solid rgba(255, 255, 255,0.1);
     border-radius: 5px;
 }
 .sp_popular {
@@ -349,12 +363,19 @@
 } */
 .search_not_found {
     width: 250px;
-    margin-top: 200px !important;
+    margin: 100px auto !important;
 }
 
+.search_not_found  h5{
+    color: grey;
+}
 
-
-
+/* catlist page */
+.sp_card_detail li::marker {
+    content: "•";
+    font-size: 14px;
+    padding: auto 10px;
+}
 
 
 
@@ -693,4 +714,10 @@
      height: 625px;
 }
 
+}
+@media (min-width: 300px) and (max-width: 375px){
+    .sp_popular {
+        text-align: center;
+        margin-bottom: 10px;
+    }
 }

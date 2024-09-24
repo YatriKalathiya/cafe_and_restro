@@ -168,11 +168,11 @@ function cat_list(x) {
                     <div class="p-3">
                         <h5>${el.title}</h5>
                         <div>
-                            <small class="d-flex text-secondary">
+                            <small class="d-flex text-secondary sp_card_detail ">
                                 ${el.cat}
-                                <ul class="d-flex ps-0 ms-auto">
-                                    <li class="mx-3">${el.type}</li>
-                                    <li class="mx-3"><img src="/sujal_img/star.png" class="mx-1 align-self-center mb-1"><span>${el.rate}</span></li>
+                                <ul class="d-flex ps-0 mb-1">
+                                    <li class="ms-3"><span class="mx-1">${el.type}</span></li>
+                                    <li class="ms-3"><img src="/sujal_img/star.png" class="mx-1 align-self-center mb-1"><span>${el.rate}</span></li>
                                 </ul>
                             </small>
                             <p class="sp_fs_12">${el.des}</p>
@@ -184,9 +184,9 @@ function cat_list(x) {
                             <div class="modal fade" id="exampleModal${index}" tabindex="-1" aria-labelledby="exampleModalLabel${index}" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                                     <div class="modal-content">
-                                        <button type="button" class="btn-close ms-auto text-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        <h5 class="modal-title text-center" id="exampleModalLabel${index}">Customize As Per Your Taste</h5>
-                                        <div class="modal-body">
+                                        <button type="button" class="btn-close ms-auto text-white mb-0" data-bs-dismiss="modal"></button>
+                                        <h5 class="modal-title text-center pb-4" id="exampleModalLabel${index}">Customize As Per Your Taste</h5>
+                                        <div class="modal-body pt-0 mt-0">
                                             <div class="s_modal_inner">
                                                 <small>
                                                     <p class="s_modal_inp">Add Instructions</p>

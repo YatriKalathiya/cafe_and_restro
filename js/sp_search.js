@@ -211,8 +211,8 @@ function searchhanddler(x) {
                                 <div class="modal fade" id="exampleModal${index}" tabindex="-1" aria-labelledby="exampleModalLabel${index}" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                                         <div class="modal-content">
-                                            <button type="button" class="btn-close ms-auto text-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                                            <h5 class="modal-title text-center" id="exampleModalLabel${index}">Customize As Per Your Taste</h5>
+                                            <button type="button" class="btn-close ms-auto text-white mb-0" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark" style="color:#ffffff"></i></button>
+                                            <h5 class="modal-title text-center pb-3" id="exampleModalLabel${index}">Customize As Per Your Taste</h5>
                                             <div class="modal-body">
                                                 <div class="s_modal_inner">
                                                     <small>
