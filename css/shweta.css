@@ -46,11 +46,11 @@
     }
 
     .sb_btn {
-        background-color: #FB7514;
-        color: #ffffff;
+        background-color: #FB7514 !important;
+        color: #ffffff !important;
         border: 0;
         border-radius: 5px;
-        padding: 5px 45px;
+        padding: 5px 45px !important;
     }
 
     .sb_btn:hover {
@@ -78,15 +78,15 @@
 
     .sb_card_body1 {
         /* height: 210px; */
-        border-radius: 0 012px 12px;
+        border-radius: 0 0 12px 12px;
     }
 
     .sb_card1 {
         background-color: transparent;
         border: none;
         width: auto !important;
-        border: 1px solid #201d1d;
-        border-radius: 12px;
+        border: 1px solid #201d1d !important;
+        border-radius: 12px !important;
     }
 
     .sb_dots {
@@ -128,8 +128,8 @@
     /* ================================= Order Summry Model Css =============================== */
 
     .sb_modal-content {
-        background-color: #0F0F0F;
-        color: #ffffff;
+        background-color: #0F0F0F !important;
+        color: #ffffff !important;
         position: relative;
     }
 
@@ -184,7 +184,7 @@
     /* ================================= Review Model Css =============================== */
 
     .sb_model-header1 {
-        border-bottom: none;
+        border-bottom: none !important;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -207,13 +207,13 @@
     /* ================================= Review Model Css =============================== */
 
     .sb_modal-content2 {
-        background-color: #0F0F0F;
-        color: #ffffff;
+        background-color: #0F0F0F !important;
+        color: #ffffff !important;
         position: relative;
     }
 
     .sb_model-header2 {
-        border-bottom: none;
+        border-bottom: none !important;
     }
 
     .sb_model-header2 img {
@@ -302,13 +302,13 @@
     }
 
     .sb_card2 {
-        background-color: #020202;
-        color: #ffffff;
-        border: 1px solid #201d1d;
+        background-color: #020202 !important ;
+        color: #ffffff !important;
+        border: 1px solid #201d1d !important;
     }
 
     .sb_modal-content3 {
-        background-color: #1c1c1c;
+        background-color: #1c1c1c !important;
         color: #fff;
         border-radius: 10px;
         padding: 20px;
@@ -368,7 +368,7 @@
     }
     @media (min-width: 576px) {
         .sb_modal-dialog {
-            max-width: 399px;
+            width: 380px !important;
             margin: 1.75rem auto;
         }
     }
@@ -433,11 +433,11 @@
         }
 
         .sb_btn {
-            padding: 5px 30px;
+            padding: 5px 30px !important;
         }
 
         .sb_btn_dark {
-            padding: 5px 30px;
+            padding: 5px 30px !important;
         }
 
         .sb_model-header img {

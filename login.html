@@ -17,15 +17,15 @@
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <link rel="stylesheet" href="css/yatri.css">
 </head>
-<body>
-    <div class="y_bg_image1">
+<body>  
+    <div class="y_bg_image">
         <div class="y_overlay">
             <div class="y_login_form">
-                <h1>Welcome Back To <br> Royal Cafe & Restaurant</h1>
-                <form>
+                <h1>Welcome Back To Royal Cafe & Restaurant</h1>
+                <form id="loginForm">
                     <p class="text-center">Login</p>
-                    <input type="text" placeholder="Enter your Name" required>
-                    <input type="text" placeholder="Enter your Mobile No." required>
+                    <input type="text" id="username" placeholder="Enter your Name" required>
+                    <input type="text" id="mobile" placeholder="Enter your Mobile No."  pattern="\d{10}" title="Enter valid 10-digit mobile number">
                     
                     <button type="submit"><a href="otp.html" class="text-decoration-none text-light">Login</a></button>
                 </form>

@@ -22,7 +22,7 @@ function generateOrderCards(orders) {
     orders.forEach((order, index) => {
         const cardHTML = `
             <div class="col-xl-3 col-lg-4 col-md-6 col-12">
-                <div class="card sb_card2">
+                <div class="card sb_card2" >
                     <div class="card-body">
                         <div class="sb_line py-3 view-invoice" data-bs-toggle="modal" data-bs-target="#invoiceModal" data-index="${index}">View Invoice</div>
                         <div>

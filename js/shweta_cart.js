@@ -38,9 +38,9 @@ function updateCartDisplay() {
                                     <div class="sb_qty_btn">
                                         ${item.count === 1
                 ? `<span><i class="fa-solid fa-trash-can" onclick="deleteItem(${index})" style="color: #000 !important;"></i></span>`
-                : `<span><i class="fa-solid fa-minus" onclick="updateQuantity(${index}, -1)"></i></span>`}
+                : `<span><i class="fa-solid fa-minus" onclick="updateQuantity(${index}, -1)" style="color: #fff "></i></span>`}
                                         <span>${item.count}</span>
-                                        <span><i class="fa-solid fa-plus" onclick="updateQuantity(${index}, 1)"></i></span>
+                                        <span><i class="fa-solid fa-plus" onclick="updateQuantity(${index}, 1)" style="color: #fff "></i></span>
                                     </div>
                                 </div>
                             </div>
