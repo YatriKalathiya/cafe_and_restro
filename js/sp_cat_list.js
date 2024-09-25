@@ -294,14 +294,14 @@ function addItemToCart(index) {
     let selectedSize = null;
     let selectedType = null;
 
-    if (item.size) {
-        const sizeInput = document.querySelector(`#exampleModal${index} input[name="size"]:checked`);
-        if (sizeInput) {
-            selectedSize = sizeInput.value;
-        } else {
-            console.warn("No size selected");
-        }
-    }
+    // if (item.size) {
+    //     const sizeInput = document.querySelector(`#exampleModal${index} input[name="size"]:checked`);
+    //     if (sizeInput) {
+    //         selectedSize = sizeInput.value;
+    //     } else {
+    //         console.warn("No size selected");
+    //     }
+    // }
     
     if (item.types) {
         const typeInput = document.querySelector(`#exampleModal${index} input[name="type"]:checked`);

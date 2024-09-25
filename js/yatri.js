@@ -1,9 +1,21 @@
   // Automatically move focus to the next input field after entering a number
-  $('.otp_input').on('keyup', function () {
-    if (this.value.length === this.maxLength) {
-        $(this).next('.otp_input').focus();
-    }
-});
+  const inputs = document.querySelectorAll('.otp_input');
+
+  inputs.forEach((input, index) => {
+      input.addEventListener('input', () => {
+          // If a value is entered, move to the next input
+          if (input.value.length === 1 && index < inputs.length - 1) {
+              inputs[index + 1].focus();
+          }
+      });
+
+      input.addEventListener('keydown', (e) => {
+          // Handle backspace key
+          if (e.key === 'Backspace' && input.value.length === 0 && index > 0) {
+              inputs[index - 1].focus();
+          }
+      });
+  });
 
 
 
