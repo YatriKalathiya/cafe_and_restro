@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+    crossorigin="anonymous">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="css/yatri.css">
+</head>
+<body>
+    <div class="main_header">
+        <header class="y_header">
+          <div class="y_container">
+            <div class="row align-items-center">
+              <div class="col-auto d-flex align-items-center">
+                <div class="logo me-4">
+                  <a href="index.html">LOGO</a>
+                </div>
+                <nav
+                  class="nav-links d-none d-md-flex  ps-lg-5 ms-lg-5 ps-md-0 ms-md-0">
+                  <a class="active" href="index.html">Home</a>
+                  <a href="shweta_html/Order.html">My Order</a>
+                </nav>
+              </div>
+              <div class="col-auto ms-auto d-md-none">
+                <button class="btn btn-link text-white mobile-nav-toggle"
+                  type="button" data-bs-toggle="offcanvas"
+                  data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu">
+                  <i class="fas fa-bars"></i>
+                </button>
+              </div>
+              <div class="col desktop-nav">
+                <div class="d-flex justify-content-end align-items-center">
+                  <a href="sujal_html/search.html" class="text-decoration-none me-3">
+                    <div class="y_search_container">
+                      <span class="search-icon">
+                        <img src="yatri_img/y_serach_icon.png" alt="Search">
+                      </span>
+                      <input type="text" placeholder="Search..."
+                        class="custom-search-input">
+                    </div>
+                  </a>
+                  <a href="shweta_html/Cart.html" class="text-decoration-none me-3">
+                    <div class="cart-icon">
+                      <img src="yatri_img/y_cart_icon.png" alt="Cart">
+                      <span class="cart-count">0</span>
+                    </div>
+                  </a>
+                  <div class="user-section">
+                    <div class="dropdown">
+                      <button class="dropdown-toggle" type="button"
+                        id="dropdownMenuButton" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <i class="fas fa-user"></i> Smith Johnson <i
+                          class="fas fa-caret-down"></i>
+                      </button>
+                      <!-- Dropdown Menu -->
+                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#y_profileModal">Profile</a></li>
+                        <li><a class="dropdown-item" href="login.html">Login</a></li>
+                        <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#logoutModal">Logout</a></li>
+                      </ul>
+                      <!-- Profile Modal -->
+                      <div class="modal fade" id="y_profileModal" tabindex="-1" aria-labelledby="y_profileModalLabel" aria-hidden="true" data-bs-backdrop="false">
+                        <div class="modal-dialog modal-dialog-centered y_modal-dialog">
+                          <div class="modal-content y_modal-content">
+                            <div class="modal-header y_modal-header">
+                              <h5 class="modal-title" id="y_profileModalLabel">Profile</h5>
+                              <button type="button" class="btn-close y_btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body y_modal-body">
+                              <!-- Profile Form -->
+                              <div id="profileForm">
+                                <form>
+                                  <div class="mb-3">
+                                    <label for="y_name" class="form-label">Name</label>
+                                    <input type="text" class="form-control y_input" id="y_name" value="Smith Johnson">
+                                  </div>
+                                  <div class="mb-3">
+                                    <label for="y_email" class="form-label">Email</label>
+                                    <input type="email" class="form-control y_input" id="y_email" value="example@gmail.com">
+                                  </div>
+                                  <div class="mb-3">
+                                    <label for="y_mobile" class="form-label">Mobile No.</label>
+                                    <input type="tel" class="form-control y_input" id="y_mobile" value="+91 66666 66666">
+                                  </div>
+                                  <button type="button" id="y_editProfileBtn" class="btn y_btn">Edit Profile</button>
+                                </form>
+                              </div>
+                              <!-- Edit Profile Form -->
+                              <div id="editProfileForm" style="display: none;">
+                                <form>
+                                  <div class="mb-3">
+                                    <label for="y_editName" class="form-label">Name</label>
+                                    <input type="text" class="form-control y_input" id="y_editName" placeholder="Enter your name">
+                                  </div>
+                                  <div class="mb-3">
+                                    <label for="y_editEmail" class="form-label">Email</label>
+                                    <input type="email" class="form-control y_input" id="y_editEmail" placeholder="Enter your email">
+                                  </div>
+                                  <div class="mb-3">
+                                    <label for="y_editMobile" class="form-label">Mobile No.</label>
+                                    <input type="tel" class="form-control y_input" id="y_editMobile" placeholder="Enter your mobile number">
+                                  </div>
+                                  <button type="button" id="y_saveProfileBtn" class="btn y_btn">Update</button>
+                                </form>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- logout modal  -->
+                      <!-- Logout Modal -->
+                      <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true" data-bs-backdrop="false">
+                        <div class="modal-dialog y_logoutModel-dialog">
+                            <div class="modal-content y_logoutModel-content">
+                                <div class="modal-body y_logoutModel-body px-0">
+                                    <p>Are you sure you want to logout?</p>
+                                    <div class="d-flex">
+                                      <button type="button" class="btn mx-3 y_logoutModel-cancel-btn" data-bs-dismiss="modal">Cancel</button>
+                                      <button type="button" class="btn mx-3 y_logoutModel-logout-btn">Logout</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                       
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+      </div>
+    <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="/js/yatri.js"></script>
+</body>
+</html>

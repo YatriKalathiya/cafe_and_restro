@@ -1,13 +1,12 @@
-const cart = JSON.parse(localStorage.getItem('cart'));
-console.log("cart>>>>>>>>>>>>>>",cart);
 
 // Sample order data (replace with your actual data structure)
 const orders = [
-    { orderDate: '19/06/2024', invoiceNo: '565465453', totalAmount: '$360' },
-    { orderDate: '20/06/2024', invoiceNo: '765445454', totalAmount: '$480' },
-    { orderDate: '21/06/2024', invoiceNo: '865465453', totalAmount: '$150' },
-    { orderDate: '22/06/2024', invoiceNo: '965465453', totalAmount: '$520' }
+    { orderDate: '19/06/2024', invoiceNo: '565465453', table:'05', items: [{title: 'Dosa', rate: 120, qty: 1},{title: 'Samosa', rate: 80, qty: 1}], totalAmount: 200 },
+    { orderDate: '20/06/2024', invoiceNo: '765445454', table:'06', items: [{title: 'Samosa', rate: 80, qty: 2}], totalAmount: 160 },
+    { orderDate: '21/06/2024', invoiceNo: '865465453', table:'08', items: [{title: 'Panipuri', rate: 20, qty: 5}], totalAmount: 100 },
+    { orderDate: '22/06/2024', invoiceNo: '965465453', table:'04', items: [{title: 'Dabeli', rate: 50, qty: 3}], totalAmount: 150 }
 ];
+
 
 // Function to generate dynamic order cards
 function generateOrderCards(orders) {
@@ -39,7 +38,7 @@ function generateOrderCards(orders) {
                             <div style="border-bottom: 1px dashed #545454; margin: 10px 0;"></div>
                             <div class="d-flex align-content-center justify-content-between">
                                 <div style="color: #737373;">Total Amount</div>
-                                <div>${order.totalAmount}</div>
+                                <div>$${order.totalAmount}</div>
                             </div>
                         </div>
                     </div>
@@ -67,7 +66,20 @@ function openInvoiceModal(order) {
 
 // Function to generate HTML invoice
 function generateInvoiceHTML(order) {
-    // This is a simplified version. You should expand this with actual order details.
+    let itemsHTML = '';
+
+    // Loop through each item in the order and generate table rows
+    order.items.forEach(item => {
+        const itemTotal = item.rate * item.qty;
+        itemsHTML += `
+            <tr>
+                <td>${item.title}</td>
+                <td>$${item.rate}</td>
+                <td>${item.qty}</td>
+                <td>$${itemTotal}</td>
+            </tr>
+        `;
+    });
     return `
         <div class="text-center py-2">
             <h3>Royal Cafe & Restaurant</h3>
@@ -98,24 +110,13 @@ function generateInvoiceHTML(order) {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Masala Dosa</td>
-                        <td>$120</td>
-                        <td>2</td>
-                        <td>$360</td>
-                    </tr>
-                    <tr>
-                       <td>Masala Dosa</td>
-                       <td>$120</td>
-                       <td>2</td>
-                       <td>$360</td>
-                </tr>
+                    ${itemsHTML}
                 </tbody>
                 <tfoot>
                    <tr style="border-bottom: 1px dashed #545454;"></tr>
                     <tr>
                         <td colspan="3" class="text-end">Sub Total:</td>
-                        <td>$480</td>
+                        <td>$${order.totalAmount}</td>
                     </tr>
                     <tr>
                         <td colspan="3" class="text-end">Tax:</td>
@@ -128,7 +129,7 @@ function generateInvoiceHTML(order) {
                     <tr style="border-bottom: 1px dashed #545454;"></tr>
                     <tr>
                         <td colspan="3" class="text-end">Total:</td>
-                        <td>${order.totalAmount}</td>
+                        <td>$${order.totalAmount + 20 + 25}</td>
                     </tr>
                     <tr class="text-center mt-3">
                         <td colspan="4"><small style="color: #999999;">Thank You! Visit Again</small></td>
@@ -139,27 +140,40 @@ function generateInvoiceHTML(order) {
     `;
 }
 
-function downloadInvoicePDF(invoiceContent) {
-    // Create a temporary div to wrap the invoice content for the PDF
+// Function to download the invoice as a PDF
+function downloadInvoicePDF() {
+    const invoiceContent = document.getElementById('invoiceContent').innerHTML;
+    
+    if (!invoiceContent) {
+        console.error('Invoice content element not found');
+        return;
+    }
+
     const invoiceWrapper = document.createElement('div');
     invoiceWrapper.innerHTML = invoiceContent;
-    
-    // Use html2pdf to generate the PDF
+
+    const elementsToStyle = invoiceWrapper.querySelectorAll('*');
+    elementsToStyle.forEach((el) => {
+        el.style.color = 'black';  
+        el.style.backgroundColor = 'white'; 
+    });
+
     html2pdf().from(invoiceWrapper).set({
         margin: 1,
         filename: 'invoice.pdf',
         jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' },
+        html2canvas: {
+            scale: 2,  
+            logging: true,  
+            useCORS: true  
+        },
     }).save();
 }
 
-// Event listener for download invoice button
+// Event listener for "Download Invoice" button inside modal
 document.getElementById('downloadInvoice').addEventListener('click', function () {
-    const invoiceContent = document.getElementById('invoiceContent').innerHTML;
-    downloadInvoicePDF(invoiceContent);
+    downloadInvoicePDF();
 });
-
-
-
 
 // Event listener for 'Order Now' button
 document.addEventListener('DOMContentLoaded', function () {
@@ -170,4 +184,3 @@ document.addEventListener('DOMContentLoaded', function () {
         generateOrderCards(orders);
     });
 });
-
