@@ -51,109 +51,110 @@
                                     <span class="cart-count">0</span>
                                 </div>
                             </a>
-                            <div class="user-section">
-                                <div class="dropdown" id="userDropdown" style="display: none;">
-                                    <button class="dropdown-toggle" type="button" id="dropdownMenuButton"
-                                        data-bs-toggle="dropdown" aria-expanded="false">
-                                        <i class="fas fa-user"></i> Smith Johnson <i class="fas fa-caret-down"></i>
-                                    </button>
-                                    <!-- Dropdown Menu -->
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
-                                                data-bs-target="#y_profileModal">Profile</a></li>
-                                        <li><a class="dropdown-item" href="login.html">Login</a></li>
-                                        <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
-                                                data-bs-target="#logoutModal">Logout</a></li>
-                                    </ul>
-                                    <!-- Profile Modal -->
-                                    <div class="modal fade" id="y_profileModal" tabindex="-1"
-                                        aria-labelledby="y_profileModalLabel" aria-hidden="true"
-                                        data-bs-backdrop="false">
-                                        <div class="modal-dialog modal-dialog-centered y_modal-dialog">
-                                            <div class="modal-content y_modal-content">
-                                                <div class="modal-header y_modal-header">
-                                                    <h5 class="modal-title" id="y_profileModalLabel">Profile</h5>
-                                                    <button type="button" class="btn-close y_btn-close"
-                                                        data-bs-dismiss="modal" aria-label="Close"></button>
-                                                </div>
-                                                <div class="modal-body y_modal-body">
-                                                    <!-- Profile Form -->
-                                                    <div id="profileForm">
-                                                        <form>
-                                                            <div class="mb-3">
-                                                                <label for="y_name" class="form-label">Name</label>
-                                                                <input type="text" class="form-control y_input"
-                                                                    id="y_name" value="Smith Johnson">
-                                                            </div>
-                                                            <div class="mb-3">
-                                                                <label for="y_email" class="form-label">Email</label>
-                                                                <input type="email" class="form-control y_input"
-                                                                    id="y_email" value="example@gmail.com">
-                                                            </div>
-                                                            <div class="mb-3">
-                                                                <label for="y_mobile" class="form-label">Mobile
-                                                                    No.</label>
-                                                                <input type="tel" class="form-control y_input"
-                                                                    id="y_mobile" value="+91 66666 66666">
-                                                            </div>
-                                                            <button type="button" id="y_editProfileBtn"
-                                                                class="btn y_btn">Edit Profile</button>
-                                                        </form>
+                                <div class="user-section">
+                                    <div class="dropdown" id="userDropdown">
+                                        <button class="dropdown-toggle" type="button" id="dropdownMenuButton"
+                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                            <i class="fas fa-user"></i><span id="usernameDisplay" class="mx-2"></span> <i
+                                                class="fas fa-caret-down"></i>
+                                        </button>
+                                        <!-- Dropdown Menu -->
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#y_profileModal">Profile</a></li>
+                                            <li><a class="dropdown-item" href="login.html">Login</a></li>
+                                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#logoutModal">Logout</a></li>
+                                        </ul>
+                                        <!-- Profile Modal -->
+                                        <div class="modal fade" id="y_profileModal" tabindex="-1"
+                                            aria-labelledby="y_profileModalLabel" aria-hidden="true"
+                                            data-bs-backdrop="false">
+                                            <div class="modal-dialog modal-dialog-centered y_modal-dialog">
+                                                <div class="modal-content y_modal-content">
+                                                    <div class="modal-header y_modal-header">
+                                                        <h5 class="modal-title" id="y_profileModalLabel">Profile</h5>
+                                                        <button type="button" class="btn-close y_btn-close"
+                                                            data-bs-dismiss="modal" aria-label="Close"></button>
                                                     </div>
-                                                    <!-- Edit Profile Form -->
-                                                    <div id="editProfileForm" style="display: none;">
-                                                        <form>
-                                                            <div class="mb-3">
-                                                                <label for="y_editName" class="form-label">Name</label>
-                                                                <input type="text" class="form-control y_input"
-                                                                    id="y_editName" placeholder="Enter your name">
-                                                            </div>
-                                                            <div class="mb-3">
-                                                                <label for="y_editEmail"
-                                                                    class="form-label">Email</label>
-                                                                <input type="email" class="form-control y_input"
-                                                                    id="y_editEmail" placeholder="Enter your email">
-                                                            </div>
-                                                            <div class="mb-3">
-                                                                <label for="y_editMobile" class="form-label">Mobile
-                                                                    No.</label>
-                                                                <input type="tel" class="form-control y_input"
-                                                                    id="y_editMobile"
-                                                                    placeholder="Enter your mobile number">
-                                                            </div>
-                                                            <button type="button" id="y_saveProfileBtn"
-                                                                class="btn y_btn">Update</button>
-                                                        </form>
+                                                    <div class="modal-body y_modal-body">
+                                                        <!-- Profile Form -->
+                                                        <div id="profileForm">
+                                                            <form>
+                                                                <div class="mb-3">
+                                                                    <label for="y_name" class="form-label">Name</label>
+                                                                    <input type="text" class="form-control y_input"
+                                                                        id="y_name" >
+                                                                </div>
+                                                                <div class="mb-3">
+                                                                    <label for="y_email" class="form-label">Email</label>
+                                                                    <input type="email" class="form-control y_input"
+                                                                        id="y_email" >
+                                                                </div>
+                                                                <div class="mb-3">
+                                                                    <label for="y_mobile" class="form-label">Mobile
+                                                                        No.</label>
+                                                                    <input type="tel" class="form-control y_input"
+                                                                        id="y_mobile" >
+                                                                </div>
+                                                                <button type="button" class="btn y_btn" id="editProfileBtn">Edit Profile</button>
+                                                            </form>
+                                                        </div>
+
+                                                        <!-- Edit Profile Form -->
+                                                        <div id="editProfileForm" style="display: none;">
+                                                            <form>
+                                                                <div class="mb-3">
+                                                                    <label for="y_editName" class="form-label">Name</label>
+                                                                    <input type="text" class="form-control y_input"
+                                                                        id="y_editName" placeholder="Enter your name">
+                                                                </div>
+                                                                <div class="mb-3">
+                                                                    <label for="y_editEmail"
+                                                                        class="form-label">Email</label>
+                                                                    <input type="email" class="form-control y_input"
+                                                                        id="y_editEmail" placeholder="Enter your email">
+                                                                </div>
+                                                                <div class="mb-3">
+                                                                    <label for="y_editMobile" class="form-label">Mobile
+                                                                        No.</label>
+                                                                    <input type="tel" class="form-control y_input"
+                                                                        id="y_editMobile"
+                                                                        placeholder="Enter your mobile number">
+                                                                </div>
+                                                                <button type="button" id="y_saveProfileBtn"
+                                                                    class="btn y_btn">Update</button>
+                                                            </form>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <!-- logout modal  -->
-                                    <!-- Logout Modal -->
-                                    <div class="modal fade" id="logoutModal" tabindex="-1"
-                                        aria-labelledby="logoutModalLabel" aria-hidden="true" data-bs-backdrop="false">
-                                        <div class="modal-dialog y_logoutModel-dialog">
-                                            <div class="modal-content y_logoutModel-content">
-                                                <div class="modal-body y_logoutModel-body px-0">
-                                                    <p>Are you sure you want to logout?</p>
-                                                    <div class="d-flex">
-                                                        <button type="button" class="btn mx-3 y_logoutModel-cancel-btn"
-                                                            data-bs-dismiss="modal">Cancel</button>
-                                                        <button type="button"
-                                                            class="btn mx-3 y_logoutModel-logout-btn">Logout</button>
+
+                                        <!-- Logout Modal -->
+                                        <div class="modal fade" id="logoutModal" tabindex="-1"
+                                            aria-labelledby="logoutModalLabel" aria-hidden="true" data-bs-backdrop="false">
+                                            <div class="modal-dialog y_logoutModel-dialog">
+                                                <div class="modal-content y_logoutModel-content">
+                                                    <div class="modal-body y_logoutModel-body px-0">
+                                                        <p>Are you sure you want to logout?</p>
+                                                        <div class="d-flex">
+                                                            <button type="button" class="btn mx-3 y_logoutModel-cancel-btn"
+                                                                data-bs-dismiss="modal">Cancel</button>
+                                                            <button type="button" class="btn mx-3 y_logoutModel-logout-btn"
+                                                                id="logoutBtn">Logout</button>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+
                                     </div>
 
+                                    <div id="loginButton">
+                                        <a href="./login.html"> <button class="btn text-white">Login</button></a>
+                                    </div>
                                 </div>
-
-                                <div id="loginButton">
-                                   <a href="./login.html"> <button class="btn text-white">Login</button></a>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -186,10 +187,10 @@
 
                 </div>
                 <div class="user-section my-3">
-                    <div class="dropdown">
+                    <div class="dropdown" id="userDropdown">
                         <button class="dropdown-toggle" type="button" id="dropdownMenuButtonMobile"
                             data-bs-toggle="dropdown" aria-expanded="false">
-                            <span><i class="fas fa-user"></i> Smith Johnson</span>
+                            <span><i class="fas fa-user"></i> <span id="usernameDisplay" class="mx-2"></span> </span>
                             <i class="fas fa-caret-down"></i>
                         </button>
                         <!-- Dropdown Menu for Mobile -->
@@ -261,7 +262,6 @@
                             </div>
                         </div>
 
-                        <!-- mobile logout modal  -->
                         <!-- Mobile Logout Modal -->
                         <div class="modal fade" id="mobileLogoutModal" tabindex="-1"
                             aria-labelledby="mobileLogoutModalLabel" aria-hidden="true" data-bs-backdrop="false">
@@ -272,13 +272,16 @@
                                         <div class="d-flex">
                                             <button type="button" class="btn mx-3 y_mobileLogoutModel-cancel-btn"
                                                 data-bs-dismiss="modal">Cancel</button>
-                                            <button type="button"
-                                                class="btn mx-3 y_mobileLogoutModel-logout-btn">Logout</button>
+                                            <button type="button" class="btn mx-3 y_mobileLogoutModel-logout-btn"
+                                                id="logoutBtn">Logout</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div id="loginButton">
+                        <a href="./login.html"> <button class="btn text-white">Login</button></a>
                     </div>
                 </div>
                 <a class="nav-link active" href="index.html">Home</a>
@@ -293,6 +296,7 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
     <script src="/js/yatri.js"></script>
+    
 </body>
 
 </html>
