@@ -1,81 +1,113 @@
 
 // Sample order data (replace with your actual data structure)
-const orders = [
-    { orderDate: '19/06/2024', invoiceNo: '565465453', table:'05', items: [{title: 'Dosa', rate: 120, qty: 1},{title: 'Samosa', rate: 80, qty: 1}], totalAmount: 200 },
-    { orderDate: '20/06/2024', invoiceNo: '765445454', table:'06', items: [{title: 'Samosa', rate: 80, qty: 2}], totalAmount: 160 },
-    { orderDate: '21/06/2024', invoiceNo: '865465453', table:'08', items: [{title: 'Panipuri', rate: 20, qty: 5}], totalAmount: 100 },
-    { orderDate: '22/06/2024', invoiceNo: '965465453', table:'04', items: [{title: 'Dabeli', rate: 50, qty: 3}], totalAmount: 150 }
-];
+// const orders = [
+//     { orderDate: '19/06/2024', invoiceNo: '565465453', table:'05', items: [{title: 'Dosa', rate: 120, qty: 1},{title: 'Samosa', rate: 80, qty: 1}], totalAmount: 200 },
+//     { orderDate: '20/06/2024', invoiceNo: '765445454', table:'06', items: [{title: 'Samosa', rate: 80, qty: 2}], totalAmount: 160 },
+//     { orderDate: '21/06/2024', invoiceNo: '865465453', table:'08', items: [{title: 'Panipuri', rate: 20, qty: 5}], totalAmount: 100 },
+//     { orderDate: '22/06/2024', invoiceNo: '965465453', table:'04', items: [{title: 'Dabeli', rate: 50, qty: 3}], totalAmount: 150 }
+// ];
 
+// const orderDetails = JSON.parse(localStorage.getItem('orderDetails'));
 
-// Function to generate dynamic order cards
-function generateOrderCards(orders) {
-    const orderContainer = document.querySelector('.sb_container .row');
+document.addEventListener('DOMContentLoaded', function () {
+    const orderDetails = JSON.parse(localStorage.getItem('orderDetails'));
+    // console.log(orderDetails);
+    
+    const emptyOrderSection = document.getElementById('empty-order');
+    const addOrderSection = document.getElementById('add_order');
 
-    if (!orderContainer) {
-        console.error('Order container not found');
-        return;
+    // Function to toggle between sections
+    function toggleOrderSection() {
+        if (orderDetails && orderDetails.items && orderDetails.items.length > 0) {
+            emptyOrderSection.style.display = 'none';
+            addOrderSection.style.display = 'block';
+
+            generateOrderCards(orderDetails);
+        } else {
+            emptyOrderSection.style.display = 'block';
+            addOrderSection.style.display = 'none';
+        }
     }
 
-    orderContainer.innerHTML = '';  // Clear previous content
+    // Function to generate dynamic order cards (from your previous code)
+    function generateOrderCards(order) {
+        const orderContainer = document.querySelector('.sb_container .row');
 
-    orders.forEach((order, index) => {
+        if (!orderContainer) {
+            console.error('Order container not found');
+            return;
+        }
+
+        orderContainer.innerHTML = ''; // Clear previous content
+        const invoiceNo = localStorage.getItem('lastInvoiceNumber');
+
+        // Loop through items and create order cards
         const cardHTML = `
             <div class="col-xl-3 col-lg-4 col-md-6 col-12">
-                <div class="card sb_card2" >
+                <div class="card sb_card2">
                     <div class="card-body">
-                        <div class="sb_line py-3 view-invoice" data-bs-toggle="modal" data-bs-target="#invoiceModal" data-index="${index}">View Invoice</div>
+                        <div class="sb_line py-3 view-invoice" data-bs-toggle="modal" data-bs-target="#invoiceModal">View Invoice</div>
                         <div>
                             <div class="d-flex align-content-center justify-content-between">
                                 <div style="color: #737373;">Order Date</div>
-                                <div>${order.orderDate}</div>
+                                <div>${order.date}</div>
                             </div>
-                            <div style="border-bottom: 1px dashed #545454; margin: 10px 0;"></div>
+                             <div style="border-bottom: 1px dashed #545454; margin: 10px 0;"></div>
                             <div class="d-flex align-content-center justify-content-between">
-                                <div style="color: #737373;">Invoice No.</div>
-                                <div>${order.invoiceNo}</div>
+                                <div style="color: #737373;">Invoice no.</div>
+                                <div>${invoiceNo}</div>
                             </div>
                             <div style="border-bottom: 1px dashed #545454; margin: 10px 0;"></div>
                             <div class="d-flex align-content-center justify-content-between">
                                 <div style="color: #737373;">Total Amount</div>
-                                <div>$${order.totalAmount}</div>
+                                <div>$${order.total}</div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         `;
-
         orderContainer.innerHTML += cardHTML;
+    }
+
+    // Initialize the sections based on the order details
+    toggleOrderSection();
+    document.addEventListener('click', function(event) {
+        if (event.target.classList.contains('view-invoice')) {
+            // console.log("View Invoice button clicked");
+            openInvoiceModal();
+        }
     });
 
-    // Add event listeners for "View Invoice" buttons
-    document.querySelectorAll('.view-invoice').forEach(button => {
-        button.addEventListener('click', function () {
-            const index = this.getAttribute('data-index');
-            openInvoiceModal(orders[index]);
-        });
-    });
-}
-
+});
 // Function to open invoice modal and populate it with data
-function openInvoiceModal(order) {
-    const modalBody = document.getElementById('invoiceContent');
-    modalBody.innerHTML = generateInvoiceHTML(order);
-}
+function openInvoiceModal() {
+    const invoiceData = JSON.parse(localStorage.getItem('orderDetails'));
+    // console.log("invoiceData>>>>>>",invoiceData);
 
+    const invoiceNo = generateInvoiceNumber();
+
+    invoiceData.invoiceNo = invoiceNo;
+    
+    const modalBody = document.getElementById('invoiceContent');
+    modalBody.innerHTML = generateInvoiceHTML(invoiceData);
+}
 // Function to generate HTML invoice
 function generateInvoiceHTML(order) {
     let itemsHTML = '';
+    let subTotal = 0;
 
     // Loop through each item in the order and generate table rows
     order.items.forEach(item => {
-        const itemTotal = item.rate * item.qty;
+        console.log("items",item);
+        
+        const itemTotal = item.price * item.quantity;
+        subTotal += itemTotal;
         itemsHTML += `
             <tr>
                 <td>${item.title}</td>
-                <td>$${item.rate}</td>
-                <td>${item.qty}</td>
+                <td>$${item.price}</td>
+                <td>${item.quantity}</td>
                 <td>$${itemTotal}</td>
             </tr>
         `;
@@ -96,7 +128,7 @@ function generateInvoiceHTML(order) {
                     <td>Time:</td>
                 </tr>
                 <tr>
-                    <td>${order.orderDate}</td>
+                    <td>${order.date}</td>
                     <td>06</td>
                     <td>${order.invoiceNo}</td>
                     <td>11:38:20 &nbsp;AM</td>
@@ -116,7 +148,7 @@ function generateInvoiceHTML(order) {
                    <tr style="border-bottom: 1px dashed #545454;"></tr>
                     <tr>
                         <td colspan="3" class="text-end">Sub Total:</td>
-                        <td>$${order.totalAmount}</td>
+                        <td>$${subTotal}</td>
                     </tr>
                     <tr>
                         <td colspan="3" class="text-end">Tax:</td>
@@ -129,7 +161,7 @@ function generateInvoiceHTML(order) {
                     <tr style="border-bottom: 1px dashed #545454;"></tr>
                     <tr>
                         <td colspan="3" class="text-end">Total:</td>
-                        <td>$${order.totalAmount + 20 + 25}</td>
+                        <td>$${subTotal + 20 + 25}</td>
                     </tr>
                     <tr class="text-center mt-3">
                         <td colspan="4"><small style="color: #999999;">Thank You! Visit Again</small></td>
@@ -175,12 +207,20 @@ document.getElementById('downloadInvoice').addEventListener('click', function ()
     downloadInvoicePDF();
 });
 
+function generateInvoiceNumber() {
+    let invoiceNumber = localStorage.getItem('lastInvoiceNumber') || 1000;
+
+    let newInvoiceNumber = parseInt(invoiceNumber) + 1;
+
+    localStorage.setItem('lastInvoiceNumber', newInvoiceNumber);
+    return newInvoiceNumber;
+}
 // Event listener for 'Order Now' button
-document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('add_order_btn').addEventListener('click', function (event) {
-        event.preventDefault();
-        document.getElementById('add_order').style.display = 'block';
-        document.getElementById('empty-order').style.display = 'none';
-        generateOrderCards(orders);
-    });
-});
+// document.addEventListener('DOMContentLoaded', function () {
+//     document.getElementById('add_order_btn').addEventListener('click', function (event) {
+//         event.preventDefault();
+//         document.getElementById('add_order').style.display = 'block';
+//         document.getElementById('empty-order').style.display = 'none';
+//         generateOrderCards(orders);
+//     });
+// });

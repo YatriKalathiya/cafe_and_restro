@@ -767,7 +767,7 @@ footer {
     margin-top: 26%;
   }
   .y_modal-dialog {
-    width: 90%; /* Responsive modal width */
+    width: 90%; 
   }
 
   .y_modal-content {
