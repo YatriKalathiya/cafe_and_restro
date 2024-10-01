@@ -1,36 +1,23 @@
-
-// Sample order data (replace with your actual data structure)
-// const orders = [
-//     { orderDate: '19/06/2024', invoiceNo: '565465453', table:'05', items: [{title: 'Dosa', rate: 120, qty: 1},{title: 'Samosa', rate: 80, qty: 1}], totalAmount: 200 },
-//     { orderDate: '20/06/2024', invoiceNo: '765445454', table:'06', items: [{title: 'Samosa', rate: 80, qty: 2}], totalAmount: 160 },
-//     { orderDate: '21/06/2024', invoiceNo: '865465453', table:'08', items: [{title: 'Panipuri', rate: 20, qty: 5}], totalAmount: 100 },
-//     { orderDate: '22/06/2024', invoiceNo: '965465453', table:'04', items: [{title: 'Dabeli', rate: 50, qty: 3}], totalAmount: 150 }
-// ];
-
-// const orderDetails = JSON.parse(localStorage.getItem('orderDetails'));
-
 document.addEventListener('DOMContentLoaded', function () {
-    const orderDetails = JSON.parse(localStorage.getItem('orderDetails'));
-    // console.log(orderDetails);
+    const orderDetails = JSON.parse(localStorage.getItem('orders')) || [];
+    // console.log("orderDetails>>>>>>>>>",orderDetails);
     
     const emptyOrderSection = document.getElementById('empty-order');
     const addOrderSection = document.getElementById('add_order');
 
-    // Function to toggle between sections
     function toggleOrderSection() {
-        if (orderDetails && orderDetails.items && orderDetails.items.length > 0) {
+        if (orderDetails.length > 0) {
             emptyOrderSection.style.display = 'none';
             addOrderSection.style.display = 'block';
 
-            generateOrderCards(orderDetails);
+            generateOrderCards(orderDetails);  
         } else {
             emptyOrderSection.style.display = 'block';
             addOrderSection.style.display = 'none';
         }
     }
 
-    // Function to generate dynamic order cards (from your previous code)
-    function generateOrderCards(order) {
+    function generateOrderCards(orders) {
         const orderContainer = document.querySelector('.sb_container .row');
 
         if (!orderContainer) {
@@ -39,70 +26,84 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         orderContainer.innerHTML = ''; // Clear previous content
-        const invoiceNo = localStorage.getItem('lastInvoiceNumber');
 
-        // Loop through items and create order cards
-        const cardHTML = `
-            <div class="col-xl-3 col-lg-4 col-md-6 col-12">
-                <div class="card sb_card2">
-                    <div class="card-body">
-                        <div class="sb_line py-3 view-invoice" data-bs-toggle="modal" data-bs-target="#invoiceModal">View Invoice</div>
-                        <div>
-                            <div class="d-flex align-content-center justify-content-between">
-                                <div style="color: #737373;">Order Date</div>
-                                <div>${order.date}</div>
-                            </div>
-                             <div style="border-bottom: 1px dashed #545454; margin: 10px 0;"></div>
-                            <div class="d-flex align-content-center justify-content-between">
-                                <div style="color: #737373;">Invoice no.</div>
-                                <div>${invoiceNo}</div>
-                            </div>
-                            <div style="border-bottom: 1px dashed #545454; margin: 10px 0;"></div>
-                            <div class="d-flex align-content-center justify-content-between">
-                                <div style="color: #737373;">Total Amount</div>
-                                <div>$${order.total}</div>
+        orders.forEach(order => {
+            const invoiceNo = order.invoiceNo || generateInvoiceNumber();  
+            order.invoiceNo = invoiceNo;
+            // console.log('Order with Invoice:', order);
+
+            // Create HTML for each order card
+            const cardHTML = `
+                <div class="col-xl-3 col-lg-4 col-md-6 col-12">
+                    <div class="card sb_card2">
+                        <div class="card-body">
+                            <div class="sb_line py-3 view-invoice" data-bs-toggle="modal" data-bs-target="#invoiceModal" data-invoice="${invoiceNo}">View Invoice</div>
+                            <div>
+                                <div class="d-flex align-content-center justify-content-between">
+                                    <div style="color: #737373;">Order Date</div>
+                                    <div>${order.date}</div>
+                                </div>
+                                 <div style="border-bottom: 1px dashed #545454; margin: 10px 0;"></div>
+                                <div class="d-flex align-content-center justify-content-between">
+                                    <div style="color: #737373;">Invoice no.</div>
+                                    <div>${invoiceNo}</div>
+                                </div>
+                                <div style="border-bottom: 1px dashed #545454; margin: 10px 0;"></div>
+                                <div class="d-flex align-content-center justify-content-between">
+                                    <div style="color: #737373;">Total Amount</div>
+                                    <div>$${order.total}</div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        `;
-        orderContainer.innerHTML += cardHTML;
+            `;
+            orderContainer.innerHTML += cardHTML;  // Add the card to the container
+        });
+        localStorage.setItem('orders', JSON.stringify(orders));
+        // console.log('Updated orders:', orders);
+
     }
 
     // Initialize the sections based on the order details
     toggleOrderSection();
+
+    // Event listener to handle invoice modal opening
     document.addEventListener('click', function(event) {
         if (event.target.classList.contains('view-invoice')) {
-            // console.log("View Invoice button clicked");
-            openInvoiceModal();
+            const invoiceNo = event.target.getAttribute('data-invoice');
+            openInvoiceModal(invoiceNo);
         }
     });
-
 });
+
 // Function to open invoice modal and populate it with data
-function openInvoiceModal() {
-    const invoiceData = JSON.parse(localStorage.getItem('orderDetails'));
-    // console.log("invoiceData>>>>>>",invoiceData);
+function openInvoiceModal(invoiceNo) {
+    const orderDetails = JSON.parse(localStorage.getItem('orders')) || [];
 
-    const invoiceNo = generateInvoiceNumber();
+    const numericInvoiceNo = Number(invoiceNo);
 
-    invoiceData.invoiceNo = invoiceNo;
-    
-    const modalBody = document.getElementById('invoiceContent');
-    modalBody.innerHTML = generateInvoiceHTML(invoiceData);
+    const order = orderDetails.find(order => Number(order.invoiceNo) === numericInvoiceNo);
+    // console.log("Order found:", order);
+
+    if (order) {
+        const modalBody = document.getElementById('invoiceContent');
+        modalBody.innerHTML = generateInvoiceHTML(order);
+    }
 }
+
 // Function to generate HTML invoice
 function generateInvoiceHTML(order) {
     let itemsHTML = '';
     let subTotal = 0;
+    // const serviceCharge = 25;
 
     // Loop through each item in the order and generate table rows
     order.items.forEach(item => {
-        console.log("items",item);
+        // console.log("item",item);
         
         const itemTotal = item.price * item.quantity;
-        subTotal += itemTotal;
+        subTotal += itemTotal ;
         itemsHTML += `
             <tr>
                 <td>${item.title}</td>
@@ -112,28 +113,30 @@ function generateInvoiceHTML(order) {
             </tr>
         `;
     });
+
+
     return `
         <div class="text-center py-2">
             <h3>Royal Cafe & Restaurant</h3>
             <p><small style="color: #999999;">1315 Dye Street, Minnesota - 55347</small></p>
         </div>
-        <div style="border-bottom: 1px dashed #545454;" ></div>
+        <div style="border-bottom: 1px dashed #545454;"></div>
         <div class="sb_invoice-items">
             <table class="table table-borderless" style="color: white;">
                 <thead style="border-bottom: 1px dashed #545454;">
-                 <tr>
-                    <td>Date:</td>
-                    <td>Table:</td>
-                    <td>Invoice No:</td>
-                    <td>Time:</td>
-                </tr>
-                <tr>
-                    <td>${order.date}</td>
-                    <td>06</td>
-                    <td>${order.invoiceNo}</td>
-                    <td>11:38:20 &nbsp;AM</td>
-                </tr>
-                 <tr style="border-bottom: 1px dashed #545454;"></tr>
+                    <tr>
+                        <td>Date:</td>
+                        <td>Table:</td>
+                        <td>Invoice No:</td>
+                        <td>Time:</td>
+                    </tr>
+                    <tr>
+                        <td>${order.date}</td>
+                        <td>06</td>
+                        <td>${order.invoiceNo}</td>
+                        <td>11:38:20 &nbsp;AM</td>
+                    </tr>
+                    <tr style="border-bottom: 1px dashed #545454;"></tr>
                     <tr>
                         <th>Item</th>
                         <th>Rate</th>
@@ -145,23 +148,19 @@ function generateInvoiceHTML(order) {
                     ${itemsHTML}
                 </tbody>
                 <tfoot>
-                   <tr style="border-bottom: 1px dashed #545454;"></tr>
+                    <tr style="border-bottom: 1px dashed #545454;"></tr>
                     <tr>
                         <td colspan="3" class="text-end">Sub Total:</td>
                         <td>$${subTotal}</td>
                     </tr>
                     <tr>
                         <td colspan="3" class="text-end">Tax:</td>
-                        <td>$20</td>
-                    </tr>
-                    <tr>
-                        <td colspan="3" class="text-end">Service Charges:</td>
-                        <td>$25</td>
+                        <td>$${order.tax}</td>
                     </tr>
                     <tr style="border-bottom: 1px dashed #545454;"></tr>
                     <tr>
                         <td colspan="3" class="text-end">Total:</td>
-                        <td>$${subTotal + 20 + 25}</td>
+                        <td>$${order.total}</td>
                     </tr>
                     <tr class="text-center mt-3">
                         <td colspan="4"><small style="color: #999999;">Thank You! Visit Again</small></td>
@@ -171,7 +170,6 @@ function generateInvoiceHTML(order) {
         </div>
     `;
 }
-
 // Function to download the invoice as a PDF
 function downloadInvoicePDF() {
     const invoiceContent = document.getElementById('invoiceContent').innerHTML;
@@ -208,19 +206,8 @@ document.getElementById('downloadInvoice').addEventListener('click', function ()
 });
 
 function generateInvoiceNumber() {
-    let invoiceNumber = localStorage.getItem('lastInvoiceNumber') || 1000;
-
-    let newInvoiceNumber = parseInt(invoiceNumber) + 1;
-
-    localStorage.setItem('lastInvoiceNumber', newInvoiceNumber);
+    let invoiceNumber = Number(localStorage.getItem('lastInvoiceNumber')) || 1000;
+    let newInvoiceNumber = invoiceNumber + 1;
+    localStorage.setItem('lastInvoiceNumber', newInvoiceNumber.toString());
     return newInvoiceNumber;
 }
-// Event listener for 'Order Now' button
-// document.addEventListener('DOMContentLoaded', function () {
-//     document.getElementById('add_order_btn').addEventListener('click', function (event) {
-//         event.preventDefault();
-//         document.getElementById('add_order').style.display = 'block';
-//         document.getElementById('empty-order').style.display = 'none';
-//         generateOrderCards(orders);
-//     });
-// });

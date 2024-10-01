@@ -256,7 +256,7 @@ function cat_list(x) {
                                                 <h5 class="mb-0" onclick="adjustItemCount(${index}, 1)" type="button">+</h5>
                                             </div>
                                             <div class="sp_btn d-flex justify-content-around align-items-center" type="button">
-                                                 <a href="../shweta_html/Cart.html"> <h5 class="mb-0" onclick="addItemToCart(${index})">Add Item</h5></a>
+                                                 <a href="./Cart.html"> <h5 class="mb-0" onclick="addItemToCart(${index})">Add Item</h5></a>
                                             </div>
                                         </div>
                                     </div>

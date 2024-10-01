@@ -134,8 +134,8 @@ function updateCartItem() {
     item.count = parseInt(modal.querySelector('.sb_qty_btn span:nth-child(2)').textContent);
 
     // Update display and save
-    updateCartDisplay();
     saveCart();
+    updateCartDisplay();
 
     // Close modal
     const myModal = bootstrap.Modal.getInstance(modal);
@@ -157,7 +157,13 @@ function getFormattedDate() {
     const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
     return new Date().toLocaleDateString(undefined, options);
 }
+function saveToOrder(orderData) {
+    let orders = JSON.parse(localStorage.getItem('orders') || '[]');
 
+    orders.push(orderData);
+
+    localStorage.setItem('orders',JSON.stringify(orders));
+}
   function populateOrderSummaryModal() {
     let orderDetails = [];
     const modalBody = document.querySelector('#orderSummaryModal .modal-body');
@@ -230,9 +236,13 @@ function getFormattedDate() {
         tax: tax.toFixed(2),
         total: mainTotal.toFixed(2)
     };
-    console.log("orderData>>>>>>>>>>>",orderData);
+    // console.log("orderData>>>>>>>>>>>",orderData);
     
-    localStorage.setItem('orderDetails', JSON.stringify(orderData));
+    saveToOrder(orderData);
+
+    cart =[];
+    saveCart();
+    updateCartDisplay();
 }
 
 // Event listeners
@@ -270,6 +280,7 @@ document.addEventListener('DOMContentLoaded', function () {
         populateOrderSummaryModal();
         const orderSummaryModal = new bootstrap.Modal(document.getElementById('orderSummaryModal'));
         orderSummaryModal.show();
+        
     });
 
     // Open Review Modal when "Add Review" is clicked

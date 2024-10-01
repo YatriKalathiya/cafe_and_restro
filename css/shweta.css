@@ -124,6 +124,9 @@
         text-decoration: none;
         color: white;
     }
+    .sb_btn a:hover {
+        color: white;
+    }
 
     /* ================================= Order Summry Model Css =============================== */
 
