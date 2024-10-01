@@ -54,6 +54,7 @@ function updateCartDisplay() {
     // Update total items and price
     document.getElementById('total-items').textContent = `Total ${totalItems} Items`;
     document.getElementById('total-price').textContent = `$${totalPrice.toFixed(2)}`;
+    localStorage.setItem('total-items',totalItems);
 
     // Update cart visibility
     document.getElementById('empty-cart').style.display = cart.length === 0 ? 'block' : 'none';
@@ -152,7 +153,13 @@ function calculatePrice(item) {
 }
 
   // Function to populate order summary modal dynamically
+function getFormattedDate() {
+    const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
+    return new Date().toLocaleDateString(undefined, options);
+}
+
   function populateOrderSummaryModal() {
+    let orderDetails = [];
     const modalBody = document.querySelector('#orderSummaryModal .modal-body');
     const modalFooter = document.querySelector('#orderSummaryModal .modal-footer');
 
@@ -164,7 +171,11 @@ function calculatePrice(item) {
 
     let subtotalPrice = 0;
     let totalItems = 0;
-    modalBody.innerHTML = '';  // Clear the modal body for new data
+    modalBody.innerHTML = ''; 
+    
+    const orderDate = getFormattedDate();
+    const dateHtml = `<small style="color: #7F7F7F;">${orderDate}</small>`;
+    modalBody.innerHTML += dateHtml;
 
     // Loop through cart to display each item
     cart.forEach(item => {
@@ -187,14 +198,21 @@ function calculatePrice(item) {
             </div>
         </div>
     `;
-        modalBody.innerHTML += itemHtml;  // Append each item to the modal body
+        modalBody.innerHTML += itemHtml;  
+        
+        orderDetails.push({
+            title: item.title,
+            quantity: item.count,
+            price: item.totalPrice.toFixed(2),
+            total: itemTotal.toFixed(2),
+            image: item.img
+        });
     });
 
     // Calculate totals and tax
-    const tax = subtotalPrice * 0.035; // Example 3.5% tax
+    const tax = subtotalPrice * 0.035;
     const mainTotal = subtotalPrice + tax;
 
-    // Check if the footer has the text-end class for totals
     const textEndElement = modalFooter.querySelector('.text-end');
     if (textEndElement) {
         textEndElement.innerHTML = `
@@ -205,8 +223,17 @@ function calculatePrice(item) {
     } else {
         console.error('.text-end element not found in modal footer');
     }
+     const orderData = {
+        date: orderDate,
+        items: orderDetails,
+        subtotal: subtotalPrice.toFixed(2),
+        tax: tax.toFixed(2),
+        total: mainTotal.toFixed(2)
+    };
+    console.log("orderData>>>>>>>>>>>",orderData);
+    
+    localStorage.setItem('orderDetails', JSON.stringify(orderData));
 }
-
 
 // Event listeners
 document.addEventListener('DOMContentLoaded', function () {
@@ -266,10 +293,7 @@ document.addEventListener('DOMContentLoaded', function () {
             value: document.querySelector('.sb_emoji[data-category="value"] i[style*="color"]')?.className || '',
             text: document.getElementById('feedbackText').value || ''
         };
-    
-        console.log('Feedback captured:', feedback); // Debug log to see captured feedback
-    
-        // Store feedback in sessionStorage
+
         sessionStorage.clear();
         sessionStorage.setItem('feedback', JSON.stringify(feedback));
     

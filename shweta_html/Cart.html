@@ -43,7 +43,7 @@
         <!-- Empty Cart  -->
 
         <section id="empty-cart" class="py-5">
-            <div class="card sb_card" style="width: 18rem;">
+            <div class="card sb_card" style="width: 18rem; background-color: #040404;">
                 <img src="../shweta_img/cart.png" class="card-img-top" alt="..." width="100%">
                 <div class="card-body sb_card_body">
                     <h5 class="card-title">Your Cart Is Empty</h5>
@@ -328,6 +328,7 @@
             </div>
         </div>
 
+        <!-- invoice model -->
           <div class="modal fade" id="invoiceModal" tabindex="-1" aria-labelledby="invoiceModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content sb_modal-content3">
@@ -347,7 +348,7 @@
     <div id="footer"></div>
 
     <script src="../js/shweta_cart.js"></script>
-    <!-- <script src="../js/yatri.js"></script> -->
+    <script src="../js/yatri.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -360,7 +361,6 @@
             .then(data => {
                 document.getElementById('navbar').innerHTML = data;
             });
-
 
             fetch('../footer.html')
             .then(response => response.text())
