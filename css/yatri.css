@@ -796,7 +796,7 @@ footer {
   }
   .y_mobileLogoutModel-dialog{
     max-width: 334px;
-  }
+  }  
 }
 @media (max-width: 425px) {
   .y_otp_form h1 {
@@ -825,6 +825,9 @@ footer {
   .y_login_form button {
     padding: 7px 0;
     font-size: 13px;
+  }
+  #loginButton button{
+   width: 100%;
   }
 }
 @media (max-width: 375px) {

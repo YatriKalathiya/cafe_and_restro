@@ -29,10 +29,10 @@
 
     <div id="navbar"></div>
 
-    <main style="background-color: #040404; " >
+    <main style="background-color: #040404; ">
 
-         <!-- first section -->
-         <section>
+        <!-- first section -->
+        <section>
             <div class="sb_abosulate">
                 <img src="../shweta_img/order2.png" alt="" width="100%">
                 <h2 class="sb_reletive">My Order</h2>
@@ -46,7 +46,7 @@
                 <div class="card-body sb_card_body">
                     <h5 class="card-title">No Order Yet</h5>
                     <p><small style="color: #999999;">You have no order yet!</small></p>
-                    <a href="../sujal_html/sub_category.html" id="add_order_btn" class="btn sb_btn my-1">Order Now</a>
+                    <a href="sub_category.html" id="add_order_btn" class="btn sb_btn my-1">Order Now</a>
                 </div>
             </div>
         </section>
@@ -54,7 +54,7 @@
         <!-- Add Items -->
         <section id="add_order" style="display: none; padding: 50px 0 100px;">
 
-            <div >
+            <div>
                 <div class="y_container sb_container">
                     <div class="row g-4">
                         <!-- Dynamic content will be injected here -->
@@ -78,37 +78,52 @@
                 </div>
             </div>
         </div>
-        
+
     </main>
 
     <div id="footer"></div>
 
-    <script src="../js/shweta_order.js"></script>
-    <script src="../js/yatri.js"></script>
-   
+    <script src="/js/shweta_order.js"></script>
+    <script src="/js/yatri.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
-        <script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
             fetch('../header.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('navbar').innerHTML = data;
-            });
-      
-      
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar').innerHTML = data;
+
+                    // Now that the header is loaded, update the cart item count
+                    const totalItems = localStorage.getItem('total-items');
+                    const totalCartDesktop = document.getElementById('totalCartDesktop');
+                    const totalCartMobile = document.getElementById('totalCartMobile');
+
+                    if (totalItems !== null && totalItems !== '0') {
+                        if (totalCartDesktop) {
+                            totalCartDesktop.textContent = totalItems;
+                        }
+                        if (totalCartMobile) {
+                            totalCartMobile.textContent = totalItems;
+                        }
+                    }
+                });
+
             fetch('../footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer').innerHTML = data;
-            })
-        </script>
-      
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer').innerHTML = data;
+                });
+        });
+
+    </script>
 
 </body>
 

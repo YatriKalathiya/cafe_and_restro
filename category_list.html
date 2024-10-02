@@ -60,7 +60,7 @@
     <section class=" y_container">
       <div class="sp_cardlist_cart d-md-flex justify-content-md-between">
         <h5 class="mb-0 d-flex justify-content-center py-2">1 Item added to cart</h5>
-        <a href="/shweta_html/Cart.html"
+        <a href="./Cart.html"
           class="d-flex justify-content-center align-items-center py-2 text-decoration-none text-white">
           <h5 class="mb-0">View Cart</h5><img src="/sujal_img/next.png" class="mx-2 ">
         </a>
@@ -100,18 +100,34 @@
     }
   </script>
   <script>
-    fetch('../header.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('navbar').innerHTML = data;
-      });
+    document.addEventListener('DOMContentLoaded', function () {
+      fetch('../header.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('navbar').innerHTML = data;
 
+          // Now that the header is loaded, update the cart item count
+          const totalItems = localStorage.getItem('total-items');
+          const totalCartDesktop = document.getElementById('totalCartDesktop');
+          const totalCartMobile = document.getElementById('totalCartMobile');
 
-    fetch('../footer.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('footer').innerHTML = data;
-      })
+          if (totalItems !== null && totalItems !== '0') {
+            if (totalCartDesktop) {
+              totalCartDesktop.textContent = totalItems;
+            }
+            if (totalCartMobile) {
+              totalCartMobile.textContent = totalItems;
+            }
+          }
+        });
+
+      fetch('../footer.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('footer').innerHTML = data;
+        });
+    });
+
   </script>
 </body>
 

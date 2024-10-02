@@ -161,7 +161,7 @@
     }
 
     function setupMobileMenuListeners() {
-        console.log("Setting up mobile menu listeners.");
+        // console.log("Setting up mobile menu listeners.");
 
         const offcanvasMenu = document.getElementById('offcanvasMenu');
         if (!offcanvasMenu) {
@@ -172,7 +172,7 @@
         offcanvasMenu.addEventListener('click', function (event) {
             const target = event.target.closest('[data-bs-toggle="modal"]');
             if (target) {
-                console.log("Modal trigger found:", target);
+                // console.log("Modal trigger found:", target);
                 event.preventDefault(); // Prevent default link behavior
 
                 const targetModalId = target.getAttribute('data-bs-target');
@@ -181,7 +181,7 @@
                 if (targetModal) {
                     const modalInstance = new bootstrap.Modal(targetModal);
                     modalInstance.show();
-                    console.log("Modal shown:", targetModalId);
+                    // console.log("Modal shown:", targetModalId);
                 } else {
                     console.error("Target modal not found.");
                 }
@@ -193,14 +193,6 @@
         checkLoginStatus();
         populateModel();
         setupMobileMenuListeners();
-
-        const offcanvasMenu = document.getElementById('offcanvasMenu');
-        if (offcanvasMenu) {
-            offcanvasMenu.addEventListener('shown.bs.offcanvas', function () {
-                checkLoginStatus();
-                console.log("Offcanvas menu shown on small screen.");
-            });
-        }
 
         const profileModal = document.getElementById('y_profileModal');
         if (profileModal) {
@@ -234,18 +226,9 @@
         checkLoginStatus();
     }
 
-    // Call checkLoginStatus when the offcanvas menu is opened
-    const offcanvasMenu = document.getElementById('offcanvasMenu');
-    if (offcanvasMenu) {
-        offcanvasMenu.addEventListener('show.bs.offcanvas', checkLoginStatus);
-    }
-
-    document.addEventListener('DOMContentLoaded', function () {
-        const totalItems = localStorage.getItem('total-items');
-        console.log("totalItems", totalItems);
-
-        const totalCartElement = document.getElementById('totalCart');
-        if (totalCartElement && totalItems !== null) {
-            totalCartElement.textContent = totalItems;
-        }
-    });
+    // document.addEventListener('DOMContentLoaded', function () {
+    //     setTimeout(() => {
+    //         setupMobileMenuListeners();
+    //     }, 500); 
+    // });
+    
