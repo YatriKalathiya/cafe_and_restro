@@ -77,6 +77,7 @@ function deleteItem(index) {
     cart.splice(index, 1);
     updateCartDisplay();
     saveCart();
+    updateCartItemCount();
 }
 
 // Function to save cart to localStorage
@@ -338,3 +339,19 @@ function add_smile3(element) {
 function add_smile4(element) {
     element.style.color = "#f34843";
  }
+//update cart item number in header show
+ function updateCartItemCount() {
+    const totalItems = cart.reduce((acc, item) => acc + item.count, 0); // Calculate total items
+    localStorage.setItem('total-items', totalItems); // Save updated total to localStorage
+
+    // Update cart item count on the page
+    const totalCartDesktop = document.getElementById('totalCartDesktop');
+    const totalCartMobile = document.getElementById('totalCartMobile');
+
+    if (totalCartDesktop) {
+        totalCartDesktop.textContent = totalItems;
+    }
+    if (totalCartMobile) {
+        totalCartMobile.textContent = totalItems;
+    }
+}

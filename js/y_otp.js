@@ -30,10 +30,11 @@ document.addEventListener('DOMContentLoaded', function() {
     function ganerateOtp() {
         return Math.floor(1000 + Math.random() * 9000);
     }
+    
     const ganeratedOtp = ganerateOtp();
-    alert(`otp sent ${ganeratedOtp}`)
+    setTimeout(() => alert(`otp sent ${ganeratedOtp}`));
     console.log("ganeratedOtp",ganeratedOtp);
-
+    
     document.getElementById('otpForm').addEventListener('submit', function(e) {
         e.preventDefault();
 
