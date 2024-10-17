@@ -144,7 +144,7 @@ body {
 }
 
 .offcanvas .dropdown-toggle {
-  width: 100%;
+  width: 50%;
   text-align: left;
   display: flex;
   justify-content: space-between;
@@ -834,5 +834,16 @@ footer {
   .y_footer{
     width: 100%;
     display: block;
+  }
+  #offcanvasMenu{
+    width: 320px;
+  }
+}
+@media (max-width:320px) {
+  #offcanvasMenu{
+    width: 270px;
+  }
+  .offcanvas .dropdown-toggle {
+    width: 60%;
   }
 }
